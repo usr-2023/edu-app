@@ -131,6 +131,7 @@ class Employee extends Model
         'number_of_children',
         'employee_phone_number',
         'employee_email',
+        'is_national_card',
         'national_card_number',
         'national_card_date_of_issue',
         'national_card_issuing_authority',

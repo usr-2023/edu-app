@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class YesNo extends Model
 {
     use HasFactory;
-    protected $table = 'yesno';
+    protected $table = 'yes_no';
     protected $fillable = [
         'value',
     ];

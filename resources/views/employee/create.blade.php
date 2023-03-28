@@ -110,7 +110,7 @@
                                     @endforeach
                                  </select>
                                 <x-input-error :messages="$errors->get('marital_status_id')" class="w-full mt-2" />
-                               </div>
+                            </div>
                             
                             <div class=" mx-4 my-4 w-full">
                                 <x-input-label for="first_husband_name" class="w-full mb-1" :value="__('اسم الزوج - الزوجة')" />
@@ -452,6 +452,23 @@
 
 
                         <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">بيانات البطاقة الوطنية</h2>
+
+                        <div class=" mx-4 my-4 w-25" >
+                            <x-input-label for="is_national_card" class="w-full mb-1" :value="__('هل توجد بطاقة وطنية')" />
+                            <select id="is_national_card" class="w-full block mt-1 "  name="is_national_card">
+                                @foreach($yesnos as $yesno)
+     
+                                <option value="{{ $yesno->id }}" {{ ($yesno->id == 2) ? 'selected' : '' }}>
+                                         {{ $yesno->value }}
+                                </option>
+                                @endforeach
+                             </select>
+                            <x-input-error :messages="$errors->get('is_national_card')" class="w-full mt-2" />
+                        </div>
+
+                        <div id="nc">
+
+                        
                         
 
                         <div class="flex"  >
@@ -483,6 +500,9 @@
                                 <x-input-error :messages="$errors->get('national_card_family_number')" class="w-full mt-2" />
                             </div>
                         </div>
+                    </div>
+
+                        <div id="ci">
 
                         <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">بيانات هوية الأحوال المدنية  </h2>
                         
@@ -555,6 +575,7 @@
                             </div>
               
                         </div>
+                    </div>
 
 
                         <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">بيانات بطاقة السكن  </h2>
@@ -738,14 +759,22 @@
 
 
                         <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">بيانات التحصيل الدراسي - اللقب العلمي</h2>
-                      
-                        <div class="flex"  >
+                        <div class=" mx-4 my-4 w-25" >
+                            <x-input-label for="is_scientific_title" class="w-full mb-1" :value="__('هل يوجد لقب علمي')" />
+                            <select id="is_scientific_title" class="w-full block mt-1 "  name="is_scientific_title">
+                                @foreach($yesnos as $yesno)
+     
+                                <option value="{{ $yesno->id }}" {{ ($yesno->id == 1) ? 'selected' : '' }}>
+                                         {{ $yesno->value }}
+                                </option>
+                                @endforeach
+                             </select>
+                            <x-input-error :messages="$errors->get('is_scientific_title')" class="w-full mt-2" />
+                        </div>
 
-                            <div class=" mx-4 my-4 w-full">
-                                <x-input-label for="is_scientific_title" class="w-full mb-1" :value="__('هل لديه لقب علمي')" />
-                                <x-text-input id="is_scientific_title" class="w-full block mt-1 " type="text" name="is_scientific_title"  />
-                                <x-input-error :messages="$errors->get('is_scientific_title')" class="w-full mt-2" />
-                            </div>
+                        <div id="st" class="flex"  >
+
+
 
                             <div class=" mx-4 my-4 w-full" >
                                 <x-input-label for="scientific_title_stage_id" class="w-full mb-1" :value="__('درجة اللقب العلمي')" />
@@ -774,13 +803,25 @@
                        
                         <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">بيانات الفصل السياسي </h2>
                         
+                        <div class=" mx-4 my-4 w-25" >
+                            <x-input-label for="is_political_dismissal" class="w-full mb-1" :value="__('هل يوجد فصل سياسي')" />
+                            <select id="is_political_dismissal" class="w-full block mt-1 "  name="is_political_dismissal">
+                                @foreach($yesnos as $yesno)
+     
+                                <option value="{{ $yesno->id }}" {{ ($yesno->id == 1) ? 'selected' : '' }}>
+                                         {{ $yesno->value }}
+                                </option>
+                                @endforeach
+                             </select>
+                            <x-input-error :messages="$errors->get('is_political_dismissal')" class="w-full mt-2" />
+                        </div>
 
+                        <div id="pd">
+
+                       
                         <div class="flex"  >
-                            <div class=" mx-4 my-4 w-full" >
-                                    <x-input-label for="is_political_dismissal" class="w-full mb-1" :value="__('هل لديه فصل سياسي')" />
-                                    <x-text-input id="is_political_dismissal" class="w-full block mt-1" type="text" name="is_political_dismissal"  />
-                                    <x-input-error :messages="$errors->get('is_political_dismissal')" class="w-full mt-2" />
-                            </div>
+
+
 
                             <div class=" mx-4 my-4 w-full" >
                                 <x-input-label for="political_dismissal_type_id" class="w-full mb-1" :value="__('نوع الفصل السياسي')" />
@@ -818,7 +859,7 @@
                         </div>
 
                         
-                        <div class="flex"  >
+                        <div  class="flex"  >
 
                             <div class=" mx-4 my-4 w-full">
                                 <x-input-label for="political_dismissal_years" class="w-full mb-1" :value="__('عدد السنوات')" />
@@ -857,7 +898,7 @@
                         </div>
 
                         
-                        <div class="flex"  >
+                        <div  class="flex"  >
 
 
                             <div class=" mx-4 my-4 w-full">
@@ -896,6 +937,8 @@
 
                         </div>
 
+                    </div>
+
                         <div class=" mx-4 my-4 w-full">
                             <x-primary-button class="ml-4">
                                 {{ __('أضافة') }}
@@ -912,7 +955,88 @@
             </div>
         </div>
     </div>
+
+   <script> 
     
-             
+    $(document).ready(function (){
+        toggleFieldspd(); 
+        toggleFieldsst();
+        toggleFieldsnc();
+        toggleFieldsci();
+
+        $("#is_national_card").change(function ()
+         { 
+          toggleFieldsnc();
+          toggleFieldsci();
+         });
+
+
+        $("#is_scientific_title").change(function ()
+         { 
+          toggleFieldsst();
+         });
+         
+        $("#is_political_dismissal").change(function ()
+         { 
+          toggleFieldspd();
+         });
+
+     });
+
+     function toggleFieldsnc()
+      {
+        if ($("#is_national_card").val() == 2)
+           $("#nc").show();
+           
+
+       else
+           $("#nc").hide();
+
+           
+      } 
+
+      function toggleFieldsci()
+      {
+        if ($("#is_national_card").val() == 1)
+           $("#ci").show();
+           
+
+       else
+           $("#ci").hide();
+
+           
+      } 
+
+     function toggleFieldsst()
+      {
+        if ($("#is_scientific_title").val() == 2)
+           $("#st").show();
+           
+
+       else
+           $("#st").hide();
+
+           
+      } 
+
+     function toggleFieldspd()
+      {
+        if ($("#is_scientific_title").val() == 2)
+           $("#st").show();
+           
+
+       else
+           $("#st").hide();
+
+
+       if ($("#is_political_dismissal").val() == 2)
+           $("#pd").show();
+           
+
+       else
+           $("#pd").hide();
+           
+      } 
+    </script>   
                 
 </x-app-layout>
