@@ -21,6 +21,7 @@ use App\Models\Section;
 use App\Models\Sub_Section;
 use App\Models\Sub_Sub_Section;
 use App\Models\Teaching_Specialization;
+use App\Models\YesNo;
 use Illuminate\Http\Request;
 
 
@@ -60,11 +61,12 @@ class EmployeeController extends Controller
         $teaching_specializations = Teaching_Specialization::all();
         $political_dismissal_types = Political_Dismissal_Type::all();
         $marital_statuss = Marital_Status::all();
+        $yesnos = YesNo::all();
 
 
        
 
-        return view('employee.create',compact(['contract_types','employee_statuss','employment_types','sections','sub_sections','sub_sub_sections','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss']));
+        return view('employee.create',compact(['contract_types','employee_statuss','employment_types','sections','sub_sections','sub_sub_sections','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
     }
 
     /**
