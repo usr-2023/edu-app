@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20579675e9f5a4e7dc0a2f9e567a7364",
+    "content-hash": "d4bdaecced25dd50479477e04dcb7504",
     "packages": [
         {
             "name": "brick/math",
@@ -5535,16 +5535,16 @@
         },
         {
             "name": "yajra/laravel-datatables-buttons",
-            "version": "v10.0.6",
+            "version": "v10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-buttons.git",
-                "reference": "da9e4493809b2d4c6e9f53c61184da7f881c1f51"
+                "reference": "b86ed88ae8f76162eff5e8f7359669c3b6dddc79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/da9e4493809b2d4c6e9f53c61184da7f881c1f51",
-                "reference": "da9e4493809b2d4c6e9f53c61184da7f881c1f51",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/b86ed88ae8f76162eff5e8f7359669c3b6dddc79",
+                "reference": "b86ed88ae8f76162eff5e8f7359669c3b6dddc79",
                 "shasum": ""
             },
             "require": {
@@ -5602,7 +5602,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables-buttons/issues",
-                "source": "https://github.com/yajra/laravel-datatables-buttons/tree/v10.0.6"
+                "source": "https://github.com/yajra/laravel-datatables-buttons/tree/v10.0.0"
             },
             "funding": [
                 {
@@ -5610,7 +5610,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-28T06:08:22+00:00"
+            "time": "2023-02-07T09:41:21+00:00"
         },
         {
             "name": "yajra/laravel-datatables-editor",

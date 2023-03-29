@@ -22,7 +22,9 @@ class EmployeeDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'employee.action')
+           // ->addColumn('action', 'employee.action')
+           ->addColumn('action','employee.action')
+           ->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -42,12 +44,15 @@ class EmployeeDataTable extends DataTable
         return $this->builder()
                     ->setTableId('my-table')
                     ->columns([
+                        'action' => [ 'title' => 'الوظائف' ],
                         'job_number' => [ 'title' => 'الرقم الوظيفي' ],
                         'name' => [ 'title' => 'الاسم' ],
                         'father_name' => [ 'title' => 'اسم الاب' ],
                         'grandfather_name' => [ 'title' => 'اسم الجد' ],
                         'mother_name' => [ 'title' => 'اسم الام' ],
+                        
                         ])
+                    
                     ->minifiedAjax()
                     //->dom('Bfrtip')
                     ->orderBy(1)

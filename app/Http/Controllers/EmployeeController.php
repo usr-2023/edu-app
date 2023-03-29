@@ -309,9 +309,10 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Employee $employee)
+    public function show(string $url_address)
     {
-        //
+        $employee = Employee::where('url_address','=',$url_address) -> first();
+        return view('employee.show', compact('employee'));
     }
 
     /**
