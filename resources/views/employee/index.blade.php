@@ -24,7 +24,9 @@
                                 <th class="text-center" title="الاسم">الاسم</th>
                                 <th class="text-center" title="اسم الاب">اسم الاب</th>
                                 <th class="text-center" title="اسم الجد">اسم الجد</th>
+                                <th class="text-center" title="تاريخ الميلاد">تاريخ الميلاد</th>
                                 <th class="text-center" title="اسم الام">اسم الام</th>
+                                <th class="text-center" title="تاريخ التعيين">تاريخ التعيين</th>
                             </tr>
                         </thead>
                     </table>

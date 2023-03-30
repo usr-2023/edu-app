@@ -44,13 +44,14 @@ class EmployeeDataTable extends DataTable
         return $this->builder()
                     ->setTableId('my-table')
                     ->columns([
-                        'action' => [ 'title' => 'الوظائف' ],
-                        'job_number' => [ 'title' => 'الرقم الوظيفي' ],
-                        'name' => [ 'title' => 'الاسم' ],
-                        'father_name' => [ 'title' => 'اسم الاب' ],
-                        'grandfather_name' => [ 'title' => 'اسم الجد' ],
-                        'mother_name' => [ 'title' => 'اسم الام' ],
-                        
+                        'action' => ['title' => 'الوظائف'],
+                        'job_number' => ['title' => 'الرقم الوظيفي'],
+                        'name' => ['title' => 'الاسم'],
+                        'father_name' => ['title' => 'اسم الاب'],
+                        'grandfather_name' => ['title' => 'اسم الجد'],
+                        'date_of_birth'=> ['title' => 'تاريخ الميلاد'],
+                        'mother_name' => ['title' => 'اسم الام'],
+                        'appointment_date'=> ['title' => 'تاريخ التعيين'],
                         ])
                     
                     ->minifiedAjax()
@@ -83,7 +84,9 @@ class EmployeeDataTable extends DataTable
             Column::make('name'),
             Column::make('father_name'),
             Column::make('grandfather_name'),
+            Column::make('date_of_birth'),
             Column::make('mother_name'),
+            Column::make('date_of_appointment'),
         ];
     }
 
