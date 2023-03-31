@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div dir="rtl">
-                        <form method="POST" action="{{ route('employee') }}">
+                        <form method="POST" action="{{ route('employee.update', $employee->url_address) }}">
                             @csrf
 
 
@@ -1269,7 +1269,7 @@
 
                             <div class=" mx-4 my-4 w-full">
                                 <x-primary-button class="ml-4">
-                                    {{ __('تحديث') }}
+                                    {{ __('حفظ') }}
                                 </x-primary-button>
                             </div>
 
