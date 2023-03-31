@@ -27,7 +27,8 @@ Route::get('/dashboard', function () {
 //employee routes
 Route::get('/employee',[EmployeeController::class,'index'])->middleware(['auth','verified'])->name('employee.index');
 Route::get('/employee/create',[EmployeeController::class,'create'])->middleware(['auth','verified'])->name('employee.create');
-Route::get('/employee/{url_address}',[EmployeeController::class,'show'])->middleware(['auth','verified'])->name('employee.show');
+Route::get('/employee/show/{url_address}',[EmployeeController::class,'show'])->middleware(['auth','verified'])->name('employee.show');
+Route::get('/employee/edit/{url_address}',[EmployeeController::class,'edit'])->middleware(['auth','verified'])->name('employee.edit');
 Route::post('/employee', [EmployeeController::class, 'store'])->middleware(['auth','verified'])->name('employee');
 
 

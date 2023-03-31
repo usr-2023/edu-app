@@ -97,13 +97,13 @@
                                     <div class="flex">
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 " placeholder="يوم"
                                             type="number" name="date_of_birth_d"
-                                            value="{{ $employee->date_of_birth_d }}" />
+                                            value=" {{ date('d', strtotime($employee->date_of_birth)) }} " />
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 " placeholder="شهر"
                                             type="number" name="date_of_birth_m"
-                                            value="{{ $employee->date_of_birth_m }}" />
+                                            value="{{ date('m', strtotime($employee->date_of_birth)) }}" />
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 " placeholder="سنة"
                                             type="number" name="date_of_birth_y"
-                                            value="{{ $employee->date_of_birth_y }}" />
+                                            value="{{ date('Y', strtotime($employee->date_of_birth)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('date_of_birth')" class="mt-2" />
                                 </div>
@@ -364,13 +364,13 @@
                                     <div class="flex">
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number" name="appointment_date_d"
-                                            value="{{ $employee->appointment_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->appointment_date)) }}" />
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number" name="appointment_date_m"
-                                            value="{{ $employee->appointment_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->appointment_date)) }}" />
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number" name="appointment_date_y"
-                                            value="{{ $employee->appointment_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->appointment_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_date')" class="w-full mt-2" />
                                 </div>
@@ -391,15 +391,15 @@
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number"
                                             name="appointment_ministerial_order_date_d"
-                                            value="{{ $employee->appointment_ministerial_order_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->appointment_ministerial_order_date)) }}" />
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number"
                                             name="appointment_ministerial_order_date_m"
-                                            value="{{ $employee->appointment_ministerial_order_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->appointment_ministerial_order_date)) }}" />
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number"
                                             name="appointment_ministerial_order_date_y"
-                                            value="{{ $employee->appointment_ministerial_order_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->appointment_ministerial_order_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_ministerial_order_date')" class="w-full mt-2" />
                                 </div>
@@ -423,15 +423,15 @@
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="يوم" type="number"
                                             name="appointment_administrative_order_date_d"
-                                            value="{{ $employee->appointment_administrative_order_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->appointment_administrative_order_date)) }}" />
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="شهر" type="number"
                                             name="appointment_administrative_order_date_m"
-                                            value="{{ $employee->appointment_administrative_order_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->appointment_administrative_order_date)) }}" />
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="سنة" type="number"
                                             name="appointment_administrative_order_date_y"
-                                            value="{{ $employee->appointment_administrative_order_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->appointment_administrative_order_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_administrative_order_date')" class="w-full mt-2" />
                                 </div>
@@ -454,15 +454,15 @@
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number"
                                             name="appointment_first_initiation_date_d"
-                                            value="{{ $employee->appointment_first_initiation_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->appointment_first_initiation_date)) }}" />
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number"
                                             name="appointment_first_initiation_date_m"
-                                            value="{{ $employee->appointment_first_initiation_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->appointment_first_initiation_date)) }}" />
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number"
                                             name="appointment_first_initiation_date_y"
-                                            value="{{ $employee->appointment_first_initiation_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->appointment_first_initiation_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_first_initiation_date')" class="w-full mt-2" />
                                 </div>
@@ -507,13 +507,13 @@
                                     <div class="flex">
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 " placeholder="يوم"
                                             type="number" name="job_grade_date_d"
-                                            value="{{ $employee->job_grade_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->job_grade_date)) }}" />
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 " placeholder="شهر"
                                             type="number" name="job_grade_date_m"
-                                            value="{{ $employee->job_grade_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->job_grade_date)) }}" />
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 " placeholder="سنة"
                                             type="number" name="job_grade_date_y"
-                                            value="{{ $employee->job_grade_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->job_grade_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('job_grade_date')" class="w-full mt-2" />
                                 </div>
@@ -535,13 +535,13 @@
                                     <div class="flex">
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number" name="career_stage_date_d"
-                                            value="{{ $employee->career_stage_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->career_stage_date)) }}" />
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number" name="career_stage_date_m"
-                                            value="{{ $employee->career_stage_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->career_stage_date)) }}" />
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number" name="career_stage_date_y"
-                                            value="{{ $employee->career_stage_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->career_stage_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('career_stage_date')" class="w-full mt-2" />
                                 </div>
@@ -588,13 +588,13 @@
                                         <div class="flex">
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
                                                 placeholder="يوم" type="number" name="national_card_date_of_issue_d"
-                                                value="{{ $employee->national_card_date_of_issue_d }}" />
+                                                value="{{ date('d', strtotime($employee->national_card_date_of_issue)) }}" />
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
                                                 placeholder="شهر" type="number" name="national_card_date_of_issue_m"
-                                                value="{{ $employee->national_card_date_of_issue_m }}" />
+                                                value="{{ date('m', strtotime($employee->national_card_date_of_issue)) }}" />
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
                                                 placeholder="سنة" type="number" name="national_card_date_of_issue_y"
-                                                value="{{ $employee->national_card_date_of_issue_y }}" />
+                                                value="{{ date('Y', strtotime($employee->national_card_date_of_issue)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('national_card_date_of_issue')" class="mt-2" />
                                     </div>
@@ -659,13 +659,13 @@
                                         <div class="flex">
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
                                                 placeholder="يوم" type="number" name="civil_status_issue_date_d"
-                                                value="{{ $employee->civil_status_issue_date_d }}" />
+                                                value="{{ date('d', strtotime($employee->civil_status_issue_date)) }}" />
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
                                                 placeholder="شهر" type="number" name="civil_status_issue_date_m"
-                                                value="{{ $employee->civil_status_issue_date_m }}" />
+                                                value="{{ date('m', strtotime($employee->civil_status_issue_date)) }}" />
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
                                                 placeholder="سنة" type="number" name="civil_status_issue_date_y"
-                                                value="{{ $employee->civil_status_issue_date_y }}" />
+                                                value="{{ date('Y', strtotime($employee->civil_status_issue_date)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('civil_status_issue_date')" class="mt-2" />
                                     </div>
@@ -710,15 +710,15 @@
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="nationality_certificate_authority_issuing_date_d"
-                                                value="{{ $employee->nationality_certificate_authority_issuing_date_d }}" />
+                                                value="{{ date('d', strtotime($employee->nationality_certificate_authority_issuing_date)) }}" />
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="nationality_certificate_authority_issuing_date_m"
-                                                value="{{ $employee->nationality_certificate_authority_issuing_date_m }}" />
+                                                value="{{ date('m', strtotime($employee->nationality_certificate_authority_issuing_date)) }}" />
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="nationality_certificate_authority_issuing_date_y"
-                                                value="{{ $employee->nationality_certificate_authority_issuing_date_y }}" />
+                                                value="{{ date('Y', strtotime($employee->nationality_certificate_authority_issuing_date)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('nationality_certificate_authority_issuing_date')" class="w-full mt-2" />
                                     </div>
@@ -756,13 +756,13 @@
                                     <div class="flex">
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number" name="housing_card_date_of_issue_d"
-                                            value="{{ $employee->housing_card_date_of_issue_d }}" />
+                                            value="{{ date('d', strtotime($employee->housing_card_date_of_issue)) }}" />
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number" name="housing_card_date_of_issue_m"
-                                            value="{{ $employee->housing_card_date_of_issue_m }}" />
+                                            value="{{ date('m', strtotime($employee->housing_card_date_of_issue)) }}" />
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number" name="housing_card_date_of_issue_y"
-                                            value="{{ $employee->housing_card_date_of_issue_y }}" />
+                                            value="{{ date('Y', strtotime($employee->housing_card_date_of_issue)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('housing_card_date_of_issue')" class="w-full mt-2" />
                                 </div>
@@ -1041,13 +1041,13 @@
                                     <div class="flex">
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
                                             placeholder="يوم" type="number" name="scientific_title_date_d"
-                                            value="{{ $employee->scientific_title_date_d }}" />
+                                            value="{{ date('d', strtotime($employee->scientific_title_date)) }}" />
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
                                             placeholder="شهر" type="number" name="scientific_title_date_m"
-                                            value="{{ $employee->scientific_title_date_m }}" />
+                                            value="{{ date('m', strtotime($employee->scientific_title_date)) }}" />
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
                                             placeholder="سنة" type="number" name="scientific_title_date_y"
-                                            value="{{ $employee->scientific_title_date_y }}" />
+                                            value="{{ date('Y', strtotime($employee->scientific_title_date)) }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('scientific_title_date')" class="w-full mt-2" />
                                 </div>
@@ -1101,15 +1101,15 @@
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="political_dismissal_duration_from_d"
-                                                value="{{ $employee->political_dismissal_duration_from_d }}" />
+                                                value="{{ date('d', strtotime($employee->political_dismissal_duration_from)) }}" />
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="political_dismissal_duration_from_m"
-                                                value="{{ $employee->political_dismissal_duration_from_m }}" />
+                                                value="{{ date('m', strtotime($employee->political_dismissal_duration_from)) }}" />
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="political_dismissal_duration_from_y"
-                                                value="{{ $employee->political_dismissal_duration_from_y }}" />
+                                                value="{{ date('Y', strtotime($employee->political_dismissal_duration_from)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_duration_from')" class="w-full mt-2" />
                                     </div>
@@ -1121,15 +1121,15 @@
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="political_dismissal_duration_to_d"
-                                                value="{{ $employee->political_dismissal_duration_to_d }}" />
+                                                value="{{ date('d', strtotime($employee->political_dismissal_duration_to)) }}" />
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="political_dismissal_duration_to_m"
-                                                value="{{ $employee->political_dismissal_duration_to_m }}" />
+                                                value="{{ date('m', strtotime($employee->political_dismissal_duration_to)) }}" />
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="political_dismissal_duration_to_y"
-                                                value="{{ $employee->political_dismissal_duration_to_y }}" />
+                                                value="{{ date('Y', strtotime($employee->political_dismissal_duration_to)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_duration_to')" class="w-full mt-2" />
                                     </div>
@@ -1182,15 +1182,15 @@
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="political_dismissal_order_date_d"
-                                                value="{{ $employee->political_dismissal_order_date_d }}" />
+                                                value="{{ date('d', strtotime($employee->political_dismissal_order_date)) }}" />
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="political_dismissal_order_date_m"
-                                                value="{{ $employee->political_dismissal_order_date_m }}" />
+                                                value="{{ date('m', strtotime($employee->political_dismissal_order_date)) }}" />
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="political_dismissal_order_date_y"
-                                                value="{{ $employee->political_dismissal_order_date_y }}" />
+                                                value="{{ date('Y', strtotime($employee->political_dismissal_order_date)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_order_date')" class="w-full mt-2" />
                                     </div>
@@ -1219,15 +1219,15 @@
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="political_dismissal_date_reappointment_d"
-                                                value="{{ $employee->political_dismissal_date_reappointment_d }}" />
+                                                value="{{ date('d', strtotime($employee->political_dismissal_date_reappointment)) }}" />
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="political_dismissal_date_reappointment_m"
-                                                value="{{ $employee->political_dismissal_date_reappointment_m }}" />
+                                                value="{{ date('m', strtotime($employee->political_dismissal_date_reappointment)) }}" />
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="political_dismissal_date_reappointment_y"
-                                                value="{{ $employee->political_dismissal_date_reappointment_y }}" />
+                                                value="{{ date('Y', strtotime($employee->political_dismissal_date_reappointment)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_date_reappointment')" class="mt-2" />
                                     </div>
@@ -1249,15 +1249,15 @@
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="يوم" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_d"
-                                                value="{{ $employee->political_dismissal_ministerial_reappointment_date_d }}" />
+                                                value="{{ date('d', strtotime($employee->political_dismissal_ministerial_reappointment_date)) }}" />
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="شهر" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_m"
-                                                value="{{ $employee->political_dismissal_ministerial_reappointment_date_m }}" />
+                                                value="{{ date('m', strtotime($employee->political_dismissal_ministerial_reappointment_date)) }}" />
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="سنة" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_y"
-                                                value="{{ $employee->political_dismissal_ministerial_reappointment_date_y }}" />
+                                                value="{{ date('Y', strtotime($employee->political_dismissal_ministerial_reappointment_date)) }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_ministerial_reappointment_date')" class="w-full mt-2" />
                                     </div>
