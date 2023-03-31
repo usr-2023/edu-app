@@ -318,9 +318,35 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Employee $employee)
+    public function edit( string $url_address)
     {
         //
+        $employee = Employee::where('url_address','=',$url_address) -> first();
+         // get data from the database and send it to employee.create view to use in <select> <options>
+         $contract_types = Contract_Type::all();
+         $employee_statuss = Employee_Status::all();
+         $employment_types = Employment_Type::all();
+         $sections = Section::all();
+         $sub_sections = Sub_Section::all();
+         $sub_sub_sections = Sub_Sub_Section::all();
+         $assignment_types = Assignment_Type::all();
+         $nationalitys = Nationality::all();
+         $mother_languages = Mother_Language::all();
+         $genders = Gender::all();
+         $scientific_title_stages = Scientific_Title_Stage::all();
+         $job_titles = Job_Title::all();
+         $job_grades = Job_Grade::all();
+         $career_stages = Career_Stage::all();
+         $teaching_specializations = Teaching_Specialization::all();
+         $political_dismissal_types = Political_Dismissal_Type::all();
+         $marital_statuss = Marital_Status::all();
+         $yesnos = YesNo::all();
+ 
+ 
+        
+ 
+         return view('employee.edit',compact(['employee','contract_types','employee_statuss','employment_types','sections','sub_sections','sub_sub_sections','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
+     
     }
 
     /**
