@@ -33,7 +33,7 @@ Route::get('/employee/show/{url_address}',[EmployeeController::class,'show'])->m
 
 Route::get('/employee/edit/{url_address}',[EmployeeController::class,'edit'])->middleware(['auth','verified'])->name('employee.edit');
 Route::post('/employee/update/{url_address}', [EmployeeController::class, 'update'])->middleware(['auth','verified'])->name('employee.update');
-
+Route::post('/employee/delete/{url_address}', [EmployeeController::class, 'destroy'])->middleware(['auth','verified'])->name('employee.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -605,9 +605,11 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee)
+    public function destroy(string $url_address)
     {
-        //
+        $affected = Employee::where('url_address',$url_address)->delete();
+        return redirect()->route('employee.index')
+                            ->with('success','تمت حذف بيانات الموظف بنجاح ');
     }
 
      function get_random_string($length)
