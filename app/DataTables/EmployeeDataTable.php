@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -21,11 +22,23 @@ class EmployeeDataTable extends DataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-        return (new EloquentDataTable($query))
+       
            // ->addColumn('action', 'employee.action')
-           ->addColumn('action','employee.action')
-           ->rawColumns(['action'])
-            ->setRowId('id');
+           
+            if (Auth::user()->is_admin) {
+                return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
+                ->rawColumns(['action'])
+                ->setRowId('id');
+            } else {
+                return   (new EloquentDataTable($query))  ->addColumn('action','employee.actionnotadmin')
+                ->rawColumns(['action'])
+                ->setRowId('id');
+            }
+            
+
+
+           
+          
     }
 
     /**

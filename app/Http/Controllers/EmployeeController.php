@@ -26,6 +26,7 @@ use Illuminate\Http\Request;
 
 
 
+
 class EmployeeController extends Controller
 {
     /**
@@ -44,6 +45,7 @@ class EmployeeController extends Controller
     public function create()
     {
         // get data from the database and send it to employee.create view to use in <select> <options>
+        
         $contract_types = Contract_Type::all();
         $employee_statuss = Employee_Status::all();
         $employment_types = Employment_Type::all();
