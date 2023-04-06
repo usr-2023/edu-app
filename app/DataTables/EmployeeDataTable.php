@@ -5,6 +5,7 @@ namespace App\DataTables;
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -56,28 +57,51 @@ class EmployeeDataTable extends DataTable
     {
         return $this->builder()
                     ->setTableId('my-table')
+                    ->language([
+                        'url' => url('//cdn.datatables.net/plug-ins/1.13.4/i18n/'.__( LaravelLocalization::getCurrentLocale() ).'.json')
+                    ])
                     ->columns([
-                        'action' => ['title' => 'الوظائف'],
-                        'job_number' => ['title' => 'الرقم الوظيفي'],
-                        'name' => ['title' => 'الاسم'],
-                        'father_name' => ['title' => 'اسم الاب'],
-                        'grandfather_name' => ['title' => 'اسم الجد'],
-                        'date_of_birth'=> ['title' => 'تاريخ الميلاد'],
-                        'mother_name' => ['title' => 'اسم الام'],
-                        'appointment_date'=> ['title' => 'تاريخ التعيين'],
+                        'action' => ['title' => __('word.action'), 'printable' => false],
+                        'job_number' => ['title' => __('word.job_number')],
+                        'name' => ['title' => __('word.name')],
+                        'father_name' => ['title' => __('word.father_name')],
+                        'grandfather_name' => ['title' => __('word.grandfather_name')],
+                        'date_of_birth'=> ['title' => __('word.date_of_birth')],
+                        'mother_name' => ['title' => __('word.mother_name')],
+                        'appointment_date'=> ['title' => __('word.appointment_date')],
                         ])
-                    
                     ->minifiedAjax()
-                    //->dom('Bfrtip')
+                    
                     ->orderBy(1)
                     ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
+                    ->parameters([
+                        'dom' => 'B<"clear">lfrtip',
+                        'scrollX' => false,
+                        'buttons' => [
+                            [
+                                'extend'  => 'print',
+                                'className'    => 'btn btn-outline-dark'
+                           ],
+                           [
+                                'extend'  => 'reset',
+                                'className'    => 'btn btn-outline-dark'
+                           ],
+                           [
+                                'extend'  => 'reload',
+                                'className'    => 'btn btn-outline-dark'
+                           ],
+                            [
+                                 'extend'  => 'collection',
+                                 'className'    => 'btn btn-outline-dark',
+                                 'text'    => '<i class="btn-outline-secondary"></i> Export',
+                                 'buttons' => [
+                                                   'csv',
+                                                   'excel',
+                                                   'pdf',
+                                              ],
+                            ],
+                            'colvis'
+                        ]
                     ]);
     }
 
@@ -88,8 +112,8 @@ class EmployeeDataTable extends DataTable
     {
         return [
             Column::computed('action')
-                  ->exportable(true)
-                  ->printable(true)
+                  ->exportable(false)
+                  ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
             

@@ -11,6 +11,7 @@
             </div>
         @endif
 
+
     </x-slot>
 
     <div class="py-6">
@@ -35,6 +36,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $.fn.dataTable.ext.errMode = 'none';
+    </script>
+
 
 
     {!! $dataTable->scripts() !!}
