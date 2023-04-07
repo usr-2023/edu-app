@@ -9,7 +9,7 @@ return [
          * Smart search will enclose search keyword with wildcard string "%keyword%".
          * SQL: column LIKE "%keyword%"
          */
-        'smart'            => true,
+        'smart'            => false,
 
         /*
          * Multi-term search will explode search keyword using spaces resulting into multiple term search.
@@ -26,7 +26,7 @@ return [
          * Wild card will add "%" in between every characters of the keyword.
          * SQL: column LIKE "%k%e%y%w%o%r%d%"
          */
-        'use_wildcards'    => true,
+        'use_wildcards'    => false,
 
         /*
          * Perform a search which starts with the given keyword.

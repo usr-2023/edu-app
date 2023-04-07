@@ -12,6 +12,15 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+     //buttons
+    'view'=>'عرض',
+    'edit'=>'تعديل',
+    'delete'=>'حذف',
+    'update'=>'تعديل',
+    'save'=>'حفظ',
+    'back'=>'رجوع',
+
+    //main navigation 
     'dashboard' => 'الرئيسية',
     'employees_profile' => 'قائمة الموظفين',
     'hr' => 'الموارد البشرية',

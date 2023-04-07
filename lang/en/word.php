@@ -12,6 +12,14 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    //buttons
+    'view'=>'View',
+    'edit'=>'Edit',
+    'delete'=>'Delete',
+    'update'=>'Update',
+    'save'=>'Save',
+    'back'=>'Back',
+
     // navigation
     'dashboard' => 'dashboard',
     'employees_profile' => 'employees profile',
