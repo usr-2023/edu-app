@@ -18,7 +18,7 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <table dir="rtl" class="table text-center" id="my-table">
+                    <table class="table text-center" id="my-table">
                         <thead>
                             <tr>
                                 <th class="text-center" title="الوظائف">الوظائف</th>

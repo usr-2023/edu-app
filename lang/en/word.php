@@ -12,6 +12,35 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    // navigation
+    'dashboard' => 'dashboard',
+    'employees_profile' => 'employees profile',
+    'hr' => 'human resources',
+    'ges' => 'General education & staff',
+    'financial' => 'financial',
+    'Planning' => 'Planning',
+
+
+    // dashboard
+    'dashboard_msg' => 'Welcome to the website of the General Directorate of Education in Najaf Governorate',
+    'dashboard_title'=> 'Welcome',
+
+    // employee 
+    // nav
+    'add_employee' => 'add employee',
+    'search' => 'search',
+
+    'personal_info' => 'Personal information',
+    'functional_data' => 'functional data',
+    'National_card_data' => 'National card data',
+    'Civil_status_identity_data' => 'Civil status identity data',
+    'Nationality_certificate_data' => 'Nationality certificate data',
+    'Residence_card_information' => 'Residence card information', 
+    'Academic_achievement_data1' => 'Academic achievement data - the certificate on which the employee is assigned',
+    'Academic_achievement_data2' => 'Academic achievement data - the last certificate obtained by the employee',
+    'Academic_achievement_data3' => 'Academic achievement data - academic title',
+    'Political_career_segregation_data' => 'Political career segregation data',
+    // fields
     'action' => 'action',
     'job_number' => 'Job Number',
     'url_address' => 'Url Address',

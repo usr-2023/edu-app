@@ -12,7 +12,35 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-         
+    'dashboard' => 'الرئيسية',
+    'employees_profile' => 'قائمة الموظفين',
+    'hr' => 'الموارد البشرية',
+    'ges' => 'التعليم العام والملاك',
+    'financial' => 'الحسابات',
+    'Planning' => 'التخطيط',
+
+
+    // dashboard
+    'dashboard_msg' => 'مرحباً بك في الموقع الالكتروني للمديرية العامة للتربية في محافظة النجف الأشرف',
+    'dashboard_title'=> 'مرحباً',
+
+    // employee 
+    // nav
+    'add_employee' => 'اضافة موظف',
+    'search' => 'بحث',
+    
+    'personal_info' => 'المعلومات الشخصية',
+    'functional_data' => 'البيانات الوظيفية',
+    'National_card_data' => 'بيانات البطاقة الوطنية',
+    'Civil_status_identity_data' => 'بيانات هوية الأحوال المدنية',
+    'Nationality_certificate_data' => 'بيانات شهادة الجنسية',
+    'Residence_card_information' => 'بيانات بطاقة السكن', 
+    'Academic_achievement_data1' => 'بيانات التحصيل الدراسي - الشهادة المعيين عليها الموظف',
+    'Academic_achievement_data2' => 'بيانات التحصيل الدراسي - اخر شهادة حاصل عليها الموظف',
+    'Academic_achievement_data3' => 'بيانات التحصيل الدراسي - اللقب العلمي',
+    'Political_career_segregation_data' => 'بيانات الفصل السياسي',
+
+    // fields
         'action' => 'الوظائف',
         'job_number' => 'الرقم الوظيفي',
         'url_address' => 'عنوان الويب',
