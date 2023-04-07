@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@if (LaravelLocalization::getCurrentLocale() == 'ar')
+    <html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@else
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@endif
+
 
 <head>
     <meta charset="utf-8">
@@ -40,26 +45,6 @@
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.bootstrap5.min.js"></script>
     <script src="{{ url('/') }}/vendor/datatables/buttons.server-side.js"></script>
-
-    <style>
-        .dataTables_wrapper .dataTables_paginate .paginate_button {
-            padding: 0px;
-            margin-left: 0px;
-            display: inline;
-            border: 0px;
-        }
-
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-            border: 0px;
-        }
-
-        .dataTables_buttons {
-            padding: 0px;
-            margin-left: 0px;
-            display: inline;
-            border: 2px;
-        }
-    </style>
 </head>
 
 <body class="font-sans antialiased">
@@ -68,7 +53,7 @@
 
         <!-- Page Heading -->
         @if (isset($header))
-            <header dir="rtl" class="bg-white shadow">
+            <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
