@@ -20,6 +20,11 @@ return [
     'save'=>'Save',
     'back'=>'Back',
 
+    // general values
+    'year'=>'yyyy',
+    'month'=>'mm',
+    'day'=>'dd',
+
     // navigation
     'dashboard' => 'dashboard',
     'employees_profile' => 'employees profile',
@@ -108,7 +113,7 @@ return [
     'nationality_certificate_authority_issuing'=> 'issuing authority',
     'nationality_certificate_authority_issuing_date'=> 'issue date',
     'nationality_certificate_authority_issuing_wallet'=> 'wallet number',
-    'housing_card_number'=> 'housing card number',
+    'housing_card_number'=> 'Residence card number',
     'housing_card_date_of_issue'=> 'issue date',
     'housing_card_issuing_authority'=> 'issuing authority',
     'housing_card_residence_address'=> 'residence address',
@@ -151,7 +156,7 @@ return [
     'political_dismissal_years'=> 'years count',
     'political_dismissal_months'=> 'months count',
     'political_dismissal_days'=> 'days count',
-    'political_dismissal_order_number'=> 'political dismissal order_number',
+    'political_dismissal_order_number'=> 'political dismissal order number',
     'political_dismissal_order_date'=> 'political dismissal order date',
     'political_dismissal_reappointment_number'=> 'reappointment order number',
     'political_dismissal_date_reappointment'=> 'reappointment order date',

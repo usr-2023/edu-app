@@ -30,6 +30,7 @@ class EmployeeDataTable extends DataTable
                 return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
                 ->rawColumns(['action'])
                 ->setRowId('id');
+                
             } else {
                 return   (new EloquentDataTable($query))  ->addColumn('action','employee.actionnotadmin')
                 ->rawColumns(['action'])
@@ -61,14 +62,14 @@ class EmployeeDataTable extends DataTable
                         'url' => url('//cdn.datatables.net/plug-ins/1.13.4/i18n/'.__( LaravelLocalization::getCurrentLocale() ).'.json')
                     ])
                     ->columns([
-                        'action' => ['title' => __('word.action'), 'printable' => false],
-                        'job_number' => ['title' => __('word.job_number')],
-                        'name' => ['title' => __('word.name')],
-                        'father_name' => ['title' => __('word.father_name')],
-                        'grandfather_name' => ['title' => __('word.grandfather_name')],
-                        'date_of_birth'=> ['title' => __('word.date_of_birth')],
-                        'mother_name' => ['title' => __('word.mother_name')],
-                        'appointment_date'=> ['title' => __('word.appointment_date')],
+                        'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
+                        'job_number' => ['title' => __('word.job_number'),'class'=> 'text-center'],
+                        'name' => ['title' => __('word.name'),'class'=> 'text-center'],
+                        'father_name' => ['title' => __('word.father_name'),'class'=> 'text-center'],
+                        'grandfather_name' => ['title' => __('word.grandfather_name'),'class'=> 'text-center'],
+                        'date_of_birth'=> ['title' => __('word.date_of_birth'),'class'=> 'text-center'],
+                        'mother_name' => ['title' => __('word.mother_name'),'class'=> 'text-center'],
+                        'appointment_date'=> ['title' => __('word.appointment_date'),'class'=> 'text-center'],
                         ])
                     ->minifiedAjax()
                     

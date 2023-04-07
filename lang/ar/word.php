@@ -20,6 +20,11 @@ return [
     'save'=>'حفظ',
     'back'=>'رجوع',
 
+     // general values
+     'year'=>'سنة',
+     'month'=>'شهر',
+     'day'=>'يوم',   
+
     //main navigation 
     'dashboard' => 'الرئيسية',
     'employees_profile' => 'قائمة الموظفين',
@@ -57,8 +62,8 @@ return [
         
         //foreign id and reference
         'employee_status_id'=> 'الحالة الوظيفية',
-        'contract_type_id'=> 'نوع التوظيف',
-        'employment_type_id'=> '',
+        'contract_type_id'=> 'نوع التعاقد',
+        'employment_type_id'=> 'نوع التوظيف',
         'section_id'=> 'القسم',
         'sub_section_id'=> 'الشعبة',
         'sub_sub_section_id'=> 'الوحدة',
