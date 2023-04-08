@@ -21,6 +21,15 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+### Requirements
+
+- [Git](https://github.com/git-guides/install-git)
+- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
+- PHP 8.1+
+- [Npm](https://www.npmjs.com/get-npm)
+- A database (e.g. MySQL)
+
+
 ### Clone
 
 Clone this repository and enter the project's directory:
@@ -42,7 +51,8 @@ composer install
 Compile the project assets:
 
 ```shell
-npm install && npm run dev
+npm install
+npm run dev
 ```
 
 ## Configure your .env
@@ -57,11 +67,17 @@ Set up the database credentials in `.env` file:
 
 ```shell
 DB_CONNECTION=mysql
-DB_HOST=localhost
-DB_PORT=3308
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=edu
 DB_USERNAME=root
 DB_PASSWORD=
+```
+
+Generate the application key.
+
+```shell
+php artisan key:generate
 ```
 
 
