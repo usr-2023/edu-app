@@ -88,3 +88,11 @@ Run the migrations
 ```shell
 php artisan migrate 
 ```
+Compile the project assets:
+
+```shell
+npm install
+npm run build
+```
+
+enjoy!!
