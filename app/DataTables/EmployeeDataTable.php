@@ -58,7 +58,7 @@ class EmployeeDataTable extends DataTable
         return $this->builder()
                     ->setTableId('my-table')
                     ->language([
-                        'sUrl' =>  url('/').'/vendor/datatables/'.__( LaravelLocalization::getCurrentLocale() ).'.json'
+                        'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
                     ->columns(  [
                         'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
@@ -72,8 +72,7 @@ class EmployeeDataTable extends DataTable
                         ])
                     ->minifiedAjax()
                     ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->parameters([
+                  /*   ->parameters([
                         'dom' => 'B<"clear">lfrtip',
                         'scrollX' => false,
                         'buttons' => [
@@ -100,7 +99,8 @@ class EmployeeDataTable extends DataTable
                             ],
                             'colvis'
                         ]
-                    ]);
+                    ]) */
+                    ->selectStyleSingle();
     }
 
     /**

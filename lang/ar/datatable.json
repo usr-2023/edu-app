@@ -3,7 +3,7 @@
     "lengthMenu": "أظهر _MENU_ مدخلات",
     "zeroRecords": "لم يعثر على أية سجلات",
     "info": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
-    "search": "ابحث:",
+    "search": "بحث : ",
     "paginate": {
         "first": "الأول",
         "previous": "السابق",
@@ -246,5 +246,5 @@
     },
     "decimal": ",",
     "infoFiltered": "(مرشحة من مجموع _MAX_ مُدخل)",
-    "searchPlaceholder": "مثال بحث"
+    "searchPlaceholder": "اكتب النص هنا للبحث"
 }
