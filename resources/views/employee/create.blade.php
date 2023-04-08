@@ -95,14 +95,17 @@
                                     <x-input-label for="date_of_birth" class="w-full mb-1" :value="__('word.date_of_birth')" />
                                     <div class="flex">
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number" name="date_of_birth_d"
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="date_of_birth_d"
                                             value="{{ old('date_of_birth_d') }}" />
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="date_of_birth_m" value="{{ old('date_of_birth_m') }}" />
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="date_of_birth_m"
+                                            value="{{ old('date_of_birth_m') }}" />
                                         <x-text-input id="date_of_birth" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="date_of_birth_y" value="{{ old('date_of_birth_y') }}" />
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="date_of_birth_y"
+                                            value="{{ old('date_of_birth_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('date_of_birth')" class="mt-2" />
                                 </div>
@@ -362,14 +365,17 @@
                                     <x-input-label for="appointment_date" class="w-full mb-1" :value="__('word.appointment_date')" />
                                     <div class="flex">
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="appointment_date_d" value="{{ old('appointment_date_d') }}" />
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="appointment_date_d"
+                                            value="{{ old('appointment_date_d') }}" />
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="appointment_date_m" value="{{ old('appointment_date_m') }}" />
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="appointment_date_m"
+                                            value="{{ old('appointment_date_m') }}" />
                                         <x-text-input id="appointment_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="appointment_date_y" value="{{ old('appointment_date_y') }}" />
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="appointment_date_y"
+                                            value="{{ old('appointment_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_date')" class="w-full mt-2" />
                                 </div>
@@ -388,16 +394,16 @@
                                         :value="__('word.appointment_ministerial_order_date')" />
                                     <div class="flex">
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="appointment_ministerial_order_date_d"
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="appointment_ministerial_order_date_d"
                                             value="{{ old('appointment_ministerial_order_date_d') }}" />
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="appointment_ministerial_order_date_m"
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="appointment_ministerial_order_date_m"
                                             value="{{ old('appointment_ministerial_order_date_m') }}" />
                                         <x-text-input id="appointment_ministerial_order_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="appointment_ministerial_order_date_y"
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="appointment_ministerial_order_date_y"
                                             value="{{ old('appointment_ministerial_order_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_ministerial_order_date')" class="w-full mt-2" />
@@ -421,15 +427,18 @@
                                     <div class="flex">
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                            type="number" name="appointment_administrative_order_date_d"
+                                            min="1" max="31" type="number"
+                                            name="appointment_administrative_order_date_d"
                                             value="{{ old('appointment_administrative_order_date_d') }}" />
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                            type="number" name="appointment_administrative_order_date_m"
+                                            min="1" max="12" type="number"
+                                            name="appointment_administrative_order_date_m"
                                             value="{{ old('appointment_administrative_order_date_m') }}" />
                                         <x-text-input id="appointment_administrative_order_date"
                                             class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                            type="number" name="appointment_administrative_order_date_y"
+                                            min="1950" max="2100" type="number"
+                                            name="appointment_administrative_order_date_y"
                                             value="{{ old('appointment_administrative_order_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_administrative_order_date')" class="w-full mt-2" />
@@ -451,16 +460,16 @@
                                         :value="__('word.appointment_first_initiation_date')" />
                                     <div class="flex">
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="appointment_first_initiation_date_d"
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="appointment_first_initiation_date_d"
                                             value="{{ old('appointment_first_initiation_date_d') }}" />
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="appointment_first_initiation_date_m"
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="appointment_first_initiation_date_m"
                                             value="{{ old('appointment_first_initiation_date_m') }}" />
                                         <x-text-input id="appointment_first_initiation_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="appointment_first_initiation_date_y"
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="appointment_first_initiation_date_y"
                                             value="{{ old('appointment_first_initiation_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('appointment_first_initiation_date')" class="w-full mt-2" />
@@ -505,14 +514,17 @@
                                     <x-input-label for="job_grade_date" class="w-full mb-1" :value="__('word.job_grade_date')" />
                                     <div class="flex">
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="job_grade_date_d" value="{{ old('job_grade_date_d') }}" />
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="job_grade_date_d"
+                                            value="{{ old('job_grade_date_d') }}" />
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="job_grade_date_m" value="{{ old('job_grade_date_m') }}" />
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="job_grade_date_m"
+                                            value="{{ old('job_grade_date_m') }}" />
                                         <x-text-input id="job_grade_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="job_grade_date_y" value="{{ old('job_grade_date_y') }}" />
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="job_grade_date_y"
+                                            value="{{ old('job_grade_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('job_grade_date')" class="w-full mt-2" />
                                 </div>
@@ -533,14 +545,17 @@
                                     <x-input-label for="career_stage_date" class="w-full mb-1" :value="__('word.career_stage_date')" />
                                     <div class="flex">
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="career_stage_date_d" value="{{ old('career_stage_date_d') }}" />
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="career_stage_date_d"
+                                            value="{{ old('career_stage_date_d') }}" />
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="career_stage_date_m" value="{{ old('career_stage_date_m') }}" />
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="career_stage_date_m"
+                                            value="{{ old('career_stage_date_m') }}" />
                                         <x-text-input id="career_stage_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="career_stage_date_y" value="{{ old('career_stage_date_y') }}" />
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="career_stage_date_y"
+                                            value="{{ old('career_stage_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('career_stage_date')" class="w-full mt-2" />
                                 </div>
@@ -587,16 +602,16 @@
                                             :value="__('word.national_card_date_of_issue')" />
                                         <div class="flex">
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.day') }}" type="number"
-                                                name="national_card_date_of_issue_d"
+                                                placeholder="{{ __('word.day') }}" min="1" max="31"
+                                                type="number" name="national_card_date_of_issue_d"
                                                 value="{{ old('national_card_date_of_issue_d') }}" />
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.month') }}" type="number"
-                                                name="national_card_date_of_issue_m"
+                                                placeholder="{{ __('word.month') }}" min="1" max="12"
+                                                type="number" name="national_card_date_of_issue_m"
                                                 value="{{ old('national_card_date_of_issue_m') }}" />
                                             <x-text-input id="national_card_date_of_issue" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.year') }}" type="number"
-                                                name="national_card_date_of_issue_y"
+                                                placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                                type="number" name="national_card_date_of_issue_y"
                                                 value="{{ old('national_card_date_of_issue_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('national_card_date_of_issue')" class="mt-2" />
@@ -662,16 +677,16 @@
                                             :value="__('word.civil_status_issue_date')" />
                                         <div class="flex">
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.day') }}" type="number"
-                                                name="civil_status_issue_date_d"
+                                                placeholder="{{ __('word.day') }}" min="1" max="31"
+                                                type="number" name="civil_status_issue_date_d"
                                                 value="{{ old('civil_status_issue_date_d') }}" />
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.month') }}" type="number"
-                                                name="civil_status_issue_date_m"
+                                                placeholder="{{ __('word.month') }}" min="1" max="12"
+                                                type="number" name="civil_status_issue_date_m"
                                                 value="{{ old('civil_status_issue_date_m') }}" />
                                             <x-text-input id="civil_status_issue_date" class="w-20 block mt-1 "
-                                                placeholder="{{ __('word.year') }}" type="number"
-                                                name="civil_status_issue_date_y"
+                                                placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                                type="number" name="civil_status_issue_date_y"
                                                 value="{{ old('civil_status_issue_date_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('civil_status_issue_date')" class="mt-2" />
@@ -717,15 +732,18 @@
                                         <div class="flex">
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number" name="nationality_certificate_authority_issuing_date_d"
+                                                min="1" max="31" type="number"
+                                                name="nationality_certificate_authority_issuing_date_d"
                                                 value="{{ old('nationality_certificate_authority_issuing_date_d') }}" />
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number" name="nationality_certificate_authority_issuing_date_m"
+                                                min="1" max="12" type="number"
+                                                name="nationality_certificate_authority_issuing_date_m"
                                                 value="{{ old('nationality_certificate_authority_issuing_date_m') }}" />
                                             <x-text-input id="nationality_certificate_authority_issuing_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number" name="nationality_certificate_authority_issuing_date_y"
+                                                min="1950" max="2100" type="number"
+                                                name="nationality_certificate_authority_issuing_date_y"
                                                 value="{{ old('nationality_certificate_authority_issuing_date_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('nationality_certificate_authority_issuing_date')" class="w-full mt-2" />
@@ -764,16 +782,16 @@
                                         :value="__('word.housing_card_date_of_issue')" />
                                     <div class="flex">
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="housing_card_date_of_issue_d"
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="housing_card_date_of_issue_d"
                                             value="{{ old('housing_card_date_of_issue_d') }}" />
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="housing_card_date_of_issue_m"
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="housing_card_date_of_issue_m"
                                             value="{{ old('housing_card_date_of_issue_m') }}" />
                                         <x-text-input id="housing_card_date_of_issue" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="housing_card_date_of_issue_y"
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="housing_card_date_of_issue_y"
                                             value="{{ old('housing_card_date_of_issue_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('housing_card_date_of_issue')" class="w-full mt-2" />
@@ -1056,16 +1074,16 @@
                                         :value="__('word.scientific_title_date')" />
                                     <div class="flex">
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.day') }}" type="number"
-                                            name="scientific_title_date_d"
+                                            placeholder="{{ __('word.day') }}" min="1" max="31"
+                                            type="number" name="scientific_title_date_d"
                                             value="{{ old('scientific_title_date_d') }}" />
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.month') }}" type="number"
-                                            name="scientific_title_date_m"
+                                            placeholder="{{ __('word.month') }}" min="1" max="12"
+                                            type="number" name="scientific_title_date_m"
                                             value="{{ old('scientific_title_date_m') }}" />
                                         <x-text-input id="scientific_title_date" class="w-20 block mt-1 "
-                                            placeholder="{{ __('word.year') }}" type="number"
-                                            name="scientific_title_date_y"
+                                            placeholder="{{ __('word.year') }}" min="1950" max="2100"
+                                            type="number" name="scientific_title_date_y"
                                             value="{{ old('scientific_title_date_y') }}" />
                                     </div>
                                     <x-input-error :messages="$errors->get('scientific_title_date')" class="w-full mt-2" />
@@ -1078,7 +1096,8 @@
                             </h2>
 
                             <div class=" mx-4 my-4 w-25">
-                                <x-input-label for="is_political_dismissal" class="w-full mb-1" :value="__('word.is_political_dismissal')" />
+                                <x-input-label for="is_political_dismissal" class="w-full mb-1"
+                                    :value="__('word.is_political_dismissal')" />
                                 <select id="is_political_dismissal" class="w-full block mt-1 "
                                     name="is_political_dismissal">
                                     @foreach ($yesnos as $yesno)
@@ -1120,15 +1139,18 @@
                                         <div class="flex">
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number" name="political_dismissal_duration_from_d"
+                                                min="1" max="31" type="number"
+                                                name="political_dismissal_duration_from_d"
                                                 value="{{ old('political_dismissal_duration_from_d') }}" />
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number" name="political_dismissal_duration_from_m"
+                                                min="1" max="12" type="number"
+                                                name="political_dismissal_duration_from_m"
                                                 value="{{ old('political_dismissal_duration_from_m') }}" />
                                             <x-text-input id="political_dismissal_duration_from"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number" name="political_dismissal_duration_from_y"
+                                                min="1950" max="2100" type="number"
+                                                name="political_dismissal_duration_from_y"
                                                 value="{{ old('political_dismissal_duration_from_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_duration_from')" class="w-full mt-2" />
@@ -1140,15 +1162,18 @@
                                         <div class="flex">
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number" name="political_dismissal_duration_to_d"
+                                                min="1" max="31" type="number"
+                                                name="political_dismissal_duration_to_d"
                                                 value="{{ old('political_dismissal_duration_to_d') }}" />
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number" name="political_dismissal_duration_to_m"
+                                                min="1" max="12" type="number"
+                                                name="political_dismissal_duration_to_m"
                                                 value="{{ old('political_dismissal_duration_to_m') }}" />
                                             <x-text-input id="political_dismissal_duration_to"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number" name="political_dismissal_duration_to_y"
+                                                min="1950" max="2100" type="number"
+                                                name="political_dismissal_duration_to_y"
                                                 value="{{ old('political_dismissal_duration_to_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_duration_to')" class="w-full mt-2" />
@@ -1201,15 +1226,18 @@
                                         <div class="flex">
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number" name="political_dismissal_order_date_d"
+                                                min="1" max="31" type="number"
+                                                name="political_dismissal_order_date_d"
                                                 value="{{ old('political_dismissal_order_date_d') }}" />
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number" name="political_dismissal_order_date_m"
+                                                min="1" max="12" type="number"
+                                                name="political_dismissal_order_date_m"
                                                 value="{{ old('political_dismissal_order_date_m') }}" />
                                             <x-text-input id="political_dismissal_order_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number" name="political_dismissal_order_date_y"
+                                                min="1950" max="2100" type="number"
+                                                name="political_dismissal_order_date_y"
                                                 value="{{ old('political_dismissal_order_date_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_order_date')" class="w-full mt-2" />
@@ -1238,15 +1266,18 @@
                                         <div class="flex">
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number" name="political_dismissal_date_reappointment_d"
+                                                min="1" max="31" type="number"
+                                                name="political_dismissal_date_reappointment_d"
                                                 value="{{ old('political_dismissal_date_reappointment_d') }}" />
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number" name="political_dismissal_date_reappointment_m"
+                                                min="1" max="12" type="number"
+                                                name="political_dismissal_date_reappointment_m"
                                                 value="{{ old('political_dismissal_date_reappointment_m') }}" />
                                             <x-text-input id="political_dismissal_date_reappointment"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number" name="political_dismissal_date_reappointment_y"
+                                                min="1950" max="2100" type="number"
+                                                name="political_dismissal_date_reappointment_y"
                                                 value="{{ old('political_dismissal_date_reappointment_y') }}" />
                                         </div>
                                         <x-input-error :messages="$errors->get('political_dismissal_date_reappointment')" class="mt-2" />
@@ -1268,17 +1299,17 @@
                                         <div class="flex">
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.day') }}"
-                                                type="number"
+                                                min="1" max="31" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_d"
                                                 value="{{ old('political_dismissal_ministerial_reappointment_date_d') }}" />
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.month') }}"
-                                                type="number"
+                                                min="1" max="12" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_m"
                                                 value="{{ old('political_dismissal_ministerial_reappointment_date_m') }}" />
                                             <x-text-input id="political_dismissal_ministerial_reappointment_date"
                                                 class="w-20 block mt-1 " placeholder="{{ __('word.year') }}"
-                                                type="number"
+                                                min="1950" max="2100" type="number"
                                                 name="political_dismissal_ministerial_reappointment_date_y"
                                                 value="{{ old('political_dismissal_ministerial_reappointment_date_y') }}" />
                                         </div>
