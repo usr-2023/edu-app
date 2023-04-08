@@ -14,6 +14,8 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
+use function Pest\Laravel\json;
+
 class EmployeeDataTable extends DataTable
 {
     /**
@@ -36,10 +38,7 @@ class EmployeeDataTable extends DataTable
                 ->rawColumns(['action'])
                 ->setRowId('id');
             }
-            
 
-
-           
           
     }
 
@@ -59,9 +58,9 @@ class EmployeeDataTable extends DataTable
         return $this->builder()
                     ->setTableId('my-table')
                     ->language([
-                        'url' => url('//cdn.datatables.net/plug-ins/1.13.4/i18n/'.__( LaravelLocalization::getCurrentLocale() ).'.json')
+                        'sUrl' =>  url('/').'/vendor/datatables/'.__( LaravelLocalization::getCurrentLocale() ).'.json'
                     ])
-                    ->columns([
+                    ->columns(  [
                         'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
                         'job_number' => ['title' => __('word.job_number'),'class'=> 'text-center'],
                         'name' => ['title' => __('word.name'),'class'=> 'text-center'],
@@ -72,7 +71,6 @@ class EmployeeDataTable extends DataTable
                         'appointment_date'=> ['title' => __('word.appointment_date'),'class'=> 'text-center'],
                         ])
                     ->minifiedAjax()
-                    
                     ->orderBy(1)
                     ->selectStyleSingle()
                     ->parameters([
@@ -92,9 +90,8 @@ class EmployeeDataTable extends DataTable
                                 'className'    => 'btn btn-outline-dark'
                            ],
                             [
-                                 'extend'  => 'collection',
+                                 'extend'  => 'export',
                                  'className'    => 'btn btn-outline-dark',
-                                 'text'    => '<i class="btn-outline-secondary"></i> Export',
                                  'buttons' => [
                                                    'csv',
                                                    'excel',
@@ -104,28 +101,6 @@ class EmployeeDataTable extends DataTable
                             'colvis'
                         ]
                     ]);
-    }
-
-    /**
-     * Get the dataTable columns definition.
-     */
-    public function getColumns(): array
-    {
-        return [
-            Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
-            
-            Column::make('job_number'),
-            Column::make('name'),
-            Column::make('father_name'),
-            Column::make('grandfather_name'),
-            Column::make('date_of_birth'),
-            Column::make('mother_name'),
-            Column::make('date_of_appointment'),
-        ];
     }
 
     /**
