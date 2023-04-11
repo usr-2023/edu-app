@@ -1129,12 +1129,31 @@
 
                                         </div>
 
-
                                     </div>
 
                                 </div>
                             @else
                             @endif
+                            <div class="flex">
+                                @if (isset($employee->user_id_create))
+                                    <div class="mx-4 my-4 ">
+
+                                        {{ __('word.user_create') }} {{ $employee->get_user_create->name }}
+
+                                        {{ $employee->created_at }}
+                                    </div>
+                                @endif
+
+                                @if (isset($employee->user_id_update))
+                                    <div class="mx-4 my-4 ">
+
+                                        {{ __('word.user_update') }} {{ $employee->get_user_update->name }}
+
+                                        {{ $employee->updated_at }}
+                                    </div>
+                                @endif
+
+                            </div>
                         </div>
 
                     </div>

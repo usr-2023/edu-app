@@ -71,6 +71,12 @@ return new class extends Migration
             $table->unsignedBigInteger('political_dismissal_type_id')->nullable();
             $table->foreign('political_dismissal_type_id')->references('id')->on('political_dismissal_type');
 
+            $table->unsignedBigInteger('user_id_create')->nullable();
+            $table->foreign('user_id_create')->references('id')->on('users');
+
+            $table->unsignedBigInteger('user_id_update')->nullable();
+            $table->foreign('user_id_update')->references('id')->on('users');
+           
             //normal fields
 
             $table->string('name','20')->nullable();

@@ -12,6 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    //auth
+    'user_create'=>'تم الانشاء من قبل',
+    'user_update'=>'تم التحديث من قبل',
      //buttons
     'view'=>'عرض',
     'edit'=>'تعديل',

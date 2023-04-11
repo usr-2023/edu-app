@@ -82,14 +82,22 @@ class Employee extends Model
     {
     return $this->hasone(Political_Dismissal_Type::class,'id','political_dismissal_type_id');
      }
-
-
+     public function get_user_create()
+     {
+     return $this->hasone(User::class,'id','user_id_create');
+      }
+      public function get_user_update()
+      {
+      return $this->hasone(User::class,'id','user_id_update');
+       }
     protected $fillable = [
 
         //
 
         'url_address',
         'job_number',
+        'user_id_create',
+        'user_id_update',
         
         //foreign id and reference
         'employee_status_id',

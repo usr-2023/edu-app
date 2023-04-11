@@ -23,9 +23,7 @@ use App\Models\Sub_Sub_Section;
 use App\Models\Teaching_Specialization;
 use App\Models\YesNo;
 use Illuminate\Http\Request;
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeController extends Controller
 {
@@ -233,6 +231,7 @@ class EmployeeController extends Controller
         'mother_father_name' => ['max:20'],
         'mother_grandfather_name' => ['max:20'],
         'mother_surname' => ['max:20'],
+        'date_of_birth' => ['nullable','date'],
         'place_of_birth' => ['max:20'],
         'first_husband_name' => ['max:20'],
         'husband_father_name' => ['max:20'],
@@ -312,6 +311,9 @@ class EmployeeController extends Controller
 
         //generate new url_address using random text function.
         'url_address' => $this->get_random_string(60),
+
+        // auth user 
+        'user_id_create' => Auth::id(),
 
         //foreign id and reference
         'employee_status_id' => $request->employee_status_id ,
@@ -727,8 +729,8 @@ class EmployeeController extends Controller
             // insert the user input into model and lareval insert it into the database.
         $data = [
 
-           
-    
+           // auth user 
+            'user_id_update' => Auth::id(),
             //foreign id and reference
             'employee_status_id' => $request->employee_status_id ,
             'contract_type_id' => $request->contract_type_id ,

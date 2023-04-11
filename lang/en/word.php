@@ -12,6 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+        //auth
+        'user_create'=>'Created by',
+        'user_update'=>'Updated by',
     //buttons
     'view'=>'View',
     'edit'=>'Edit',
