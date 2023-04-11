@@ -72,34 +72,155 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created employee in storage.
      */
     public function store(Request $request)
     {
-        // validate user input 
+       // concatenate date fields
+        if (isset($request->date_of_birth_y) or isset($request->date_of_birth_m) or isset($request->date_of_birth_d)){
+            $year   = $request->get('date_of_birth_y');
+            $month  = sprintf('%02d', $request->get('date_of_birth_m'));
+            $day    = sprintf('%02d', $request->get('date_of_birth_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['date_of_birth' => $date]);
+        }
+        if (isset($request->national_card_date_of_issue_y) or isset($request->national_card_date_of_issue_d) or isset($request->national_card_date_of_issue_y)){
+            $year   = $request->get('national_card_date_of_issue_y');
+            $month  = sprintf('%02d', $request->get('national_card_date_of_issue_m'));
+            $day    = sprintf('%02d', $request->get('national_card_date_of_issue_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['national_card_date_of_issue' => $date]);
+        }
+        if (isset($request->civil_status_issue_date_y) or isset($request->civil_status_issue_date_d) or isset($request->civil_status_issue_date_y)){
+            $year   = $request->get('civil_status_issue_date_y');
+            $month  = sprintf('%02d', $request->get('civil_status_issue_date_m'));
+            $day    = sprintf('%02d', $request->get('civil_status_issue_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['civil_status_issue_date' => $date]);
+        }
+        if (isset($request->nationality_certificate_authority_issuing_date_y) or isset($request->nationality_certificate_authority_issuing_date_m) or isset($request->nationality_certificate_authority_issuing_date_d)){
+            $year   = $request->get('nationality_certificate_authority_issuing_date_y');
+            $month  = sprintf('%02d', $request->get('nationality_certificate_authority_issuing_date_m'));
+            $day    = sprintf('%02d', $request->get('nationality_certificate_authority_issuing_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['nationality_certificate_authority_issuing_date' => $date]);
+        }
+        if (isset($request->housing_card_date_of_issue_y) or isset($request->housing_card_date_of_issue_m) or isset($request->housing_card_date_of_issue_d)){
+            $year   = $request->get('housing_card_date_of_issue_y');
+            $month  = sprintf('%02d', $request->get('housing_card_date_of_issue_m'));
+            $day    = sprintf('%02d', $request->get('housing_card_date_of_issue_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['housing_card_date_of_issue' => $date]);
+        }
+        if (isset($request->scientific_title_date_y) or isset($request->scientific_title_date_m) or isset($request->scientific_title_date_d)){
+            $year   = $request->get('scientific_title_date_y');
+            $month  = sprintf('%02d', $request->get('scientific_title_date_m'));
+            $day    = sprintf('%02d', $request->get('scientific_title_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['scientific_title_date' => $date]);
+        }
+        if (isset($request->appointment_date_y) or isset($request->appointment_date_m) or isset($request->appointment_date_d)){
+            $year   = $request->get('appointment_date_y');
+            $month  = sprintf('%02d', $request->get('appointment_date_m'));
+            $day    = sprintf('%02d', $request->get('appointment_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['appointment_date' => $date]);
+        }
+        if (isset($request->appointment_ministerial_order_date_y) or isset($request->appointment_ministerial_order_date_m) or isset($request->appointment_ministerial_order_date_d)){
+            $year   = $request->get('appointment_ministerial_order_date_y');
+            $month  = sprintf('%02d', $request->get('appointment_ministerial_order_date_m'));
+            $day    = sprintf('%02d', $request->get('appointment_ministerial_order_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['appointment_ministerial_order_date' => $date]);
+        }
+        if (isset($request->appointment_administrative_order_date_y) or isset($request->appointment_administrative_order_date_m) or isset($request->appointment_administrative_order_date_d)){
+            $year   = $request->get('appointment_administrative_order_date_y');
+            $month  = sprintf('%02d', $request->get('appointment_administrative_order_date_m'));
+            $day    = sprintf('%02d', $request->get('appointment_administrative_order_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['appointment_administrative_order_date' => $date]);
+        }
+        if (isset($request->appointment_first_initiation_date_y) or isset($request->appointment_first_initiation_date_m) or isset($request->appointment_first_initiation_date_d)){
+            $year   = $request->get('appointment_first_initiation_date_y');
+            $month  = sprintf('%02d', $request->get('appointment_first_initiation_date_m'));
+            $day    = sprintf('%02d', $request->get('appointment_first_initiation_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['appointment_first_initiation_date' => $date]);
+        }
+        if (isset($request->job_grade_date_y) or isset($request->job_grade_date_m) or isset($request->job_grade_date_d)){
+            $year   = $request->get('job_grade_date_y');
+            $month  = sprintf('%02d', $request->get('job_grade_date_m'));
+            $day    = sprintf('%02d', $request->get('job_grade_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['job_grade_date' => $date]);
+        }
+        if (isset($request->career_stage_date_y) or isset($request->career_stage_date_m) or isset($request->career_stage_date_d)){
+            $year   = $request->get('career_stage_date_y');
+            $month  = sprintf('%02d', $request->get('career_stage_date_m'));
+            $day    = sprintf('%02d', $request->get('career_stage_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['career_stage_date' => $date]);
+        }
+        if (isset($request->political_dismissal_duration_from_y) or isset($request->political_dismissal_duration_from_m) or isset($request->political_dismissal_duration_from_d)){
+            $year   = $request->get('political_dismissal_duration_from_y');
+            $month  = sprintf('%02d', $request->get('political_dismissal_duration_from_m'));
+            $day    = sprintf('%02d', $request->get('political_dismissal_duration_from_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['political_dismissal_duration_from' => $date]);
+        }
+        if (isset($request->political_dismissal_duration_to_d) or isset($request->political_dismissal_duration_to_m) or isset($request->political_dismissal_duration_to_d)){
+            $year   = $request->get('political_dismissal_duration_to_y');
+            $month  = sprintf('%02d', $request->get('political_dismissal_duration_to_m'));
+            $day    = sprintf('%02d', $request->get('political_dismissal_duration_to_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['political_dismissal_duration_to' => $date]);
+        }
+        if (isset($request->political_dismissal_order_date_y) or isset($request->political_dismissal_order_date_m) or isset($request->political_dismissal_order_date_d)){
+            $year   = $request->get('political_dismissal_order_date_y');
+            $month  = sprintf('%02d', $request->get('political_dismissal_order_date_m'));
+            $day    = sprintf('%02d', $request->get('political_dismissal_order_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['political_dismissal_order_date' => $date]);
+        }
+        if (isset($request->political_dismissal_date_reappointment_y) or isset($request->political_dismissal_date_reappointment_m) or isset($request->political_dismissal_date_reappointment_d)){
+            $year   = $request->get('political_dismissal_date_reappointment_y');
+            $month  = sprintf('%02d', $request->get('political_dismissal_date_reappointment_m'));
+            $day    = sprintf('%02d', $request->get('political_dismissal_date_reappointment_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['political_dismissal_date_reappointment' => $date]);
+        }
+        if (isset($request->political_dismissal_ministerial_reappointment_date_y) or isset($request->political_dismissal_ministerial_reappointment_date_m) or isset($request->political_dismissal_ministerial_reappointment_date_d)){
+            $year   = $request->get('political_dismissal_ministerial_reappointment_date_y');
+            $month  = sprintf('%02d', $request->get('political_dismissal_ministerial_reappointment_date_m'));
+            $day    = sprintf('%02d', $request->get('political_dismissal_ministerial_reappointment_date_d'));
+            $date = $year.'-'.$month.'-'.$day;
+            $request->request->add( ['political_dismissal_ministerial_reappointment_date' => $date]);
+        }
+
+         // validate user input 
 
         $request->validate([
         
         'job_number' => ['required','unique:'.Employee::class , 'digits:9'],
         
         //foreign id and reference
-        'employee_status_id' => ['required','max:2'],
-        'contract_type_id' => ['required','max:2'],
-        'employment_type_id' => ['required','max:2'],
-        'section_id' => ['required','max:2'],
-        'sub_section_id' => ['required','max:2'],
-        'sub_sub_section_id' => ['required','max:2'],
-        'assignment_type_id' => ['required','max:2'],
-        'nationality_id' => ['required','max:2'],
-        'mother_language_id' => ['required','max:2'],
-        'gender_id' => ['required','max:2'],
-        'scientific_title_stage_id' => ['required','max:2'],
-        'job_title_id' => ['required','max:2'],
-        'job_grade_id' => ['required','max:2'],
-        'career_stage_id' => ['required','max:2'],
-        'teaching_specialization_id' => ['required','max:2'],
-        'political_dismissal_type_id' => ['required','max:2'],
-        'marital_status_id' => ['required','max:2'],
+        'employee_status_id' => ['required'],
+        'contract_type_id' => ['required'],
+        'employment_type_id' => ['required'],
+        'section_id' => ['required'],
+        'sub_section_id' => ['required'],
+        'sub_sub_section_id' => ['required'],
+        'assignment_type_id' => ['required'],
+        'nationality_id' => ['required'],
+        'mother_language_id' => ['required'],
+        'gender_id' => ['required'],
+        'scientific_title_stage_id' => ['required'],
+        'job_title_id' => ['required'],
+        'job_grade_id' => ['required'],
+        'career_stage_id' => ['required'],
+        'teaching_specialization_id' => ['required'],
+        'political_dismissal_type_id' => ['required'],
+        'marital_status_id' => ['required'],
 
         //normal fields
         'name' => ['required','max:20'],
@@ -281,23 +402,23 @@ class EmployeeController extends Controller
         'political_dismissal_ministerial_reappointment_number' => $request->political_dismissal_ministerial_reappointment_number,
         
         // dates
-        'date_of_birth' => (checkdate($request->date_of_birth_m,$request->date_of_birth_d,$request->date_of_birth_y)) ? $request->date_of_birth_y.'-'.$request->date_of_birth_m.'-'.$request->date_of_birth_d : null ,
-        'national_card_date_of_issue' =>(checkdate($request->national_card_date_of_issue_m,$request->national_card_date_of_issue_d,$request->national_card_date_of_issue_y)) ? $request->national_card_date_of_issue_y.'-'.$request->national_card_date_of_issue_m.'-'.$request->national_card_date_of_issue_d : null ,
-        'civil_status_issue_date' =>(checkdate($request->civil_status_issue_date_m,$request->civil_status_issue_date_d,$request->civil_status_issue_date_y)) ? $request->civil_status_issue_date_y.'-'.$request->civil_status_issue_date_m.'-'.$request->civil_status_issue_date_d : null,
-        'nationality_certificate_authority_issuing_date' => (checkdate($request->nationality_certificate_authority_issuing_date_m,$request->nationality_certificate_authority_issuing_date_d,$request->nationality_certificate_authority_issuing_date_y)) ? $request->nationality_certificate_authority_issuing_date_y.'-'.$request->nationality_certificate_authority_issuing_date_m.'-'.$request->nationality_certificate_authority_issuing_date_d : null,
-        'housing_card_date_of_issue' => (checkdate($request->housing_card_date_of_issue_m,$request->housing_card_date_of_issue_d,$request->housing_card_date_of_issue_y)) ? $request->housing_card_date_of_issue_y.'-'.$request->housing_card_date_of_issue_m.'-'.$request->housing_card_date_of_issue_d : null,
-        'scientific_title_date' => (checkdate($request->scientific_title_date_m,$request->scientific_title_date_d,$request->scientific_title_date_y))? $request->scientific_title_date_y.'-'.$request->scientific_title_date_m.'-'.$request->scientific_title_date_d :null,
-        'appointment_date' =>(checkdate($request->appointment_date_m,$request->appointment_date_d,$request->appointment_date_y))? $request->appointment_date_y.'-'.$request->appointment_date_m.'-'.$request->appointment_date_d:null,
-        'appointment_ministerial_order_date' =>(checkdate($request->appointment_ministerial_order_date_m,$request->appointment_ministerial_order_date_d,$request->appointment_ministerial_order_date_y))? $request->appointment_ministerial_order_date_y.'-'.$request->appointment_ministerial_order_date_m.'-'.$request->appointment_ministerial_order_date_d:null,
-        'appointment_administrative_order_date' =>(checkdate($request->appointment_administrative_order_date_m,$request->appointment_administrative_order_date_d,$request->appointment_administrative_order_date_y))? $request->appointment_administrative_order_date_y.'-'.$request->appointment_administrative_order_date_m.'-'.$request->appointment_administrative_order_date_d:null,
-        'appointment_first_initiation_date' =>(checkdate($request->appointment_first_initiation_date_m,$request->appointment_first_initiation_date_d,$request->appointment_first_initiation_date_y))? $request->appointment_first_initiation_date_y.'-'.$request->appointment_first_initiation_date_m.'-'.$request->appointment_first_initiation_date_d:null,
-        'job_grade_date' =>(checkdate($request->job_grade_date_m,$request->job_grade_date_d,$request->job_grade_date_y))? $request->job_grade_date_y.'-'.$request->job_grade_date_m.'-'.$request->job_grade_date_d:null,
-        'career_stage_date' =>(checkdate($request->career_stage_date_m,$request->career_stage_date_d,$request->career_stage_date_y))? $request->career_stage_date_y.'-'.$request->career_stage_date_m.'-'.$request->career_stage_date_d:null,
-        'political_dismissal_duration_from' =>(checkdate($request->political_dismissal_duration_from_m,$request->political_dismissal_duration_from_d,$request->political_dismissal_duration_from_y))? $request->political_dismissal_duration_from_y.'-'.$request->political_dismissal_duration_from_m.'-'.$request->political_dismissal_duration_from_d:null,
-        'political_dismissal_duration_to' =>(checkdate($request->political_dismissal_duration_to_m,$request->political_dismissal_duration_to_d,$request->political_dismissal_duration_to_y))? $request->political_dismissal_duration_to_y.'-'.$request->political_dismissal_duration_to_m.'-'.$request->political_dismissal_duration_to_d:null,
-        'political_dismissal_order_date' =>(checkdate($request->political_dismissal_order_date_m,$request->political_dismissal_order_date_d,$request->political_dismissal_order_date_y))? $request->political_dismissal_order_date_y.'-'.$request->political_dismissal_order_date_m.'-'.$request->political_dismissal_order_date_d:null,
-        'political_dismissal_date_reappointment' =>(checkdate($request->political_dismissal_date_reappointment_m,$request->political_dismissal_date_reappointment_d,$request->political_dismissal_date_reappointment_y))? $request->political_dismissal_date_reappointment_y.'-'.$request->political_dismissal_date_reappointment_m.'-'.$request->political_dismissal_date_reappointment_d:null,
-        'political_dismissal_ministerial_reappointment_date' =>(checkdate($request->political_dismissal_ministerial_reappointment_date_m,$request->political_dismissal_ministerial_reappointment_date_d,$request->political_dismissal_ministerial_reappointment_date_y))? $request->political_dismissal_ministerial_reappointment_date_y.'-'.$request->political_dismissal_ministerial_reappointment_date_m.'-'.$request->political_dismissal_ministerial_reappointment_date_d:null,
+        'date_of_birth' => $request->date_of_birth,
+        'national_card_date_of_issue' =>$request->national_card_date_of_issue,
+        'civil_status_issue_date' =>$request->civil_status_issue_date,
+        'nationality_certificate_authority_issuing_date' => $request->nationality_certificate_authority_issuing_date,
+        'housing_card_date_of_issue' => $request->housing_card_date_of_issue,
+        'scientific_title_date' => $request->scientific_title_date ,
+        'appointment_date' =>$request->appointment_date ,
+        'appointment_ministerial_order_date' => $request->appointment_ministerial_order_date,
+        'appointment_administrative_order_date' =>$request->appointment_administrative_order_date ,
+        'appointment_first_initiation_date' =>$request->appointment_first_initiation_date ,
+        'job_grade_date' =>$request->job_grade_date ,
+        'career_stage_date' =>$request->career_stage_date ,
+        'political_dismissal_duration_from' =>$request->political_dismissal_duration_from ,
+        'political_dismissal_duration_to' =>$request->political_dismissal_duration_to ,
+        'political_dismissal_order_date' =>$request->political_dismissal_order_date ,
+        'political_dismissal_date_reappointment' =>$request->political_dismissal_date_reappointment ,
+        'political_dismissal_ministerial_reappointment_date' =>$request->political_dismissal_ministerial_reappointment_date ,
  
 
         ]);
@@ -367,10 +488,131 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified employee in storage.
      */
     public function update(Request $request, string $url_address)
     {
+               // concatenate date fields
+               if (isset($request->date_of_birth_y) or isset($request->date_of_birth_m) or isset($request->date_of_birth_d)){
+                $year   = $request->get('date_of_birth_y');
+                $month  = sprintf('%02d', $request->get('date_of_birth_m'));
+                $day    = sprintf('%02d', $request->get('date_of_birth_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['date_of_birth' => $date]);
+            }
+            if (isset($request->national_card_date_of_issue_y) or isset($request->national_card_date_of_issue_d) or isset($request->national_card_date_of_issue_y)){
+                $year   = $request->get('national_card_date_of_issue_y');
+                $month  = sprintf('%02d', $request->get('national_card_date_of_issue_m'));
+                $day    = sprintf('%02d', $request->get('national_card_date_of_issue_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['national_card_date_of_issue' => $date]);
+            }
+            if (isset($request->civil_status_issue_date_y) or isset($request->civil_status_issue_date_d) or isset($request->civil_status_issue_date_y)){
+                $year   = $request->get('civil_status_issue_date_y');
+                $month  = sprintf('%02d', $request->get('civil_status_issue_date_m'));
+                $day    = sprintf('%02d', $request->get('civil_status_issue_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['civil_status_issue_date' => $date]);
+            }
+            if (isset($request->nationality_certificate_authority_issuing_date_y) or isset($request->nationality_certificate_authority_issuing_date_m) or isset($request->nationality_certificate_authority_issuing_date_d)){
+                $year   = $request->get('nationality_certificate_authority_issuing_date_y');
+                $month  = sprintf('%02d', $request->get('nationality_certificate_authority_issuing_date_m'));
+                $day    = sprintf('%02d', $request->get('nationality_certificate_authority_issuing_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['nationality_certificate_authority_issuing_date' => $date]);
+            }
+            if (isset($request->housing_card_date_of_issue_y) or isset($request->housing_card_date_of_issue_m) or isset($request->housing_card_date_of_issue_d)){
+                $year   = $request->get('housing_card_date_of_issue_y');
+                $month  = sprintf('%02d', $request->get('housing_card_date_of_issue_m'));
+                $day    = sprintf('%02d', $request->get('housing_card_date_of_issue_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['housing_card_date_of_issue' => $date]);
+            }
+            if (isset($request->scientific_title_date_y) or isset($request->scientific_title_date_m) or isset($request->scientific_title_date_d)){
+                $year   = $request->get('scientific_title_date_y');
+                $month  = sprintf('%02d', $request->get('scientific_title_date_m'));
+                $day    = sprintf('%02d', $request->get('scientific_title_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['scientific_title_date' => $date]);
+            }
+            if (isset($request->appointment_date_y) or isset($request->appointment_date_m) or isset($request->appointment_date_d)){
+                $year   = $request->get('appointment_date_y');
+                $month  = sprintf('%02d', $request->get('appointment_date_m'));
+                $day    = sprintf('%02d', $request->get('appointment_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['appointment_date' => $date]);
+            }
+            if (isset($request->appointment_ministerial_order_date_y) or isset($request->appointment_ministerial_order_date_m) or isset($request->appointment_ministerial_order_date_d)){
+                $year   = $request->get('appointment_ministerial_order_date_y');
+                $month  = sprintf('%02d', $request->get('appointment_ministerial_order_date_m'));
+                $day    = sprintf('%02d', $request->get('appointment_ministerial_order_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['appointment_ministerial_order_date' => $date]);
+            }
+            if (isset($request->appointment_administrative_order_date_y) or isset($request->appointment_administrative_order_date_m) or isset($request->appointment_administrative_order_date_d)){
+                $year   = $request->get('appointment_administrative_order_date_y');
+                $month  = sprintf('%02d', $request->get('appointment_administrative_order_date_m'));
+                $day    = sprintf('%02d', $request->get('appointment_administrative_order_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['appointment_administrative_order_date' => $date]);
+            }
+            if (isset($request->appointment_first_initiation_date_y) or isset($request->appointment_first_initiation_date_m) or isset($request->appointment_first_initiation_date_d)){
+                $year   = $request->get('appointment_first_initiation_date_y');
+                $month  = sprintf('%02d', $request->get('appointment_first_initiation_date_m'));
+                $day    = sprintf('%02d', $request->get('appointment_first_initiation_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['appointment_first_initiation_date' => $date]);
+            }
+            if (isset($request->job_grade_date_y) or isset($request->job_grade_date_m) or isset($request->job_grade_date_d)){
+                $year   = $request->get('job_grade_date_y');
+                $month  = sprintf('%02d', $request->get('job_grade_date_m'));
+                $day    = sprintf('%02d', $request->get('job_grade_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['job_grade_date' => $date]);
+            }
+            if (isset($request->career_stage_date_y) or isset($request->career_stage_date_m) or isset($request->career_stage_date_d)){
+                $year   = $request->get('career_stage_date_y');
+                $month  = sprintf('%02d', $request->get('career_stage_date_m'));
+                $day    = sprintf('%02d', $request->get('career_stage_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['career_stage_date' => $date]);
+            }
+            if (isset($request->political_dismissal_duration_from_y) or isset($request->political_dismissal_duration_from_m) or isset($request->political_dismissal_duration_from_d)){
+                $year   = $request->get('political_dismissal_duration_from_y');
+                $month  = sprintf('%02d', $request->get('political_dismissal_duration_from_m'));
+                $day    = sprintf('%02d', $request->get('political_dismissal_duration_from_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['political_dismissal_duration_from' => $date]);
+            }
+            if (isset($request->political_dismissal_duration_to_d) or isset($request->political_dismissal_duration_to_m) or isset($request->political_dismissal_duration_to_d)){
+                $year   = $request->get('political_dismissal_duration_to_y');
+                $month  = sprintf('%02d', $request->get('political_dismissal_duration_to_m'));
+                $day    = sprintf('%02d', $request->get('political_dismissal_duration_to_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['political_dismissal_duration_to' => $date]);
+            }
+            if (isset($request->political_dismissal_order_date_y) or isset($request->political_dismissal_order_date_m) or isset($request->political_dismissal_order_date_d)){
+                $year   = $request->get('political_dismissal_order_date_y');
+                $month  = sprintf('%02d', $request->get('political_dismissal_order_date_m'));
+                $day    = sprintf('%02d', $request->get('political_dismissal_order_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['political_dismissal_order_date' => $date]);
+            }
+            if (isset($request->political_dismissal_date_reappointment_y) or isset($request->political_dismissal_date_reappointment_m) or isset($request->political_dismissal_date_reappointment_d)){
+                $year   = $request->get('political_dismissal_date_reappointment_y');
+                $month  = sprintf('%02d', $request->get('political_dismissal_date_reappointment_m'));
+                $day    = sprintf('%02d', $request->get('political_dismissal_date_reappointment_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['political_dismissal_date_reappointment' => $date]);
+            }
+            if (isset($request->political_dismissal_ministerial_reappointment_date_y) or isset($request->political_dismissal_ministerial_reappointment_date_m) or isset($request->political_dismissal_ministerial_reappointment_date_d)){
+                $year   = $request->get('political_dismissal_ministerial_reappointment_date_y');
+                $month  = sprintf('%02d', $request->get('political_dismissal_ministerial_reappointment_date_m'));
+                $day    = sprintf('%02d', $request->get('political_dismissal_ministerial_reappointment_date_d'));
+                $date = $year.'-'.$month.'-'.$day;
+                $request->request->add( ['political_dismissal_ministerial_reappointment_date' => $date]);
+            }
+    
          // validate user input 
 
          $request->validate([
@@ -378,23 +620,23 @@ class EmployeeController extends Controller
             'job_number' => ['required', 'digits:9'],
             
             //foreign id and reference
-            'employee_status_id' => ['required','max:2'],
-            'contract_type_id' => ['required','max:2'],
-            'employment_type_id' => ['required','max:2'],
-            'section_id' => ['required','max:2'],
-            'sub_section_id' => ['required','max:2'],
-            'sub_sub_section_id' => ['required','max:2'],
-            'assignment_type_id' => ['required','max:2'],
-            'nationality_id' => ['required','max:2'],
-            'mother_language_id' => ['required','max:2'],
-            'gender_id' => ['required','max:2'],
-            'scientific_title_stage_id' => ['required','max:2'],
-            'job_title_id' => ['required','max:2'],
-            'job_grade_id' => ['required','max:2'],
-            'career_stage_id' => ['required','max:2'],
-            'teaching_specialization_id' => ['required','max:2'],
-            'political_dismissal_type_id' => ['required','max:2'],
-            'marital_status_id' => ['required','max:2'],
+            'employee_status_id' => ['required'],
+            'contract_type_id' => ['required'],
+            'employment_type_id' => ['required'],
+            'section_id' => ['required'],
+            'sub_section_id' => ['required'],
+            'sub_sub_section_id' => ['required'],
+            'assignment_type_id' => ['required'],
+            'nationality_id' => ['required'],
+            'mother_language_id' => ['required'],
+            'gender_id' => ['required'],
+            'scientific_title_stage_id' => ['required'],
+            'job_title_id' => ['required'],
+            'job_grade_id' => ['required'],
+            'career_stage_id' => ['required'],
+            'teaching_specialization_id' => ['required'],
+            'political_dismissal_type_id' => ['required'],
+            'marital_status_id' => ['required'],
     
             //normal fields
             'name' => ['required','max:20'],
@@ -407,6 +649,7 @@ class EmployeeController extends Controller
             'mother_father_name' => ['max:20'],
             'mother_grandfather_name' => ['max:20'],
             'mother_surname' => ['max:20'],
+            'date_of_birth' => ['nullable','date'],
             'place_of_birth' => ['max:20'],
             'first_husband_name' => ['max:20'],
             'husband_father_name' => ['max:20'],
@@ -574,25 +817,27 @@ class EmployeeController extends Controller
             'political_dismissal_reappointment_number' => $request->political_dismissal_reappointment_number,
             'political_dismissal_ministerial_reappointment_number' => $request->political_dismissal_ministerial_reappointment_number,
             
+            
             // dates
-            'date_of_birth' => (checkdate($request->date_of_birth_m,$request->date_of_birth_d,$request->date_of_birth_y)) ? $request->date_of_birth_y.'-'.$request->date_of_birth_m.'-'.$request->date_of_birth_d : null ,
-            'national_card_date_of_issue' =>(checkdate($request->national_card_date_of_issue_m,$request->national_card_date_of_issue_d,$request->national_card_date_of_issue_y)) ? $request->national_card_date_of_issue_y.'-'.$request->national_card_date_of_issue_m.'-'.$request->national_card_date_of_issue_d : null ,
-            'civil_status_issue_date' =>(checkdate($request->civil_status_issue_date_m,$request->civil_status_issue_date_d,$request->civil_status_issue_date_y)) ? $request->civil_status_issue_date_y.'-'.$request->civil_status_issue_date_m.'-'.$request->civil_status_issue_date_d : null,
-            'nationality_certificate_authority_issuing_date' => (checkdate($request->nationality_certificate_authority_issuing_date_m,$request->nationality_certificate_authority_issuing_date_d,$request->nationality_certificate_authority_issuing_date_y)) ? $request->nationality_certificate_authority_issuing_date_y.'-'.$request->nationality_certificate_authority_issuing_date_m.'-'.$request->nationality_certificate_authority_issuing_date_d : null,
-            'housing_card_date_of_issue' => (checkdate($request->housing_card_date_of_issue_m,$request->housing_card_date_of_issue_d,$request->housing_card_date_of_issue_y)) ? $request->housing_card_date_of_issue_y.'-'.$request->housing_card_date_of_issue_m.'-'.$request->housing_card_date_of_issue_d : null,
-            'scientific_title_date' => (checkdate($request->scientific_title_date_m,$request->scientific_title_date_d,$request->scientific_title_date_y))? $request->scientific_title_date_y.'-'.$request->scientific_title_date_m.'-'.$request->scientific_title_date_d :null,
-            'appointment_date' =>(checkdate($request->appointment_date_m,$request->appointment_date_d,$request->appointment_date_y))? $request->appointment_date_y.'-'.$request->appointment_date_m.'-'.$request->appointment_date_d:null,
-            'appointment_ministerial_order_date' =>(checkdate($request->appointment_ministerial_order_date_m,$request->appointment_ministerial_order_date_d,$request->appointment_ministerial_order_date_y))? $request->appointment_ministerial_order_date_y.'-'.$request->appointment_ministerial_order_date_m.'-'.$request->appointment_ministerial_order_date_d:null,
-            'appointment_administrative_order_date' =>(checkdate($request->appointment_administrative_order_date_m,$request->appointment_administrative_order_date_d,$request->appointment_administrative_order_date_y))? $request->appointment_administrative_order_date_y.'-'.$request->appointment_administrative_order_date_m.'-'.$request->appointment_administrative_order_date_d:null,
-            'appointment_first_initiation_date' =>(checkdate($request->appointment_first_initiation_date_m,$request->appointment_first_initiation_date_d,$request->appointment_first_initiation_date_y))? $request->appointment_first_initiation_date_y.'-'.$request->appointment_first_initiation_date_m.'-'.$request->appointment_first_initiation_date_d:null,
-            'job_grade_date' =>(checkdate($request->job_grade_date_m,$request->job_grade_date_d,$request->job_grade_date_y))? $request->job_grade_date_y.'-'.$request->job_grade_date_m.'-'.$request->job_grade_date_d:null,
-            'career_stage_date' =>(checkdate($request->career_stage_date_m,$request->career_stage_date_d,$request->career_stage_date_y))? $request->career_stage_date_y.'-'.$request->career_stage_date_m.'-'.$request->career_stage_date_d:null,
-            'political_dismissal_duration_from' =>(checkdate($request->political_dismissal_duration_from_m,$request->political_dismissal_duration_from_d,$request->political_dismissal_duration_from_y))? $request->political_dismissal_duration_from_y.'-'.$request->political_dismissal_duration_from_m.'-'.$request->political_dismissal_duration_from_d:null,
-            'political_dismissal_duration_to' =>(checkdate($request->political_dismissal_duration_to_m,$request->political_dismissal_duration_to_d,$request->political_dismissal_duration_to_y))? $request->political_dismissal_duration_to_y.'-'.$request->political_dismissal_duration_to_m.'-'.$request->political_dismissal_duration_to_d:null,
-            'political_dismissal_order_date' =>(checkdate($request->political_dismissal_order_date_m,$request->political_dismissal_order_date_d,$request->political_dismissal_order_date_y))? $request->political_dismissal_order_date_y.'-'.$request->political_dismissal_order_date_m.'-'.$request->political_dismissal_order_date_d:null,
-            'political_dismissal_date_reappointment' =>(checkdate($request->political_dismissal_date_reappointment_m,$request->political_dismissal_date_reappointment_d,$request->political_dismissal_date_reappointment_y))? $request->political_dismissal_date_reappointment_y.'-'.$request->political_dismissal_date_reappointment_m.'-'.$request->political_dismissal_date_reappointment_d:null,
-            'political_dismissal_ministerial_reappointment_date' =>(checkdate($request->political_dismissal_ministerial_reappointment_date_m,$request->political_dismissal_ministerial_reappointment_date_d,$request->political_dismissal_ministerial_reappointment_date_y))? $request->political_dismissal_ministerial_reappointment_date_y.'-'.$request->political_dismissal_ministerial_reappointment_date_m.'-'.$request->political_dismissal_ministerial_reappointment_date_d:null,
-     
+            'date_of_birth' => $request->date_of_birth,
+            'national_card_date_of_issue' =>$request->national_card_date_of_issue,
+            'civil_status_issue_date' =>$request->civil_status_issue_date,
+            'nationality_certificate_authority_issuing_date' => $request->nationality_certificate_authority_issuing_date,
+            'housing_card_date_of_issue' => $request->housing_card_date_of_issue,
+            'scientific_title_date' => $request->scientific_title_date ,
+            'appointment_date' =>$request->appointment_date ,
+            'appointment_ministerial_order_date' => $request->appointment_ministerial_order_date,
+            'appointment_administrative_order_date' =>$request->appointment_administrative_order_date ,
+            'appointment_first_initiation_date' =>$request->appointment_first_initiation_date ,
+            'job_grade_date' =>$request->job_grade_date ,
+            'career_stage_date' =>$request->career_stage_date ,
+            'political_dismissal_duration_from' =>$request->political_dismissal_duration_from ,
+            'political_dismissal_duration_to' =>$request->political_dismissal_duration_to ,
+            'political_dismissal_order_date' =>$request->political_dismissal_order_date ,
+            'political_dismissal_date_reappointment' =>$request->political_dismissal_date_reappointment ,
+            'political_dismissal_ministerial_reappointment_date' =>$request->political_dismissal_ministerial_reappointment_date ,
+
+
             ];
 
             $affected = Employee::where('url_address',$url_address)->update($data);

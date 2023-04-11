@@ -150,6 +150,9 @@ return [
     'url' => 'The :attribute field must be a valid URL.',
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
+    'day' => 'The field value must be between 1 and 31',
+    'month' => 'The field value must be between 1 and 12',
+    'year' => 'The field value must be between 1950 and 2100',
 
     /*
     |--------------------------------------------------------------------------
