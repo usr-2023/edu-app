@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Employee;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employment_Type extends Model
+class Nationality extends Model
 {
     use HasFactory;
-    protected $table = 'employment_type';
+    protected $table = 'nationality';
     protected $fillable = [
-        'employment_type',
+        'nationality',
     ];
-
 }

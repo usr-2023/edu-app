@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Employee;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Career_Stage extends Model
+class Employee_Status extends Model
 {
     use HasFactory;
-    protected $table = 'career_stage';
+
+    protected $table = 'employee_status';
     protected $fillable = [
-        'career_stage',
+        'employee_status',
     ];
 }

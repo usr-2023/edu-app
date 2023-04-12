@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Employee;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Teaching_Specialization extends Model
+class Mother_Language extends Model
 {
     use HasFactory;
-    protected $table = 'teaching_specialization';
+    protected $table = 'mother_language';
     protected $fillable = [
-        'teaching_specialization',
+        'mother_language',
     ];
 }

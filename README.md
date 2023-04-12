@@ -36,8 +36,7 @@ Clone this repository and enter the project's directory:
 
 ```shell
 git clone https://github.com/alighirbn/edu-app.git 
-
- cd edu-app
+cd edu-app
 ```
 
 ### Install
@@ -83,10 +82,14 @@ php artisan key:generate
 
 ## Prepare your Database
 
+create a new database on your mysql server [phpmyadmin](http://localhost/phpmyadmin/)
+and name it edu
+
+
 Run the migrations 
 
 ```shell
-php artisan migrate 
+php artisan migrate --path=/database/migrations/*
 ```
 Compile the project assets:
 

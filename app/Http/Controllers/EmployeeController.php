@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\EmployeeDataTable;
-use App\Models\Assignment_Type;
-use App\Models\Career_Stage;
-use App\Models\Contract_Type;
-use App\Models\Employee;
-use App\Models\Employee_Status;
-use App\Models\Employment_Type;
-use App\Models\Gender;
-use App\Models\Job_Grade;
-use App\Models\Job_Title;
-use App\Models\Marital_Status;
-use App\Models\Mother_Language;
-use App\Models\Nationality;
-use App\Models\Political_Dismissal_Type;
-use App\Models\Scientific_Title_Stage;
-use App\Models\Section;
-use App\Models\Sub_Section;
-use App\Models\Sub_Sub_Section;
-use App\Models\Teaching_Specialization;
+use App\Models\Employee\Assignment_Type;
+use App\Models\Employee\Career_Stage;
+use App\Models\Employee\Contract_Type;
+use App\Models\Employee\Employee;
+use App\Models\Employee\Employee_Status;
+use App\Models\Employee\Employment_Type;
+use App\Models\Employee\Gender;
+use App\Models\Employee\Job_Grade;
+use App\Models\Employee\Job_Title;
+use App\Models\Employee\Marital_Status;
+use App\Models\Employee\Mother_Language;
+use App\Models\Employee\Nationality;
+use App\Models\Employee\Political_Dismissal_Type;
+use App\Models\Employee\Scientific_Title_Stage;
+use App\Models\Employee\Section;
+use App\Models\Employee\Sub_Section;
+use App\Models\Employee\Sub_Sub_Section;
+use App\Models\Employee\Teaching_Specialization;
 use App\Models\YesNo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,6 +61,8 @@ class EmployeeController extends Controller
         $teaching_specializations = Teaching_Specialization::all();
         $political_dismissal_types = Political_Dismissal_Type::all();
         $marital_statuss = Marital_Status::all();
+
+
         $yesnos = YesNo::all();
 
 

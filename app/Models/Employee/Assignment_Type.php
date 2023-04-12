@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Employee;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sub_Sub_Section extends Model
+class Assignment_Type extends Model
 {
     use HasFactory;
-    protected $table = 'sub_sub_section';
+    protected $table = 'assignment_type';
     protected $fillable = [
-        'sub_sub_section',
+        'assignment_type',
     ];
 }
