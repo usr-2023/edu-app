@@ -24,7 +24,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ### Requirements
 
 - [Git](https://github.com/git-guides/install-git)
-- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
+- [Composer](https://getcomposer.org/download/)
 - PHP 8.1+
 - [Npm](https://www.npmjs.com/get-npm)
 - A database (e.g. MySQL)
