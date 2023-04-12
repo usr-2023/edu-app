@@ -30,7 +30,7 @@ return [
 
     // navigation
     'dashboard' => 'dashboard',
-    'employees_profile' => 'employees profile',
+    'info' => 'Basic info',
     'hr' => 'human resources',
     'ges' => 'General education & staff',
     'financial' => 'financial',
@@ -43,8 +43,8 @@ return [
 
     // employee 
     // nav
-    'add_employee' => 'add employee',
-    'search' => 'search',
+    'employee_add' => 'add employee',
+    'employee_search' => 'search',
 
     'personal_info' => 'Personal information',
     'functional_data' => 'functional data',
@@ -165,5 +165,37 @@ return [
     'political_dismissal_date_reappointment'=> 'reappointment order date',
     'political_dismissal_ministerial_reappointment_number'=> 'ministerial reappointment order number',
     'political_dismissal_ministerial_reappointment_date'=> 'ministerial reappointment order date',
+
+
+    // Building 
+    'building_add'=>'Add Building',
+    'building_search'=>'Search Building',
+
+    'Building_reference'=>'Building reference',
+
+    //foreign id and reference
+    'Building_Status_id'=>'Building Status',
+    'Building_Type_id'=>'Building Type',
+    //'Last_School_id'=>'Last School',
+
+    //normal fields
+    
+    'city'=>'city',
+    'district'=>'district',
+    'quarter'=>'quarter',
+    'latitude'=>'latitude',
+    'longitude'=>'longitude',
+    'Class_count'=>'Class count',
+    'Hall_count'=>'Hall count',
+    'Floor_count'=>'Floor count',
+    'SanitaryUnits_count'=>'Sanitary Units count',
+    'Lab_count'=>'Lab count',
+    'SchoolLength'=>'Building Length',
+    'SchoolWidth'=>'Building Width',
+    'BuildingArea'=>'Building Area',
+    'BuildingYear'=>'Building Year',
+    'ExtendArea'=>'Extend Area Available',
+    'SportArea'=>'Sport Area Available',
+    'GardenArea'=>'Garden Area Available',
 
 ];

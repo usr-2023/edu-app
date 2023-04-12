@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Employee\Employee;
+use App\Models\Building\Building;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -14,61 +14,64 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-use function Pest\Laravel\json;
-
-class EmployeeDataTable extends DataTable
+class BuildingDataTable extends DataTable
 {
     /**
-     * Build the DataTable class.
+     * Build DataTable class.
      *
      * @param QueryBuilder $query Results from query() method.
+     * @return \Yajra\DataTables\EloquentDataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-       
-           // ->addColumn('action', 'employee.action')
+           // ->addColumn('action', 'building.action')
            
-            if (Auth::user()->is_admin) {
-                return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
-                ->rawColumns(['action'])
-                ->setRowId('id');
-                
-            } else {
-                return   (new EloquentDataTable($query))  ->addColumn('action','employee.actionnotadmin')
-                ->rawColumns(['action'])
-                ->setRowId('id');
-            }
-
-          
+           if (Auth::user()->is_admin) {
+            return   (new EloquentDataTable($query)) ->addColumn('action','building.action')
+            ->rawColumns(['action'])
+            ->setRowId('id');
+            
+        } else {
+            return   (new EloquentDataTable($query))  ->addColumn('action','building.actionnotadmin')
+            ->rawColumns(['action'])
+            ->setRowId('id');
+        }
     }
 
     /**
-     * Get the query source of dataTable.
+     * Get query source of dataTable.
+     *
+     * @param \App\Models\Building\Building $model
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Employee $model): QueryBuilder
+    public function query(Building $model): QueryBuilder
     {
         return $model->newQuery();
     }
 
     /**
-     * Optional method if you want to use the html builder.
+     * Optional method if you want to use html builder.
+     *
+     * @return \Yajra\DataTables\Html\Builder
      */
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('employee-table')
+                    ->setTableId('building-table')
                     ->language([
                         'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
                     ->columns(  [
                         'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
-                        'job_number' => ['title' => __('word.job_number'),'class'=> 'text-center'],
-                        'name' => ['title' => __('word.name'),'class'=> 'text-center'],
-                        'father_name' => ['title' => __('word.father_name'),'class'=> 'text-center'],
-                        'grandfather_name' => ['title' => __('word.grandfather_name'),'class'=> 'text-center'],
-                        'date_of_birth'=> ['title' => __('word.date_of_birth'),'class'=> 'text-center'],
-                        'mother_name' => ['title' => __('word.mother_name'),'class'=> 'text-center'],
-                        'appointment_date'=> ['title' => __('word.appointment_date'),'class'=> 'text-center'],
+                        'Building_reference' => ['title' => __('word.Building_reference'),'class'=> 'text-center'],
+                        'city' => ['title' => __('word.city'),'class'=> 'text-center'],
+                        'district' => ['title' => __('word.district'),'class'=> 'text-center'],
+                        'quarter' => ['title' => __('word.quarter'),'class'=> 'text-center'],
+                        'latitude'=> ['title' => __('word.latitude'),'class'=> 'text-center'],
+                        'longitude' => ['title' => __('word.longitude'),'class'=> 'text-center'],
+                        'Class_count'=> ['title' => __('word.Class_count'),'class'=> 'text-center'],
+                        'Hall_count'=> ['title' => __('word.Hall_count'),'class'=> 'text-center'],
+                        'Floor_count'=> ['title' => __('word.Floor_count'),'class'=> 'text-center'],
                         ])
                     ->minifiedAjax()
                     ->orderBy(1)
@@ -103,11 +106,15 @@ class EmployeeDataTable extends DataTable
                     ->selectStyleSingle();
     }
 
+
+
     /**
-     * Get the filename for export.
+     * Get filename for export.
+     *
+     * @return string
      */
     protected function filename(): string
     {
-        return 'Employee_' . date('YmdHis');
+        return 'Building_' . date('YmdHis');
     }
 }

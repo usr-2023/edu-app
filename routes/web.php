@@ -25,6 +25,9 @@ Route::get('/dashboard', function () {
 //employee routes
 require __DIR__.'/employee.php';
 
+//building routes
+require __DIR__.'/building.php';
+
 //profile routes
 require __DIR__.'/profile.php';
 

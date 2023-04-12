@@ -30,7 +30,7 @@ return [
 
     //main navigation 
     'dashboard' => 'الرئيسية',
-    'employees_profile' => 'قائمة الموظفين',
+    'info' => 'المعلومات الاساسية',
     'hr' => 'الموارد البشرية',
     'ges' => 'التعليم العام والملاك',
     'financial' => 'الحسابات',
@@ -43,8 +43,8 @@ return [
 
     // employee 
     // nav
-    'add_employee' => 'اضافة موظف',
-    'search' => 'بحث',
+    'employee_add' => 'اضافة موظف',
+    'employee_search' => 'بحث موظف',
     
     'personal_info' => 'المعلومات الشخصية',
     'functional_data' => 'البيانات الوظيفية',
@@ -167,4 +167,36 @@ return [
         'political_dismissal_ministerial_reappointment_number'=> 'رقم الامر الوزاري',
         'political_dismissal_ministerial_reappointment_date'=> 'تاريخ الامر الوزاري',
 
+
+         // Building 
+         'building_add'=>'اضافة بناية',
+         'building_search'=>'بحث بناية',
+         
+         'Building_reference'=>'الرقم الاحصائي للبناية',
+         
+         //foreign id and reference
+         'Building_Status_id'=>'حالة البناية',
+         'Building_Type_id'=>'نوع البناية',
+         //'Last_School_id'=>'Last School',
+
+         //normal fields
+         
+         'city'=>'المدينة',
+         'district'=>'القضاء',
+         'quarter'=>'الناحية',
+         'latitude'=>'خط العرض',
+         'longitude'=>'خط الطول',
+         'Class_count'=>'عدد الصفوف',
+         'Hall_count'=>'عدد القاعات',
+         'Floor_count'=>'عدد الطوابق',
+         'SanitaryUnits_count'=>'عدد الوحدات الصحية',
+         'Lab_count'=>'عدد المختبرات',
+         'SchoolLength'=>'الطول (متر)',
+         'SchoolWidth'=>'العرض (متر)',
+         'BuildingArea'=>'مساحة البناء (متر)',
+         'BuildingYear'=>'سنة البناء',
+         'ExtendArea'=>'هل توجد مساحة اضافية',
+         'SportArea'=>'هل توجد ساحة رياضية',
+         'GardenArea'=>'هل توجد حديقة',
+    
 ];
