@@ -28,7 +28,7 @@
                         {{ __('word.ges') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('financial.index')" :active="request()->routeIs('financial.index')">
                         {{ __('word.financial') }}
                     </x-nav-link>
 

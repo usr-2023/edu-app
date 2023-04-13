@@ -28,6 +28,9 @@ require __DIR__.'/employee.php';
 //building routes
 require __DIR__.'/building.php';
 
+//financial routes
+require __DIR__.'/financial.php';
+
 //profile routes
 require __DIR__.'/profile.php';
 
