@@ -12,11 +12,13 @@
                     <div>
                         <form method="POST" action="{{ route('financial.add_payroll') }}">
                             @csrf
-                            <input type="checkbox" id="basic_single" name="basic_single" value="400"><br>
-
-                            <input type="checkbox" id="basic_double" name="basic_double" value="680"><br>
-
-                            <input type="text" name="total" value="" size="30" id="total">
+                            <div class="section">
+                                <input type="checkbox" name="q1" value="2" />
+                                <input type="number" name="q2" value="0" />
+                                <input type="checkbox" name="q3" value="1" />
+                                <input type="number" name="q4" value="3" />
+                            </div>
+                            <div id="total">0</div>
                             <div class=" mx-4 my-4 w-full">
                                 <x-primary-button class="ml-4">
                                     {{ __('word.save') }}
@@ -30,15 +32,39 @@
     </div>
 
     <script>
+        var totalPoints = 0;
         $(document).ready(function() {
-            $('input:checkbox').change(function() {
-                var total = 0;
-                $('input:checkbox:checked').each(function() { // iterate through each checked element.
-                    total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+
+            $('.section').each(function() {
+                totalPoints = 0;
+                $(this).find('input:checkbox:checked').each(function() {
+                    totalPoints += parseInt($(this).val()); //<==== a catch  in here !! read below
                 });
-                $("#total").val(total);
+                $(this).find('input[type=number]').each(function() {
+                    totalPoints += parseInt($(this).val()); //<==== a catch  in here !! read below
+                });
+
+
 
             });
+            $('#total').text(totalPoints);
+
+        });
+        $(document).on("change", ".section", function() {
+
+            $('.section').each(function() {
+                totalPoints = 0;
+                $(this).find('input:checkbox:checked').each(function() {
+                    totalPoints += parseInt($(this).val()); //<==== a catch  in here !! read below
+                });
+                $(this).find('input[type=number]').each(function() {
+                    totalPoints += parseInt($(this).val()); //<==== a catch  in here !! read below
+                });
+
+
+            });
+            $('#total').text(totalPoints);
+
         });
     </script>
 
