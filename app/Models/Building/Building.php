@@ -48,15 +48,15 @@ class Building extends Model
         'Class_count',
         'Hall_count',
         'Floor_count',
-        'SanitaryUnits_count',
+        'Sanitary_Units_count',
         'Lab_count',
-        'SchoolLength',
-        'SchoolWidth',
-        'BuildingArea',
-        'BuildingYear',
-        'ExtendArea',
-        'SportArea',
-        'GardenArea',
+        'School_Length',
+        'School_Width',
+        'Building_Area',
+        'Building_Year',
+        'is_Extend_Area',
+        'is_Sport_Area',
+        'is_Garden_Area',
     ];
 
     

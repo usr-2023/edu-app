@@ -1323,7 +1323,7 @@
 
                             <div class=" mx-4 my-4 w-full">
                                 <x-primary-button class="ml-4">
-                                    {{ __('word.add_employee') }}
+                                    {{ __('word.save') }}
                                 </x-primary-button>
                             </div>
 

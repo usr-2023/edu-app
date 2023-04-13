@@ -33,23 +33,23 @@ return new class extends Migration
  */
 
 
-            $table->string('city',10);
-            $table->string('district',10);
-            $table->string('quarter',10);
-            $table->string('latitude',10);
-            $table->string('longitude',10);
-            $table->integer('Class_count');
-            $table->integer('Hall_count');
-            $table->integer('Floor_count');
-            $table->integer('SanitaryUnits_count');
-            $table->integer('Lab_count');
-            $table->integer('SchoolLength');
-            $table->integer('SchoolWidth');
-            $table->integer('BuildingArea');
-            $table->integer('BuildingYear');
-            $table->integer('ExtendArea');
-            $table->integer('SportArea');
-            $table->integer('GardenArea');
+            $table->string('city',10)->nullable();
+            $table->string('district',10)->nullable();
+            $table->string('quarter',10)->nullable();
+            $table->string('latitude',16)->nullable();
+            $table->string('longitude',16)->nullable();
+            $table->integer('Class_count')->nullable();
+            $table->integer('Hall_count')->nullable();
+            $table->integer('Floor_count')->nullable();
+            $table->integer('Sanitary_Units_count')->nullable();
+            $table->integer('Lab_count')->nullable();
+            $table->integer('School_Length')->nullable();
+            $table->integer('School_Width')->nullable();
+            $table->integer('Building_Area')->nullable();
+            $table->integer('Building_Year')->nullable();
+            $table->integer('is_Extend_Area')->nullable();
+            $table->integer('is_Sport_Area')->nullable();
+            $table->integer('is_Garden_Area')->nullable();
             
         });
     }
