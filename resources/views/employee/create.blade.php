@@ -1410,6 +1410,13 @@
             else
                 $("#pd").hide();
 
+            //prevent ENTER KEY from submiing the form
+            $(':input').keypress(function(e) {
+                var code = e.keyCode || e.which;
+                if (code == 13)
+                    return false;
+            });
+
         }
     </script>
 
