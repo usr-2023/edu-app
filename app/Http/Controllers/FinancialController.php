@@ -20,4 +20,10 @@ class FinancialController extends Controller
     {
 
     }
+
+    public function test()
+    {
+       return view('financial.test');
+        
+    }
 }
