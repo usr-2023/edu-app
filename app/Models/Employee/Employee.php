@@ -94,7 +94,7 @@ class Employee extends Model
     protected $fillable = [
 
         //
-
+        'id',
         'url_address',
         'job_number',
         'user_id_create',

@@ -4,14 +4,9 @@ namespace App\DataTables;
 
 use App\Models\Employee\Employee;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
-use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
-use Yajra\DataTables\Html\Button;
-use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 use function Pest\Laravel\json;
@@ -28,7 +23,7 @@ class EmployeeDataTable extends DataTable
        
            // ->addColumn('action', 'employee.action')
            
-            if (Auth::user()->is_admin) {
+            if (auth()->user()->is_admin) {
                 return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
                 ->rawColumns(['action'])
                 ->setRowId('id');

@@ -41,7 +41,7 @@ return [
     'dashboard_msg' => 'مرحباً بك في الموقع الالكتروني للمديرية العامة للتربية في محافظة النجف الأشرف',
     'dashboard_title'=> 'مرحباً',
 
-    // employee 
+    // ************************************** employee *********************************************
     // nav
     'employee_add' => 'اضافة موظف',
     'employee_search' => 'بحث موظف',
@@ -168,7 +168,7 @@ return [
         'political_dismissal_ministerial_reappointment_date'=> 'تاريخ الامر الوزاري',
 
 
-         // Building 
+         // ******************************************Building ***************************************
          'building_add'=>'اضافة بناية',
          'building_search'=>'بحث بناية',
          

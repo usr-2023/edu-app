@@ -42,7 +42,7 @@ return [
     'dashboard_msg' => 'Welcome to the website of the General Directorate of Education in Najaf Governorate',
     'dashboard_title'=> 'Welcome',
 
-    // employee 
+    // ************************************ employee ***********************************************
     // nav
     'employee_add' => 'add employee',
     'employee_search' => 'search',
@@ -168,7 +168,7 @@ return [
     'political_dismissal_ministerial_reappointment_date'=> 'ministerial reappointment order date',
 
 
-    // Building 
+    //****************************************** */ Building *******************************************
     'building_add'=>'Add Building',
     'building_search'=>'Search Building',
 

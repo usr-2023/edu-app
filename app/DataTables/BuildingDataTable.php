@@ -4,14 +4,9 @@ namespace App\DataTables;
 
 use App\Models\Building\Building;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
-use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
-use Yajra\DataTables\Html\Button;
-use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class BuildingDataTable extends DataTable
@@ -26,7 +21,7 @@ class BuildingDataTable extends DataTable
     {
            // ->addColumn('action', 'building.action')
            
-           if (Auth::user()->is_admin) {
+           if (auth()->user()->is_admin) {
             return   (new EloquentDataTable($query)) ->addColumn('action','building.action')
             ->rawColumns(['action'])
             ->setRowId('id');

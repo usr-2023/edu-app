@@ -10,10 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form method="POST" action="{{ route('employee.update', $employee->url_address) }}">
+                        <form method="post" action="{{ route('employee.update', $employee->url_address) }}">
                             @csrf
+                            @method('patch')
 
-
+                            <input type="hidden" id="id" name="id" value="{{ $employee->id }}">
                             <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">
                                 {{ __('word.personal_info') }}
                             </h2>
