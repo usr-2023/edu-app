@@ -22,7 +22,11 @@ use App\Models\Employee\Section;
 use App\Models\Employee\Sub_Section;
 use App\Models\Employee\Sub_Sub_Section;
 use App\Models\Employee\Teaching_Specialization;
+use App\Models\User;
 use App\Models\YesNo;
+use App\Notifications\Employee\EmployeeCreatedNotify;
+use App\Notifications\Employee\EmployeeUpdateNotify;
+use Illuminate\Support\Facades\Notification;
 
 
 class EmployeeController extends Controller
@@ -78,6 +82,9 @@ class EmployeeController extends Controller
     {
         // insert the user input into model and lareval insert it into the database.
          Employee::create($request->validated());
+
+        // Notify related users
+        Notification::send(User::all(),new EmployeeCreatedNotify($request));
    
         //inform the user 
         return redirect()->route('employee.index')
@@ -148,12 +155,13 @@ class EmployeeController extends Controller
     public function update(EmployeeRequest $request, string $url_address)
     {
             
-            // insert the user input into model and lareval insert it into the database.
-             Employee::where('url_address',$url_address)->update($request->validated());
-       
-            //inform the user 
-            return redirect()->route('employee.index')
-                            ->with('success','تمت تعديل بيانات الموظف بنجاح ');
+        // insert the user input into model and lareval insert it into the database.
+        Employee::where('url_address',$url_address)->update($request->validated());
+        // Notify related users
+        Notification::send(User::all(),new EmployeeUpdateNotify($request));
+        //inform the user 
+        return redirect()->route('employee.index')
+        ->with('success','تمت تعديل بيانات الموظف بنجاح ');
     
     }
 
@@ -169,19 +177,19 @@ class EmployeeController extends Controller
 
     function getIPAddress()
     {
-    //whether ip is from the share internet
-       if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-           $ip = $_SERVER['HTTP_CLIENT_IP'];
-       }
-    //whether ip is from the proxy
-       elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-           $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-       }
-    //whether ip is from the remote address
-       else {
-           $ip = $_SERVER['REMOTE_ADDR'];
-       }
-       return $ip;
+        //whether ip is from the share internet
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }
+        //whether ip is from the proxy
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        //whether ip is from the remote address
+        else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
    }
 
 }

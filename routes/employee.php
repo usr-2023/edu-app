@@ -16,5 +16,4 @@ Route::group(['prefix' => 'employee'], function() {
     Route::patch('/update/{url_address}', [EmployeeController::class, 'update'])->middleware(['auth','verified'])->name('employee.update');
     //delete
     Route::delete('/delete/{url_address}', [EmployeeController::class, 'destroy'])->middleware(['auth','verified'])->name('employee.destroy');
-    
 });

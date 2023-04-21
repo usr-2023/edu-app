@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+//read notification
+Route::get('/markasread/{id}',[NotificationController::class,'markasread'])
+->middleware(['auth','verified'])
+->name('markasread');
 
 //employee routes
 require __DIR__.'/employee.php';
