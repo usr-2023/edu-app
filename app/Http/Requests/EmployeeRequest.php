@@ -58,11 +58,12 @@ class EmployeeRequest extends FormRequest
         'grandfather_name' => ['required','max:20'],
         'fourth_grandfather_name' => ['max:20'],
         'surname' => ['max:20'],
-        
+        'full_name' => ['required','max:100'],
         'mother_name' => ['max:20'],
         'mother_father_name' => ['max:20'],
         'mother_grandfather_name' => ['max:20'],
         'mother_surname' => ['max:20'],
+        'mother_full_name' => ['required','max:80'],
         'date_of_birth' => ['nullable','date'],
         'place_of_birth' => ['max:20'],
         'first_husband_name' => ['max:20'],
@@ -155,6 +156,13 @@ class EmployeeRequest extends FormRequest
             $this->mergeIfMissing(['user_id_update' =>  auth()->user()->id ]);
         
         }
+
+        // get employee full name 
+        $this->request->add( ['full_name' => trim($this->get('name').' '.$this->get('father_name').' '.$this->get('grandfather_name').' '.$this->get('fourth_grandfather_name').' '.$this->get('surname'),' ')]);
+
+        // get employee full name 
+        $this->request->add( ['mother_full_name' => trim($this->get('mother_name').' '.$this->get('mother_father_name').' '.$this->get('mother_grandfather_name').' '.$this->get('mother_surname'),' ')]);
+
         //merge date inputs into one field
          if (isset($this->date_of_birth_y) or isset($this->date_of_birth_m) or isset($this->date_of_birth_d)){
             $year   = $this->get('date_of_birth_y');

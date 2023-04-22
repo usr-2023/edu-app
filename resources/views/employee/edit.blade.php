@@ -15,6 +15,8 @@
                             @method('patch')
 
                             <input type="hidden" id="id" name="id" value="{{ $employee->id }}">
+                            <input type="hidden" id="url_address" name="url_address"
+                                value="{{ $employee->url_address }}">
                             <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">
                                 {{ __('word.personal_info') }}
                             </h2>

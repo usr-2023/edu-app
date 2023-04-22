@@ -38,8 +38,8 @@ class EmployeeUpdateNotify extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'action'=>'تم تحديث بيانات الموظف',
-            'name'=>$this->request->name,
+            'action'=>'تحديث',
+            'name'=>$this->request->full_name,
             'url_address'=>$this->request->url_address,
             'route'=>'employee.show',
         ];

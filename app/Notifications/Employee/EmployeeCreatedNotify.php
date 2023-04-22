@@ -39,8 +39,8 @@ class EmployeeCreatedNotify extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'action'=>'تم اضافة الموظف',
-            'name'=>$this->request->name,
+            'action'=>'اضافة',
+            'name'=>$this->request->full_name,
             'url_address'=>$this->request->url_address,
             'route'=>'employee.show',
         ];

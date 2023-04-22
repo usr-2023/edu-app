@@ -58,11 +58,9 @@ class EmployeeDataTable extends DataTable
                     ->columns(  [
                         'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
                         'job_number' => ['title' => __('word.job_number'),'class'=> 'text-center'],
-                        'name' => ['title' => __('word.name'),'class'=> 'text-center'],
-                        'father_name' => ['title' => __('word.father_name'),'class'=> 'text-center'],
-                        'grandfather_name' => ['title' => __('word.grandfather_name'),'class'=> 'text-center'],
+                        'full_name' => ['title' => __('word.full_name'),'class'=> 'text-center'],
+                        'mother_full_name' => ['title' => __('word.mother_full_name'),'class'=> 'text-center'],
                         'date_of_birth'=> ['title' => __('word.date_of_birth'),'class'=> 'text-center'],
-                        'mother_name' => ['title' => __('word.mother_name'),'class'=> 'text-center'],
                         'appointment_date'=> ['title' => __('word.appointment_date'),'class'=> 'text-center'],
                         ])
                     ->minifiedAjax()

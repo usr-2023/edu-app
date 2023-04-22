@@ -22,11 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-//read notification
-Route::get('/markasread/{id}',[NotificationController::class,'markasread'])
-->middleware(['auth','verified'])
-->name('markasread');
+//notification routes
+require __DIR__.'/notification.php';
 
 //employee routes
 require __DIR__.'/employee.php';
