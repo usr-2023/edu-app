@@ -131,15 +131,15 @@
                             @endforelse
 
                             @forelse (auth()->user()->readNotifications()->take(5)->get() as $notification)
-                                <li>
+                                <li class="border border-solid">
                                     <a rel="alternate" href="{{ route('notification.markasread', $notification) }}"
                                         class="block w-full px-4 py-2 text-center text-sm leading-5 text-gray-400 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                        {{ $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) . ' دقيقة' }}
+                                        {{ round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) > 59 ? (round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) > 24 ? $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 86400, 0) . 'يوم' : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) . 'ساعة') : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) . 'دقيقة' }}
                                     </a>
                                 </li>
                             @empty
                             @endforelse
-                            <li class="font-semibold">
+                            <li class="font-semibold border border-solid">
                                 <a rel="alternate" href="{{ route('notification.index') }}"
                                     class="block w-full px-4 py-2 text-center leading-5 text-black-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     {{ __('word.show_all') }}
