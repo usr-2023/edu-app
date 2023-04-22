@@ -107,25 +107,25 @@
                     <x-slot name="content">
 
                         <ul>
+                            <li class="font-semibold border border-solid">
+                                <a rel="alternate" href="{{ route('notification.markallasread') }}"
+                                    class="block w-full px-4 py-2 text-center leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                    {{ __('word.markallasread') }}
 
+                                </a>
+                            </li>
                             @forelse (auth()->user()->unreadNotifications()->take(5)->get() as $notification)
-                                <li class="font-semibold">
-                                    <a rel="alternate" href="{{ route('notification.markallasread') }}"
-                                        class="block w-full px-4 py-2 text-center leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                        تمييز الكل كمقروء
-                                    </a>
-                                </li>
-                                <li class="font-semibold">
+                                <li class="font-semibold border border-solid">
                                     <a rel="alternate" href="{{ route('notification.markasread', $notification) }}"
                                         class="block w-full px-4 py-2 text-center leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                        {{ $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) . ' دقيقة' }}
+                                        {{ round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) > 59 ? (round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) > 24 ? $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 86400, 0) . 'يوم' : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) . 'ساعة') : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) . 'دقيقة' }}
                                     </a>
                                 </li>
                             @empty
                                 <li class="font-semibold">
                                     <a rel="alternate"
                                         class="block w-full px-4 py-2 text-center leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                        لا توجد اشعارات غير مقروءة
+                                        {{ __('word.nonotification') }}
                                     </a>
                                 </li>
                             @endforelse
@@ -142,7 +142,7 @@
                             <li class="font-semibold">
                                 <a rel="alternate" href="{{ route('notification.index') }}"
                                     class="block w-full px-4 py-2 text-center leading-5 text-black-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                    عرض الكل
+                                    {{ __('word.show_all') }}
                                 </a>
                             </li>
 

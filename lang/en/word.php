@@ -2,16 +2,7 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Word Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
+   
     //auth
     'user_create'=>'Created by',
     'user_update'=>'Updated by',
@@ -41,6 +32,15 @@ return [
     // dashboard
     'dashboard_msg' => 'Welcome to the website of the General Directorate of Education in Najaf Governorate',
     'dashboard_title'=> 'Welcome',
+
+    //************************************* notification *******************************************
+    'notifications' => 'Notifications',
+    'show_all' => 'Show All',
+    'markallasread' => 'Mark All As Read',
+    'unreadnotification' => 'Unread Notifications',
+    'nonotification' => 'No Notification Were Added',
+    'readnotification' => 'Read Notifications',
+
 
     // ************************************ employee ***********************************************
     // nav
