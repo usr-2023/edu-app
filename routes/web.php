@@ -22,6 +22,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//user routes
+require __DIR__.'/user.php';
+
+//role routes
+require __DIR__.'/role.php';
+
 //notification routes
 require __DIR__.'/notification.php';
 

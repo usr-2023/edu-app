@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
+    use HasApiTokens, HasFactory, Notifiable , HasRoles;
+    
+     public function get_Department()
+    {
+        return $this->hasone(Department::class,'id','department_id');
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +26,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin',
+        'department_id',
+        'url_address',
+        'roles_name',
+        'Status',
     ];
 
     /**
@@ -41,5 +49,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'roles_name' => 'array',
     ];
 }

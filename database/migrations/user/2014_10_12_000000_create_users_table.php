@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('is_admin')->default(0);
+            $table->integer('department_id');
+            $table->string('url_address','60')->unique()->nullable();
+            $table->text('roles_name');
+            $table->string('Status', 10)->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

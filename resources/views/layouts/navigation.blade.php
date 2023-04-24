@@ -12,26 +12,41 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-
-                    <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
-                        {{ __('word.info') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('word.hr') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('word.ges') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('financial.index')" :active="request()->routeIs('financial.index')">
-                        {{ __('word.financial') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('word.Planning') }}
-                    </x-nav-link>
+                    @can('dashboard-info')
+                        <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
+                            {{ __('word.info') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-hr')
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('word.hr') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-ges')
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('word.ges') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-financial')
+                        <x-nav-link :href="route('financial.index')" :active="request()->routeIs('financial.index')">
+                            {{ __('word.financial') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-Planning')
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('word.Planning') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-users')
+                        <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                            {{ __('word.users') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('dashboard-roles')
+                        <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
+                            {{ __('word.roles') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
 
             </div>
@@ -107,22 +122,24 @@
                     <x-slot name="content">
 
                         <ul>
-                            <li class="font-semibold border border-solid">
-                                <a rel="alternate" href="{{ route('notification.markallasread') }}"
-                                    class="block w-full px-4 py-2 text-center leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
-                                    {{ __('word.markallasread') }}
+                            @if (auth()->user()->unreadNotifications()->count() != 0)
+                                <li class=" border border-solid">
+                                    <a rel="alternate" href="{{ route('notification.markallasread') }}"
+                                        class="block w-full px-4 py-2 text-center leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                        {{ __('word.markallasread') }}
 
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
+                            @endif
                             @forelse (auth()->user()->unreadNotifications()->take(5)->get() as $notification)
-                                <li class="font-semibold border border-solid">
+                                <li class=" border border-solid">
                                     <a rel="alternate" href="{{ route('notification.markasread', $notification) }}"
                                         class="block w-full px-4 py-2 text-center leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                         {{ round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) > 59 ? (round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) > 24 ? $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 86400, 0) . 'يوم' : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 3600, 0) . 'ساعة') : $notification->data['name'] . ' - ' . $notification->data['action'] . ' - قبل ' . round(abs(strtotime(date('Y-m-d H:i:s')) - strtotime($notification->created_at)) / 60, 0) . 'دقيقة' }}
                                     </a>
                                 </li>
                             @empty
-                                <li class="font-semibold">
+                                <li>
                                     <a rel="alternate"
                                         class="block w-full px-4 py-2 text-center leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                         {{ __('word.nonotification') }}
@@ -139,7 +156,7 @@
                                 </li>
                             @empty
                             @endforelse
-                            <li class="font-semibold border border-solid">
+                            <li class="border border-solid">
                                 <a rel="alternate" href="{{ route('notification.index') }}"
                                     class="block w-full px-4 py-2 text-center leading-5 text-black-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     {{ __('word.show_all') }}

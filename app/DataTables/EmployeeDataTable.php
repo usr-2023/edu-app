@@ -23,16 +23,11 @@ class EmployeeDataTable extends DataTable
        
            // ->addColumn('action', 'employee.action')
            
-            if (auth()->user()->is_admin) {
+            
                 return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
                 ->rawColumns(['action'])
                 ->setRowId('id');
-                
-            } else {
-                return   (new EloquentDataTable($query))  ->addColumn('action','employee.actionnotadmin')
-                ->rawColumns(['action'])
-                ->setRowId('id');
-            }
+            
 
           
     }

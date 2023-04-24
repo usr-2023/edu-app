@@ -13,18 +13,18 @@
 
                     <ul>
                         @if (auth()->user()->unreadNotifications()->groupBy('notifiable_type')->count() != 0)
-                            <li class="font-semibold">
+                            <li>
                                 <a rel="alternate" href="{{ route('notification.markallasread') }}"
-                                    class="block w-full px-4 py-2 text-xl text-right leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                    class="block w-full px-4 py-2  text-right leading-5 text-green-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     <span class="w-full px-4 py-2 font-bold bg-success text-white rounded">
                                         {{ __('word.markallasread') }}</span>
                                 </a>
                             </li>
 
                             <br>
-                            <li class="font-semibold">
+                            <li>
                                 <a rel="alternate"
-                                    class="block w-full px-4 py-2 text-xl text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                    class="block w-full px-4 py-2  text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     {{ __('word.unreadnotification') }}
                                     {{ auth()->user()->unreadNotifications()->groupBy('notifiable_type')->count() }}
                                 </a>
@@ -32,25 +32,25 @@
                         @endif
 
                         @forelse (auth()->user()->unreadNotifications()->take(500)->get() as $notification)
-                            <li class="font-semibold border border-solid">
+                            <li class="border border-solid">
                                 <a rel="alternate" href="{{ route('notification.markasread', $notification) }}"
                                     class="block w-full px-4 py-2 text-lg text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     {{ $notification->data['name'] . ' - ' . $notification->data['action'] . ' - وقت الاشعار - ' . $notification->created_at }}
                                 </a>
                             </li>
                         @empty
-                            <li class="font-semibold">
+                            <li>
                                 <a rel="alternate"
-                                    class="block w-full px-4 py-2 text-xl text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                    class="block w-full px-4 py-2  text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                     {{ __('word.nonotification') }}
                                 </a>
                             </li>
                         @endforelse
                         <br>
 
-                        <li class="font-semibold">
+                        <li>
                             <a rel="alternate"
-                                class="block w-full px-4 py-2 text-xl text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                class="block w-full px-4 py-2  text-right leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                 {{ __('word.readnotification') }}
                                 {{ auth()->user()->readNotifications()->groupBy('notifiable_type')->count() }}
                             </a>
