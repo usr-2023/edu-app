@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('login');
 });
-
+Route::group(['middleware' => 'checkStatus'], function () {
+   
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -43,5 +44,7 @@ require __DIR__.'/financial.php';
 //profile routes
 require __DIR__.'/profile.php';
 
+
+});
 //auth routes 
 require __DIR__.'/auth.php';

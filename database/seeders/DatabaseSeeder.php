@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'dashboard-financial',
             'dashboard-Planning',
             'dashboard-users',
+            'dashboard-roles',
 
             //employee permissions
             'employee-list',
