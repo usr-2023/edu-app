@@ -18,7 +18,7 @@ class Employee extends Model
         return $this->hasone(Employee_Status::class,'id','employee_status_id');
     }
 
-    public function get_Marital_Status()
+    public function get_marital_status()
     {
         return $this->hasone(Marital_Status::class,'id','marital_status_id');
     }

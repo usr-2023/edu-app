@@ -135,7 +135,7 @@
                                     <x-input-label for="marital_status_id" class="w-full mb-1" :value="__('word.marital_status_id')" />
                                     <p id="marital_status_id" class="w-full h-9 block mt-1 " type="text"
                                         name="marital_status_id">
-                                        {{ $employee->get_Marital_Status->marital_status }}
+                                        {{ $employee->get_marital_status->marital_status }}
 
                                     </p>
 
