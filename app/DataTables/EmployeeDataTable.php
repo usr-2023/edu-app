@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
 use function Pest\Laravel\json;
@@ -20,16 +21,10 @@ class EmployeeDataTable extends DataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-       
            // ->addColumn('action', 'employee.action')
-           
-            
                 return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
                 ->rawColumns(['action'])
-                ->setRowId('id');
-            
-
-          
+                ->setRowId('id');   
     }
 
     /**
@@ -37,7 +32,7 @@ class EmployeeDataTable extends DataTable
      */
     public function query(Employee $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['get_marital_status']);
     }
 
     /**
@@ -50,14 +45,7 @@ class EmployeeDataTable extends DataTable
                     ->language([
                         'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
-                    ->columns(  [
-                        'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
-                        'job_number' => ['title' => __('word.job_number'),'class'=> 'text-center'],
-                        'full_name' => ['title' => __('word.full_name'),'class'=> 'text-center'],
-                        'mother_full_name' => ['title' => __('word.mother_full_name'),'class'=> 'text-center'],
-                        'date_of_birth'=> ['title' => __('word.date_of_birth'),'class'=> 'text-center'],
-                        'appointment_date'=> ['title' => __('word.appointment_date'),'class'=> 'text-center'],
-                        ])
+                    ->columns(  $this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
                   /*   ->parameters([
@@ -89,6 +77,30 @@ class EmployeeDataTable extends DataTable
                         ]
                     ]) */
                     ->selectStyleSingle();
+    }
+
+        /**
+     * Get the dataTable columns definition.
+     *
+     * @return array
+     */
+    public function getColumns(): array
+    {
+        return [
+            Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->title(__('word.action'))
+                  ->addClass('text-center'),
+            Column::make('job_number')->title(__('word.job_number'))->class('text-center'),
+            Column::make('full_name')->title(__('word.full_name'))->class('text-center'),
+            Column::make('mother_full_name')->title(__('word.mother_full_name'))->class('text-center'),
+            Column::make('date_of_birth')->title(__('word.date_of_birth'))->class('text-center'),
+            Column::make('appointment_date')->title(__('word.appointment_date'))->class('text-center'),
+            Column::make('get_marital_status')->title(__('word.marital_status_id'))->data('get_marital_status.marital_status')->name('get_marital_status.marital_status')->class('text-center'),
+            
+        ];
     }
 
     /**
