@@ -22,18 +22,19 @@
                             </div>
 
                             <div class=" mx-4 my-4 w-full ">
+                                <x-input-label for="building_status_id" class="w-full mb-1" :value="__('word.building_status_id')" />
+                                <p id="building_status_id" class="w-full h-9 block mt-1 " type="text"
+                                    name="building_status_id">
+                                    {{ $building->get_Building_Status->building_status }}
+                            </div>
+
+                            <div class=" mx-4 my-4 w-full ">
                                 <x-input-label for="building_type_id" class="w-full mb-1" :value="__('word.building_type_id')" />
                                 <p id="building_type_id" class="w-full h-9 block mt-1 " type="text"
                                     name="building_type_id">
                                     {{ $building->get_Building_Type->building_type }}
                             </div>
 
-                            <div class=" mx-4 my-4 w-full ">
-                                <x-input-label for="building_status_id" class="w-full mb-1" :value="__('word.building_status_id')" />
-                                <p id="building_status_id" class="w-full h-9 block mt-1 " type="text"
-                                    name="building_status_id">
-                                    {{ $building->get_Building_Status->building_status }}
-                            </div>
                         </div>
 
                         <h2 class="font-semibold underline text-l text-gray-800 leading-tight mx-4 my-8 w-full">

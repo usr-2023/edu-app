@@ -38,9 +38,9 @@ return new class extends Migration
             $table->foreign('user_id_update')->references('id')->on('users');
 
 
-            $table->string('city',10)->nullable();
-            $table->string('district',10)->nullable();
-            $table->string('quarter',10)->nullable();
+            $table->string('city',20)->nullable();
+            $table->string('district',20)->nullable();
+            $table->string('quarter',20)->nullable();
             $table->string('latitude',16)->nullable();
             $table->string('longitude',16)->nullable();
             $table->integer('class_count')->nullable();

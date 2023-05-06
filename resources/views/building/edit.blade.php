@@ -25,7 +25,8 @@
                                 <div class=" mx-4 my-4 w-full ">
                                     <x-input-label for="building_reference" class="w-full mb-1" :value="__('word.building_reference')" />
                                     <x-text-input id="building_reference" class="w-full block mt-1" type="text"
-                                        name="building_reference" value="{{ $building->building_reference }}" />
+                                        name="building_reference"
+                                        value="{{ old('building_reference') ?? $building->building_reference }}" />
                                     <x-input-error :messages="$errors->get('building_reference')" class="w-full mt-2" />
                                 </div>
 
@@ -36,7 +37,7 @@
                                         name="building_status_id">
                                         @foreach ($building_statuses as $building_status)
                                             <option value="{{ $building_status->id }}"
-                                                {{ $building->building_status_id == $building_status->id ? 'selected' : '' }}>
+                                                {{ (old('building_status_id') ?? $building->building_status_id) == $building_status->id ? 'selected' : '' }}>
                                                 {{ $building_status->building_status }}
                                             </option>
                                         @endforeach
@@ -50,7 +51,7 @@
                                     <select id="building_type_id" class="w-full block mt-1 " name="building_type_id">
                                         @foreach ($building_types as $building_type)
                                             <option value="{{ $building_type->id }}"
-                                                {{ $building->building_type_id == $building_type->id ? 'selected' : '' }}>
+                                                {{ (old('building_type_id') ?? $building->building_type_id) == $building_type->id ? 'selected' : '' }}>
                                                 {{ $building_type->building_type }}
                                             </option>
                                         @endforeach
@@ -68,7 +69,7 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="city" class="w-full mb-1" :value="__('word.city')" />
                                     <x-text-input id="city" class="w-full block mt-1" type="text" name="city"
-                                        value="{{ $building->city }}" />
+                                        value="{{ old('city') ?? $building->city }}" />
                                     <x-input-error :messages="$errors->get('city')" class="w-full mt-2" />
                                 </div>
 
@@ -76,7 +77,7 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="district" class="w-full mb-1" :value="__('word.district')" />
                                     <x-text-input id="district" class="w-full block mt-1" type="text" ame="district"
-                                        value="{{ $building->district }}" />
+                                        value="{{ old('district') ?? $building->district }}" />
                                     <x-input-error :messages="$errors->get('district')" class="w-full mt-2" />
                                 </div>
 
@@ -84,7 +85,7 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="quarter" class="w-full mb-1" :value="__('word.quarter')" />
                                     <x-text-input id="quarter" class="w-full block mt-1" type="text" name="quarter"
-                                        value="{{ $building->quarter }}" />
+                                        value="{{ old('quarter') ?? $building->quarter }}" />
                                     <x-input-error :messages="$errors->get('quarter')" class="w-full mt-2" />
                                 </div>
 
@@ -92,7 +93,7 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="latitude" class="w-full mb-1" :value="__('word.latitude')" />
                                     <x-text-input id="latitude" class="w-full block mt-1" type="text"
-                                        name="latitude" value="{{ $building->latitude }}" />
+                                        name="latitude" value="{{ old('latitude') ?? $building->latitude }}" />
                                     <x-input-error :messages="$errors->get('latitude')" class="w-full mt-2" />
                                 </div>
 
@@ -100,7 +101,7 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="longitude" class="w-full mb-1" :value="__('word.longitude')" />
                                     <x-text-input id="longitude" class="w-full block mt-1" type="text"
-                                        name="longitude" value="{{ $building->longitude }}" />
+                                        name="longitude" value="{{ old('longitude') ?? $building->longitude }}" />
                                     <x-input-error :messages="$errors->get('longitude')" class="w-full mt-2" />
                                 </div>
                             </div>
@@ -156,7 +157,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="school_length" class="w-full mb-1" :value="__('word.school_length')" />
                                     <x-text-input id="school_length" class="w-full block mt-1" type="number"
-                                        name="school_length" value="{{ $building->school_length }}" />
+                                        name="school_length"
+                                        value="{{ old('school_length') ?? $building->school_length }}" />
                                     <x-input-error :messages="$errors->get('school_length')" class="w-full mt-2" />
                                 </div>
 
@@ -164,7 +166,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="school_width" class="w-full mb-1" :value="__('word.school_width')" />
                                     <x-text-input id="school_width" class="w-full block mt-1" type="number"
-                                        name="school_width" value="{{ $building->school_width }}" />
+                                        name="school_width"
+                                        value="{{ old('school_width') ?? $building->school_width }}" />
                                     <x-input-error :messages="$errors->get('school_width')" class="w-full mt-2" />
                                 </div>
 
@@ -172,7 +175,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="building_area" class="w-full mb-1" :value="__('word.building_area')" />
                                     <x-text-input id="building_area" class="w-full block mt-1" type="number"
-                                        name="building_area" value=" {{ $building->building_area }}" />
+                                        name="building_area"
+                                        value=" {{ old('building_area') ?? $building->building_area }}" />
                                     <x-input-error :messages="$errors->get('building_area')" class="w-full mt-2" />
                                 </div>
 
@@ -180,7 +184,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="building_year" class="w-full mb-1" :value="__('word.building_year')" />
                                     <x-text-input id="building_year" class="w-full block mt-1" type="number"
-                                        name="building_year" value="{{ $building->building_year }}" />
+                                        name="building_year"
+                                        value="{{ old('building_year') ?? $building->building_year }}" />
                                     <x-input-error :messages="$errors->get('building_year')" class="w-full mt-2" />
                                 </div>
                             </div>
@@ -192,7 +197,7 @@
                                     <select id="is_extend_area" class="w-full block mt-1 " name="is_extend_area">
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ $building->is_extend_area == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_extend_area') ?? $building->is_extend_area) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -207,7 +212,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ $building->is_sport_area == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_sport_area') ?? $building->is_sport_area) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -221,7 +226,7 @@
                                     <select id="is_garden_area" class="w-full block mt-1 "name="is_garden_area">
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ $building->is_garden_area == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_garden_area') ?? $building->is_garden_area) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
