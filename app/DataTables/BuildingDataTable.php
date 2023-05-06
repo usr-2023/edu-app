@@ -6,6 +6,7 @@ use App\Models\Building\Building;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Services\DataTable;
 
@@ -20,17 +21,9 @@ class BuildingDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
            // ->addColumn('action', 'building.action')
-           
-           if (auth()->user()->is_admin) {
             return   (new EloquentDataTable($query)) ->addColumn('action','building.action')
             ->rawColumns(['action'])
             ->setRowId('id');
-            
-        } else {
-            return   (new EloquentDataTable($query))  ->addColumn('action','building.actionnotadmin')
-            ->rawColumns(['action'])
-            ->setRowId('id');
-        }
     }
 
     /**
@@ -56,18 +49,7 @@ class BuildingDataTable extends DataTable
                     ->language([
                         'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
-                    ->columns(  [
-                        'action' => ['title' => __('word.action'), 'printable' => false,'class'=> 'text-center'],
-                        'Building_reference' => ['title' => __('word.Building_reference'),'class'=> 'text-center'],
-                        'city' => ['title' => __('word.city'),'class'=> 'text-center'],
-                        'district' => ['title' => __('word.district'),'class'=> 'text-center'],
-                        'quarter' => ['title' => __('word.quarter'),'class'=> 'text-center'],
-                        'latitude'=> ['title' => __('word.latitude'),'class'=> 'text-center'],
-                        'longitude' => ['title' => __('word.longitude'),'class'=> 'text-center'],
-                        'Class_count'=> ['title' => __('word.Class_count'),'class'=> 'text-center'],
-                        'Hall_count'=> ['title' => __('word.Hall_count'),'class'=> 'text-center'],
-                        'Floor_count'=> ['title' => __('word.Floor_count'),'class'=> 'text-center'],
-                        ])
+                    ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
                   /*   ->parameters([
@@ -101,7 +83,32 @@ class BuildingDataTable extends DataTable
                     ->selectStyleSingle();
     }
 
-
+        /**
+     * Get the dataTable columns definition.
+     *
+     * @return array
+     */
+    public function getColumns(): array
+    {
+        return [
+            Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->title(__('word.action'))
+                  ->addClass('text-center'),
+            Column::make('building_reference')->title(__('word.building_reference'))->class('text-center'),
+            Column::make('city')->title(__('word.city'))->class('text-center'),
+            Column::make('district')->title(__('word.district'))->class('text-center'),
+            Column::make('quarter')->title(__('word.quarter'))->class('text-center'),
+            Column::make('latitude')->title(__('word.latitude'))->class('text-center'),
+            Column::make('longitude')->title(__('word.longitude'))->class('text-center'),
+            Column::make('class_count')->title(__('word.class_count'))->class('text-center'),
+            Column::make('hall_count')->title(__('word.hall_count'))->class('text-center'),
+            Column::make('floor_count')->title(__('word.floor_count'))->class('text-center'),
+            
+        ];
+    }
 
     /**
      * Get filename for export.

@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Building_Type extends Model
 {
     use HasFactory;
-    protected $table = 'Building_Type';
+    protected $table = 'building_type';
     protected $fillable = [
-        'Building_Type',
+        'building_type',
     ];
-
 }

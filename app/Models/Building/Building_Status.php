@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Building_Status extends Model
 {
     use HasFactory;
-    protected $table = 'Building_Status';
+    protected $table = 'building_status';
     protected $fillable = [
-        'Building_Status',
+        'building_status',
     ];
-
 }

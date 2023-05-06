@@ -35,6 +35,20 @@ class DatabaseSeeder extends Seeder
             'employee-update',
             'employee-delete',
 
+            //building permissions
+            'building-list',
+            'building-show',
+            'building-create',
+            'building-update',
+            'building-delete',
+
+            //school permissions
+            'school-list',
+            'school-show',
+            'school-create',
+            'school-update',
+            'school-delete',
+
             // user permissions
             'user-list',
             'user-show',

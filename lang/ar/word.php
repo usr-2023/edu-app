@@ -210,35 +210,43 @@ return [
         'political_dismissal_ministerial_reappointment_date'=> 'تاريخ الامر الوزاري',
 
 
-         // ******************************************Building ***************************************
-         'building_add'=>'اضافة بناية',
-         'building_search'=>'بحث بناية',
-         
-         'Building_reference'=>'الرقم الاحصائي للبناية',
-         
-         //foreign id and reference
-         'Building_Status_id'=>'حالة البناية',
-         'Building_Type_id'=>'نوع البناية',
-         //'Last_School_id'=>'Last School',
+       
 
-         //normal fields
-         
-         'city'=>'المدينة',
-         'district'=>'القضاء',
-         'quarter'=>'الناحية',
-         'latitude'=>'خط العرض',
-         'longitude'=>'خط الطول',
-         'Class_count'=>'عدد الصفوف',
-         'Hall_count'=>'عدد القاعات',
-         'Floor_count'=>'عدد الطوابق',
-         'SanitaryUnits_count'=>'عدد الوحدات الصحية',
-         'Lab_count'=>'عدد المختبرات',
-         'SchoolLength'=>'الطول (متر)',
-         'SchoolWidth'=>'العرض (متر)',
-         'BuildingArea'=>'مساحة البناء (متر)',
-         'BuildingYear'=>'سنة البناء',
-         'ExtendArea'=>'هل توجد مساحة اضافية',
-         'SportArea'=>'هل توجد ساحة رياضية',
-         'GardenArea'=>'هل توجد حديقة',
-    
+    // ******************************************Building ***************************************
+    'building_add' => 'اضافة بناية',
+    'building_search' => 'بحث بناية',
+
+    'building_reference' => 'الرقم الاحصائي للبناية',
+    'building_info' => 'معلومات البناية',
+    'building_address_full' => 'العنوان الكامل',
+    'building_status' => 'الحالة العامة للبناية',
+    'additional_info' => 'معلومات اضافية',
+
+
+
+    //foreign id and reference
+    'building_status_id' => 'حالة البناية',
+
+    'building_type_id' => 'نوع البناية',
+    //'Last_School_id'=>'Last School',
+
+    //normal fields
+
+    'city' => 'المدينة',
+    'district' => 'القضاء',
+    'quarter' => 'الناحية',
+    'latitude' => 'خط العرض',
+    'longitude' => 'خط الطول',
+    'class_count' => 'عدد الصفوف',
+    'hall_count' => 'عدد القاعات',
+    'floor_count' => 'عدد الطوابق',
+    'sanitary_units_count' => 'عدد الوحدات الصحية',
+    'lab_count' => 'عدد المختبرات',
+    'school_length' => 'الطول (متر)',
+    'school_width' => 'العرض (متر)',
+    'building_area' => 'مساحة البناء (متر)',
+    'building_year' => 'سنة البناء',
+    'is_extend_area' => 'هل توجد مساحة اضافية',
+    'is_sport_area' => 'هل توجد ساحة رياضية',
+    'is_garden_area' => 'هل توجد حديقة',
 ];

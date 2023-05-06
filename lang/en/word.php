@@ -198,35 +198,42 @@ return [
     'political_dismissal_ministerial_reappointment_date'=> 'ministerial reappointment order date',
 
 
-    //****************************************** */ Building *******************************************
-    'building_add'=>'Add Building',
-    'building_search'=>'Search Building',
 
-    'Building_reference'=>'Building reference',
+    //****************************************** */ Building *******************************************
+    'building_add' => 'Add Building',
+    'building_search' => 'Search Building',
+
+    'building_reference' => 'Building reference',
+    'building_info' => 'Building info',
+    'building_status' => 'Building Status info',
+    'building_address_full' => 'Full address',
+    'additional_info' => 'addtional information',
+
 
     //foreign id and reference
-    'Building_Status_id'=>'Building Status',
-    'Building_Type_id'=>'Building Type',
+    'building_status_id' => 'Building Status',
+
+    'building_type_id' => 'Building Type',
     //'Last_School_id'=>'Last School',
 
     //normal fields
-    
-    'city'=>'city',
-    'district'=>'district',
-    'quarter'=>'quarter',
-    'latitude'=>'latitude',
-    'longitude'=>'longitude',
-    'Class_count'=>'Class count',
-    'Hall_count'=>'Hall count',
-    'Floor_count'=>'Floor count',
-    'SanitaryUnits_count'=>'Sanitary Units count',
-    'Lab_count'=>'Lab count',
-    'SchoolLength'=>'Building Length',
-    'SchoolWidth'=>'Building Width',
-    'BuildingArea'=>'Building Area',
-    'BuildingYear'=>'Building Year',
-    'ExtendArea'=>'Extend Area Available',
-    'SportArea'=>'Sport Area Available',
-    'GardenArea'=>'Garden Area Available',
+
+    'city' => 'city',
+    'district' => 'district',
+    'quarter' => 'quarter',
+    'latitude' => 'latitude',
+    'longitude' => 'longitude',
+    'class_count' => 'Class count',
+    'hall_count' => 'Hall count',
+    'floor_count' => 'Floor count',
+    'sanitary_units_count' => 'Sanitary Units count',
+    'lab_count' => 'Lab count',
+    'school_length' => 'Building Length',
+    'school_width' => 'Building Width',
+    'building_area' => 'Building Area',
+    'building_year' => 'Building Year',
+    'is_extend_area' => 'Extend Area Available',
+    'is_sport_area' => 'Sport Area Available',
+    'is_garden_area' => 'Garden Area Available',
 
 ];

@@ -13,7 +13,7 @@ class Employee extends Model
 
     protected $table = 'employees';
 
-     public function get_Employee_Status()
+     public function get_employee_status()
     {
         return $this->hasone(Employee_Status::class,'id','employee_status_id');
     }
@@ -23,63 +23,63 @@ class Employee extends Model
         return $this->hasone(Marital_Status::class,'id','marital_status_id');
     }
 
-     public function get_Contract_Type()
+     public function get_contract_type()
     {
         return $this->hasone(Contract_Type::class,'id','contract_type_id');
     }
-    public function get_Employment_Type()
+    public function get_employment_type()
     {
         return $this->hasone(Employment_Type::class,'id','employment_type_id');
     }
-    public function get_Section()
+    public function get_section()
     {
         return $this->hasone(Section::class,'id','section_id');
     }
-    public function get_Sub_Section()
+    public function get_sub_section()
     {
         return $this->hasone(Section::class,'id','sub_section_id');
     }
-    public function get_Sub_Sub_Section()
+    public function get_sub_sub_section()
     {
         return $this->hasone(Sub_Sub_Section::class,'id','sub_sub_section_id');
     }
-    public function get_Assignment_Type()
+    public function get_assignment_type()
     {
         return $this->hasone(Assignment_Type::class,'id','assignment_type_id');
     }
-    public function get_Nationality()
+    public function get_nationality()
     {
         return $this->hasone(Nationality::class,'id','nationality_id');
     }
-    public function get_Mother_Language()
+    public function get_mother_language()
     {
         return $this->hasone(Mother_Language::class,'id','mother_language_id');
     }
-    public function get_Gender()
+    public function get_gender()
     {
         return $this->hasone(Gender::class,'id','gender_id');
     }
-    public function get_Scientific_Title_Stage()
+    public function get_scientific_title_stage()
     {
         return $this->hasone(Scientific_Title_Stage::class,'id','scientific_title_stage_id');
     }
-    public function get_Job_Title()
+    public function get_job_title()
     {
         return $this->hasone(Job_Title::class,'id','job_title_id');
     }
-    public function get_Job_Grade()
+    public function get_job_grade()
     {
     return $this->hasone(Job_Grade::class,'id','job_grade_id');
     }
-    public function get_Career_Stage()
+    public function get_career_stage()
     {
     return $this->hasone(Career_Stage::class,'id','career_stage_id');
     }
-    public function get_Teaching_Specialization()
+    public function get_teaching_specialization()
     {
     return $this->hasone(Teaching_Specialization::class,'id','teaching_specialization_id');
     }
-    public function get_Political_Dismissal_Type()
+    public function get_political_dismissal_type()
     {
     return $this->hasone(Political_Dismissal_Type::class,'id','political_dismissal_type_id');
      }

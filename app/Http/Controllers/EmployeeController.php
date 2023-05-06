@@ -37,8 +37,6 @@ class EmployeeController extends Controller
     public function index(EmployeeDataTable $dataTable)
     {
        return $dataTable->render('employee.index');
-        
-
     }
 
     /**

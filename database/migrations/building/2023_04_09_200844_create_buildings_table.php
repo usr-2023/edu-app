@@ -16,21 +16,26 @@ return new class extends Migration
             $table->timestamps();
 
             //unique
-            $table->integer('Building_reference')->unique()->nullable();
+            $table->integer('building_reference')->unique()->nullable();
             $table->string('url_address','60')->unique()->nullable();
 
 
              //foreign id and reference
 
-            $table->unsignedBigInteger('Building_Type_id')->nullable();
-            $table->foreign('Building_Type_id')->references('id')->on('Building_Type');
+            $table->unsignedBigInteger('building_type_id')->nullable();
+            $table->foreign('building_type_id')->references('id')->on('building_type');
 
-            $table->unsignedBigInteger('Building_Status_id')->nullable();
-            $table->foreign('Building_Status_id')->references('id')->on('Building_Status');
+            $table->unsignedBigInteger('building_status_id')->nullable();
+            $table->foreign('building_status_id')->references('id')->on('building_status');
 /* 
             $table->unsignedBigInteger('Last_School_id')->nullable();
             $table->foreign('Last_School_id')->references('id')->on('Schools');
  */
+            $table->unsignedBigInteger('user_id_create')->nullable();
+            $table->foreign('user_id_create')->references('id')->on('users');
+
+            $table->unsignedBigInteger('user_id_update')->nullable();
+            $table->foreign('user_id_update')->references('id')->on('users');
 
 
             $table->string('city',10)->nullable();
@@ -38,18 +43,18 @@ return new class extends Migration
             $table->string('quarter',10)->nullable();
             $table->string('latitude',16)->nullable();
             $table->string('longitude',16)->nullable();
-            $table->integer('Class_count')->nullable();
-            $table->integer('Hall_count')->nullable();
-            $table->integer('Floor_count')->nullable();
-            $table->integer('Sanitary_Units_count')->nullable();
-            $table->integer('Lab_count')->nullable();
-            $table->integer('School_Length')->nullable();
-            $table->integer('School_Width')->nullable();
-            $table->integer('Building_Area')->nullable();
-            $table->integer('Building_Year')->nullable();
-            $table->integer('is_Extend_Area')->nullable();
-            $table->integer('is_Sport_Area')->nullable();
-            $table->integer('is_Garden_Area')->nullable();
+            $table->integer('class_count')->nullable();
+            $table->integer('hall_count')->nullable();
+            $table->integer('floor_count')->nullable();
+            $table->integer('sanitary_units_count')->nullable();
+            $table->integer('lab_count')->nullable();
+            $table->integer('school_length')->nullable();
+            $table->integer('school_width')->nullable();
+            $table->integer('building_area')->nullable();
+            $table->integer('building_year')->nullable();
+            $table->integer('is_extend_area')->nullable();
+            $table->integer('is_sport_area')->nullable();
+            $table->integer('is_garden_area')->nullable();
             
         });
     }

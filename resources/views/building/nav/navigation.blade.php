@@ -7,13 +7,26 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
-                    <x-nav-link :href="route('building.index')" :active="request()->routeIs('building.index')">
-                        {{ __('word.building_search') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('building.create')" :active="request()->routeIs('building.create')">
-                        {{ __('word.building_add') }}
-                    </x-nav-link>
+                    @can('employee-list')
+                        <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
+                            {{ __('word.employee_search') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('employee-create')
+                        <x-nav-link :href="route('employee.create')" :active="request()->routeIs('employee.create')">
+                            {{ __('word.employee_add') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('building-list')
+                        <x-nav-link :href="route('building.index')" :active="request()->routeIs('building.index')">
+                            {{ __('word.building_search') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('building-create')
+                        <x-nav-link :href="route('building.create')" :active="request()->routeIs('building.create')">
+                            {{ __('word.building_add') }}
+                        </x-nav-link>
+                    @endcan
 
                 </div>
 
