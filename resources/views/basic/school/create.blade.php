@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form method="POST" action="{{ route('school') }}">
+                        <form method="POST" action="{{ route('school.store') }}">
                             @csrf
                             <div class="flex">
                                 <div class=" mx-4 my-4 w-full">
