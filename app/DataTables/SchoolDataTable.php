@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\School\School;
+use App\Models\Basic\School\School;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -35,7 +35,7 @@ class schoolDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\School\school $model
+     * @param \App\Models\Basic\School\school $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(School $model): QueryBuilder

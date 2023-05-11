@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\School\School;
+use App\Models\Basic\School\School;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SchoolRequest extends FormRequest

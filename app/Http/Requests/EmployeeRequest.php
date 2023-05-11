@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Employee\Employee;
+use App\Models\Basic\Employee\Employee;
 use Illuminate\Foundation\Http\FormRequest;
 
 

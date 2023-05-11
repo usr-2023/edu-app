@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Building\Building;
+use App\Models\Basic\Building\Building;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
@@ -29,7 +29,7 @@ class BuildingDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Building\Building $model
+     * @param \App\Models\Basic\Building\Building $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Building $model): QueryBuilder

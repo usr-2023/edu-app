@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Employee\Employee;
+use App\Models\Basic\Employee\Employee;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;

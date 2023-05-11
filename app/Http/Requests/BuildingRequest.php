@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Building\Building;
+use App\Models\Basic\Building\Building;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BuildingRequest extends FormRequest

@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Basic;
 use App\DataTables\BuildingDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BuildingRequest;
-use App\Models\Building\Building;
-use App\Models\Building\Building_Status;
-use App\Models\Building\Building_Type;
+use App\Models\Basic\Building\Building;
+use App\Models\Basic\Building\Building_Status;
+use App\Models\Basic\Building\Building_Type;
 use App\Models\YesNo;
 
 
