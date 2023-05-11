@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <x-slot name="header">
-        @include('building.nav.navigation')
+        @include('basic.nav.navigation')
     </x-slot>
 
 

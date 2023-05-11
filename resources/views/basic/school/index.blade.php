@@ -2,7 +2,7 @@
 
     <x-slot name="header">
 
-        @include('school.nav.navigation')
+        @include('basic.nav.navigation')
 
     </x-slot>
 

@@ -33,6 +33,8 @@ return [
     // dashboard
     'dashboard_msg' => 'Welcome to the website of the General Directorate of Education in Najaf Governorate',
     'dashboard_title'=> 'Welcome',
+    // basic info
+    'basic_msg' => 'welcome in the page of basic information',
 
     //************************************* user        ******************************************* 
     //fields

@@ -32,7 +32,7 @@
                             {{ __('word.School_search') }}
                         </x-nav-link>
                     @endcan
-                    @can('school-list')
+                    @can('school-create')
                         <x-nav-link :href="route('school.create')" :active="request()->routeIs('school.create')">
                             {{ __('word.School_add') }}
                         </x-nav-link>

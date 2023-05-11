@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Basic;
 use App\Http\Requests\SchoolRequest;
 use App\DataTables\schoolDataTable;
+use App\Http\Controllers\Controller;
 use App\Models\School\duality;
 use App\Models\School\main_section;
 use App\Models\School\School;
@@ -21,7 +22,7 @@ class SchoolController extends Controller
      */
     public function index(schoolDataTable $dataTable)
     {
-       return $dataTable->render('school.index');
+       return $dataTable->render('basic.school.index');
     }
 
     /**
@@ -38,7 +39,7 @@ class SchoolController extends Controller
         $school_time=school_time::all();
         $provinces=Province::all();
         $yesnos = YesNo::all();
-        return view('school.create',compact(['duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+        return view('basic.school.create',compact(['duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
     }
 
     /**
@@ -50,7 +51,7 @@ class SchoolController extends Controller
          School::create($request->validated());
 
         //inform the user 
-        return redirect()->route('school.index')
+        return redirect()->route('basic.school.index')
                         ->with('success','تمت أضافة المدرسة بنجاح ');
     }
 
@@ -62,11 +63,11 @@ class SchoolController extends Controller
     {
         $school = School::where('url_address','=',$url_address) -> first();
         if (isset($school)) {
-            return view('school.show', compact('school'));
+            return view('basic.school.show', compact('school'));
         }
         else{
             $ip = $this->getIPAddress();
-             return view('school.accessdenied' , ['ip'=>$ip]);
+             return view('basic.school.accessdenied' , ['ip'=>$ip]);
         }
     }
 
@@ -89,12 +90,12 @@ class SchoolController extends Controller
 
         $school = School::where('url_address','=',$url_address) -> first();
          if (isset($school)) {
-            return view('school.edit',compact(['school','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+            return view('basic.school.edit',compact(['school','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
      
          }
          else{
             $ip = $this->getIPAddress();
-             return view('school.accessdenied' , ['ip'=>$ip]);
+             return view('basic.school.accessdenied' , ['ip'=>$ip]);
          }
     }
 
@@ -105,7 +106,7 @@ class SchoolController extends Controller
     {
         School::where('url_address',$url_address)->update($request->validated());
         // Notify related users
-        return redirect()->route('school.index')
+        return redirect()->route('basic.school.index')
         ->with('success','تمت تعديل بيانات المدرسة بنجاح ');
     }
 
@@ -115,7 +116,7 @@ class SchoolController extends Controller
     public function destroy(string $url_address)
     {
         $affected = School::where('url_address',$url_address)->delete();
-        return redirect()->route('school.index')
+        return redirect()->route('basic.school.index')
                             ->with('success','تمت حذف بيانات المدرسة بنجاح ');
     }
 

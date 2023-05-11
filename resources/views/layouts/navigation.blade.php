@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     @can('dashboard-info')
-                        <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
+                        <x-nav-link :href="route('basic.index')" :active="request()->routeIs('basic.index')">
                             {{ __('word.info') }}
                         </x-nav-link>
                     @endcan

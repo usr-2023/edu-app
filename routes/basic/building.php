@@ -1,10 +1,10 @@
 
 <?php
-use App\Http\Controllers\BuildingController;
+use App\Http\Controllers\Basic\BuildingController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'building'], function() {
+Route::group(['prefix' => 'basic/building'], function() {
 
     //index
         Route::get('/',[BuildingController::class,'index'])->middleware(['auth','verified','permission:building-list'])->name('building.index');

@@ -3,7 +3,7 @@
     <x-slot name="header">
 
 
-        @include('school.nav.navigation')
+        @include('basic.nav.navigation')
 
         @if ($message = Session::get('success'))
             <div class="alert alert-success">

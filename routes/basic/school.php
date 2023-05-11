@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\Basic\SchoolController;
 use Illuminate\Support\Facades\Route;
 
 
 
 
-Route::group(['prefix' => 'school'], function() {
+Route::group(['prefix' => 'basic/school'], function() {
 
     //index
         Route::get('/',[SchoolController::class,'index'])->middleware(['auth','verified','permission:school-list'])->name('school.index');

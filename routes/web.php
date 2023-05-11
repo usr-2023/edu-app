@@ -32,14 +32,18 @@ require __DIR__.'/role.php';
 //notification routes
 require __DIR__.'/notification.php';
 
+//basic group
+Route::get('/basic/index', function () {
+    return view('basic.index');
+})->middleware(['auth', 'verified','permission:dashboard-info'])->name('basic.index');
 //employee routes
-require __DIR__.'/employee.php';
+require __DIR__.'/basic/employee.php';
 
 //School routes
-require __DIR__.'/school.php';
+require __DIR__.'/basic/school.php';
 
 //building routes
-require __DIR__.'/building.php';
+require __DIR__.'/basic/building.php';
 
 //financial routes
 require __DIR__.'/financial.php';

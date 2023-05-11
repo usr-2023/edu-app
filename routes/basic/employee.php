@@ -1,9 +1,9 @@
 <?php
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Basic\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'employee'], function() {
+Route::group(['prefix' => 'basic/employee'], function() {
 
     //index
         Route::get('/',[EmployeeController::class,'index'])->middleware(['auth','verified','permission:employee-list'])->name('employee.index');

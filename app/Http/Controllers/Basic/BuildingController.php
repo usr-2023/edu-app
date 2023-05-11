@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Basic;
 
 use App\DataTables\BuildingDataTable;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\BuildingRequest;
 use App\Models\Building\Building;
 use App\Models\Building\Building_Status;
@@ -17,7 +18,7 @@ class BuildingController extends Controller
      */
     public function index(BuildingDataTable $dataTable)
     {
-        return $dataTable->render('building.index');
+        return $dataTable->render('basic.building.index');
     }
 
     /**
@@ -29,7 +30,7 @@ class BuildingController extends Controller
         $building_statuses = Building_Status::all();
         $building_types = Building_Type::all();
         $yesnos = YesNo::all(); //add this line & use App\Models\YesNo; 
-        return view('building.create', compact(['building_statuses', 'building_types', 'yesnos']));
+        return view('basic.building.create', compact(['building_statuses', 'building_types', 'yesnos']));
     }
 
     /**
@@ -40,7 +41,7 @@ class BuildingController extends Controller
         Building::create($request->validated());
 
         //inform the user 
-        return redirect()->route('building.index')
+        return redirect()->route('basic.building.index')
             ->with('success', 'تمت أضافة البناية بنجاح ');
     }
 
@@ -51,10 +52,10 @@ class BuildingController extends Controller
     {
         $building = Building::where('url_address', '=', $url_address)->first();
         if (isset($building)) {
-            return view('building.show', compact('building'));
+            return view('basic.building.show', compact('building'));
         } else {
             $ip = $this->getIPAddress();
-            return view('building.accessdenied', ['ip' => $ip]);
+            return view('basic.building.accessdenied', ['ip' => $ip]);
         }
     }
 
@@ -69,10 +70,10 @@ class BuildingController extends Controller
 
         $building = Building::where('url_address', '=', $url_address)->first();
         if (isset($building)) {
-            return view('building.edit', compact('building', 'building_statuses', 'building_types', 'yesnos'));
+            return view('basic.building.edit', compact('building', 'building_statuses', 'building_types', 'yesnos'));
         } else {
             $ip = $this->getIPAddress();
-            return view('building.accessdenied', ['ip' => $ip]);
+            return view('basic.building.accessdenied', ['ip' => $ip]);
         }
     }
 
@@ -86,7 +87,7 @@ class BuildingController extends Controller
 
 
         //inform the user 
-        return redirect()->route('building.index')
+        return redirect()->route('basic.building.index')
             ->with('success', 'تمت تعديل بيانات البناية بنجاح ');
     }
 
@@ -96,7 +97,7 @@ class BuildingController extends Controller
     public function destroy(string $url_address)
     {
         $affected = Building::where('url_address', $url_address)->delete();
-        return redirect()->route('building.index')
+        return redirect()->route('basic.building.index')
             ->with('success', 'تمت حذف بيانات البناية بنجاح ');
     }
 
