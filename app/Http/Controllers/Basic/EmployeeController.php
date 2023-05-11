@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Basic;
 
 use App\DataTables\EmployeeDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EmployeeRequest;
+use App\Http\Requests\Basic\EmployeeRequest;
 use App\Models\Basic\Employee\Assignment_Type;
 use App\Models\Basic\Employee\Career_Stage;
 use App\Models\Basic\Employee\Contract_Type;
@@ -86,7 +86,7 @@ class EmployeeController extends Controller
         Notification::send(User::all(),new EmployeeCreatedNotify($request));
    
         //inform the user 
-        return redirect()->route('basic.employee.index')
+        return redirect()->route('employee.index')
                         ->with('success','تمت أضافة الموظف بنجاح ');
     }
 
@@ -159,7 +159,7 @@ class EmployeeController extends Controller
         // Notify related users
         Notification::send(User::all(),new EmployeeUpdateNotify($request));
         //inform the user 
-        return redirect()->route('basic.employee.index')
+        return redirect()->route('employee.index')
         ->with('success','تمت تعديل بيانات الموظف بنجاح ');
     
     }
@@ -170,7 +170,7 @@ class EmployeeController extends Controller
     public function destroy(string $url_address)
     {
         $affected = Employee::where('url_address',$url_address)->delete();
-        return redirect()->route('basic.employee.index')
+        return redirect()->route('employee.index')
                             ->with('success','تمت حذف بيانات الموظف بنجاح ');
     }
 

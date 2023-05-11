@@ -21,7 +21,7 @@ class BuildingDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
            // ->addColumn('action', 'building.action')
-            return   (new EloquentDataTable($query)) ->addColumn('action','building.action')
+            return   (new EloquentDataTable($query)) ->addColumn('action','basic.building.action')
             ->rawColumns(['action'])
             ->setRowId('id');
     }

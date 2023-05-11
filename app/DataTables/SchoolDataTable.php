@@ -26,7 +26,7 @@ class schoolDataTable extends DataTable
     {
            // ->addColumn('action', 'building.action')
 
-            return   (new EloquentDataTable($query)) ->addColumn('action','school.action')
+            return   (new EloquentDataTable($query)) ->addColumn('action','basic.school.action')
             ->rawColumns(['action'])
             ->setRowId('id');
   

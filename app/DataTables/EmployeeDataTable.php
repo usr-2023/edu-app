@@ -22,7 +22,7 @@ class EmployeeDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
            // ->addColumn('action', 'employee.action')
-            return   (new EloquentDataTable($query)) ->addColumn('action','employee.action')
+            return   (new EloquentDataTable($query)) ->addColumn('action','basic.employee.action')
             ->rawColumns(['action'])
             ->setRowId('id');   
     }

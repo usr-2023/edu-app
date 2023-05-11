@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Basic;
 
 use App\DataTables\BuildingDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BuildingRequest;
+use App\Http\Requests\Basic\BuildingRequest;
 use App\Models\Basic\Building\Building;
 use App\Models\Basic\Building\Building_Status;
 use App\Models\Basic\Building\Building_Type;
@@ -41,7 +41,7 @@ class BuildingController extends Controller
         Building::create($request->validated());
 
         //inform the user 
-        return redirect()->route('basic.building.index')
+        return redirect()->route('building.index')
             ->with('success', 'تمت أضافة البناية بنجاح ');
     }
 
@@ -87,7 +87,7 @@ class BuildingController extends Controller
 
 
         //inform the user 
-        return redirect()->route('basic.building.index')
+        return redirect()->route('building.index')
             ->with('success', 'تمت تعديل بيانات البناية بنجاح ');
     }
 
@@ -97,7 +97,7 @@ class BuildingController extends Controller
     public function destroy(string $url_address)
     {
         $affected = Building::where('url_address', $url_address)->delete();
-        return redirect()->route('basic.building.index')
+        return redirect()->route('building.index')
             ->with('success', 'تمت حذف بيانات البناية بنجاح ');
     }
 

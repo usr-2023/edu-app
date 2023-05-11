@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Basic;
-use App\Http\Requests\SchoolRequest;
+use App\Http\Requests\Basic\SchoolRequest;
 use App\DataTables\schoolDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Basic\School\duality;
@@ -51,7 +51,7 @@ class SchoolController extends Controller
          School::create($request->validated());
 
         //inform the user 
-        return redirect()->route('basic.school.index')
+        return redirect()->route('school.index')
                         ->with('success','تمت أضافة المدرسة بنجاح ');
     }
 
@@ -106,7 +106,7 @@ class SchoolController extends Controller
     {
         School::where('url_address',$url_address)->update($request->validated());
         // Notify related users
-        return redirect()->route('basic.school.index')
+        return redirect()->route('school.index')
         ->with('success','تمت تعديل بيانات المدرسة بنجاح ');
     }
 
@@ -116,7 +116,7 @@ class SchoolController extends Controller
     public function destroy(string $url_address)
     {
         $affected = School::where('url_address',$url_address)->delete();
-        return redirect()->route('basic.school.index')
+        return redirect()->route('school.index')
                             ->with('success','تمت حذف بيانات المدرسة بنجاح ');
     }
 
