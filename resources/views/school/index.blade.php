@@ -2,7 +2,7 @@
 
     <x-slot name="header">
 
-        @include('financial.nav.navigation')
+        @include('school.nav.navigation')
 
     </x-slot>
 
@@ -15,13 +15,20 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
-                    @foreach ($users as $user)
-                        <option value="">{{ __($user->name) }}</option>
-                    @endforeach
+                    <table>
+                        {!! $dataTable->table() !!}
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $.fn.dataTable.ext.errMode = 'none';
+    </script>
+
+
+
+    {!! $dataTable->scripts() !!}
 
 </x-app-layout>

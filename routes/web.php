@@ -35,6 +35,9 @@ require __DIR__.'/notification.php';
 //employee routes
 require __DIR__.'/employee.php';
 
+//School routes
+require __DIR__.'/school.php';
+
 //building routes
 require __DIR__.'/building.php';
 

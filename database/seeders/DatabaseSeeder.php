@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             'employee-create',
             'employee-update',
             'employee-delete',
+            
 
             //building permissions
             'building-list',
@@ -80,7 +81,6 @@ class DatabaseSeeder extends Seeder
              'password' => bcrypt('12345678'),
              'department_id' => 1,
              'url_address'=> $this->get_random_string(60),
-             'roles_name' => ["admin"],
              'Status' => 'active',
         ]);
          

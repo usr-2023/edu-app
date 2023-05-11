@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FinancialController extends Controller
@@ -9,7 +10,8 @@ class FinancialController extends Controller
     //
     public function index()
     {
-       return view('financial.index');
+        $users = User::select('id','name')->where('department_id',1)->role('admin')->get();
+       return view('financial.index',compact(['users']));
         
     }
     public function add_payroll()

@@ -37,7 +37,7 @@ class Employee extends Model
     }
     public function get_sub_section()
     {
-        return $this->hasone(Section::class,'id','sub_section_id');
+        return $this->hasone(Sub_Section::class,'id','sub_section_id');
     }
     public function get_sub_sub_section()
     {

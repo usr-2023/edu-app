@@ -28,7 +28,6 @@ class User extends Authenticatable
         'password',
         'department_id',
         'url_address',
-        'roles_name',
         'Status',
     ];
 

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->integer('department_id');
             $table->string('url_address','60')->unique()->nullable();
-            $table->text('roles_name');
             $table->string('Status', 10)->default('active');
             $table->rememberToken();
             $table->timestamps();

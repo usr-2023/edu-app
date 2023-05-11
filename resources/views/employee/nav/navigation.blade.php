@@ -6,6 +6,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
                     @can('employee-list')
                         <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
                             {{ __('word.employee_search') }}
@@ -26,6 +27,17 @@
                             {{ __('word.building_add') }}
                         </x-nav-link>
                     @endcan
+                    @can('school-list')
+                        <x-nav-link :href="route('school.index')" :active="request()->routeIs('school.index')">
+                            {{ __('word.School_search') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('school-list')
+                        <x-nav-link :href="route('school.create')" :active="request()->routeIs('school.create')">
+                            {{ __('word.School_add') }}
+                        </x-nav-link>
+                    @endcan
+
                 </div>
 
             </div>

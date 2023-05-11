@@ -48,7 +48,6 @@ class UserController extends Controller
             'email' => $request->email,
             'department_id'=> $request->department_id,
             'Status'=> $request->Status,
-            'roles_name'=> collect($request->role_name),
             'url_address'=> $this->get_random_string(60),
             'password' => Hash::make($request->password),
         ]);
