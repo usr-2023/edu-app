@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('name','50');
             $table->string('url_address','60');
             $table->string('counting_number','7');
+            $table->unsignedBigInteger('user_id_create')->nullable();
+            $table->foreign('user_id_create')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id_update')->nullable();
+            $table->foreign('user_id_update')->references('id')->on('users');
         });
     }
 

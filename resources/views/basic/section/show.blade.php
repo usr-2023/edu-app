@@ -26,6 +26,21 @@
                         </div>
 
                     </div>
+                    <div class="flex">
+                        @if (isset($section->user_id_create))
+                            <div class="mx-4 my-4 ">
+                                {{ __('word.user_create') }} {{ $section->get_user_create->name }}
+                                {{ $section->created_at }}
+                            </div>
+                        @endif
+
+                        @if (isset($section->user_id_update))
+                            <div class="mx-4 my-4 ">
+                                {{ __('word.user_update') }} {{ $section->get_user_update->name }}
+                                {{ $section->updated_at }}
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

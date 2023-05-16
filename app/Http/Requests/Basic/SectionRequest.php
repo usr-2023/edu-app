@@ -26,13 +26,23 @@ class SectionRequest extends FormRequest
             'name'=>['required'],
             'url_address'=>['required'],
             'counting_number' => ['required',\Illuminate\Validation\Rule::unique(Section::class, 'counting_number')->ignore($this->id) , 'digits:7'],
-           
+            'user_id_create'=>['Numeric'],
+            'user_id_update'=>['Numeric'],
         ];
     }
 
      protected function prepareForValidation()
     {
         $this->mergeIfMissing(['url_address' => $this->get_random_string(60)]);
+        //add user_id base on route
+         if (request()->routeIs('section.store')) { 
+            $this->mergeIfMissing(['user_id_create' => auth()->user()->id ]);
+
+         }elseif(request()->routeIs('section.update')) 
+        {
+            $this->mergeIfMissing(['user_id_update' =>  auth()->user()->id ]);
+        
+        }
 
     }
 
