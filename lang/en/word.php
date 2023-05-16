@@ -99,9 +99,6 @@ return [
     'employee_status_id'=> 'employee status',
     'contract_type_id'=> 'contract type',
     'employment_type_id'=> 'employment type',
-    'section_id'=> 'section',
-    'sub_section_id'=> 'sub section',
-    'sub_sub_section_id'=> 'ub sub section',
     'assignment_type_id'=> 'assignment type',
     'nationality_id'=> 'nationality',
     'mother_language_id'=> 'mother language',
@@ -271,6 +268,12 @@ return [
     'established_year'=>'Established Year',
     'occupied_rooms_number'=>'Occupied Rooms Number',
     'is_there_airconditions'=>'Is There Airconditions',
+
+    //******************************** Section********************************** */
+        'section_add'=>'Add Section',
+         'section_search'=>'Search Section',
+         'section_name'=>'Section Name',
+         'section_counting_number'=>'Section Counting Number',
 
 
 ];

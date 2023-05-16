@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('section', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('section','20');
+            $table->string('name','50');
+            $table->string('url_address','60');
+            $table->string('counting_number','7');
         });
     }
 

@@ -294,45 +294,6 @@
                                     <x-input-error :messages="$errors->get('employment_type_id')" class="w-full mt-2" />
                                 </div>
 
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="section_id" class="w-full mb-1" :value="__('word.section_id')" />
-                                    <select id="section_id" class="w-full block mt-1 " name="section_id">
-                                        @foreach ($sections as $section)
-                                            <option value="{{ $section->id }}"
-                                                {{ $employee->section_id == $section->id ? 'selected' : '' }}>
-                                                {{ $section->section }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <x-input-error :messages="$errors->get('section_id')" class="w-full mt-2" />
-                                </div>
-
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="sub_section_id" class="w-full mb-1" :value="__('word.sub_section_id')" />
-                                    <select id="sub_section_id" class="w-full block mt-1 " name="sub_section_id">
-                                        @foreach ($sub_sections as $sub_section)
-                                            <option value="{{ $sub_section->id }}"
-                                                {{ $employee->sub_section_id == $sub_section->id ? 'selected' : '' }}>
-                                                {{ $sub_section->sub_section }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <x-input-error :messages="$errors->get('sub_section_id')" class="w-full mt-2" />
-                                </div>
-
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="sub_sub_section_id" class="w-full mb-1" :value="__('word.sub_sub_section_id')" />
-                                    <select id="sub_sub_section_id" class="w-full block mt-1 "
-                                        name="sub_sub_section_id">
-                                        @foreach ($sub_sub_sections as $sub_sub_section)
-                                            <option value="{{ $sub_sub_section->id }}"
-                                                {{ $employee->sub_sub_section_id == $sub_sub_section->id ? 'selected' : '' }}>
-                                                {{ $sub_sub_section->sub_sub_section }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <x-input-error :messages="$errors->get('sub_sub_section_id')" class="w-full mt-2" />
-                                </div>
 
                             </div>
 

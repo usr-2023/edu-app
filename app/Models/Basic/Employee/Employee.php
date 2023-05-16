@@ -31,18 +31,7 @@ class Employee extends Model
     {
         return $this->hasone(Employment_Type::class,'id','employment_type_id');
     }
-    public function get_section()
-    {
-        return $this->hasone(Section::class,'id','section_id');
-    }
-    public function get_sub_section()
-    {
-        return $this->hasone(Sub_Section::class,'id','sub_section_id');
-    }
-    public function get_sub_sub_section()
-    {
-        return $this->hasone(Sub_Sub_Section::class,'id','sub_sub_section_id');
-    }
+    
     public function get_assignment_type()
     {
         return $this->hasone(Assignment_Type::class,'id','assignment_type_id');
@@ -104,9 +93,6 @@ class Employee extends Model
         'employee_status_id',
         'contract_type_id',
         'employment_type_id',
-        'section_id',
-        'sub_section_id',
-        'sub_sub_section_id',
         'assignment_type_id',
         'nationality_id',
         'mother_language_id',

@@ -50,6 +50,13 @@ class DatabaseSeeder extends Seeder
             'school-update',
             'school-delete',
 
+            //section permissions
+            'section-list',
+            'section-show',
+            'section-create',
+            'section-update',
+            'section-delete',
+
             // user permissions
             'user-list',
             'user-show',

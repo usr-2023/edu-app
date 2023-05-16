@@ -279,32 +279,6 @@
 
                                 </div>
 
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="section_id" class="w-full mb-1" :value="__('word.section_id')" />
-                                    <p id="section_id" class="w-full h-9 block mt-1 " type="text"
-                                        name="section_id">
-                                        {{ $employee->get_Section->section }}
-                                    </p>
-
-                                </div>
-
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="sub_section_id" class="w-full mb-1" :value="__('word.sub_section_id')" />
-                                    <p id="sub_section_id" class="w-full h-9 block mt-1 " type="text"
-                                        name="sub_section_id">
-                                        {{ $employee->get_Sub_Section->sub_section }}
-                                    </p>
-
-                                </div>
-
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="sub_sub_section_id" class="w-full mb-1" :value="__('word.sub_sub_section_id')" />
-                                    <p id="sub_sub_section_id" class="w-full h-9 block mt-1 " type="text"
-                                        name="sub_sub_section_id">
-                                        {{ $employee->get_Sub_Sub_Section->sub_sub_section }}
-                                    </p>
-
-                                </div>
 
                             </div>
 

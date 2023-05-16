@@ -12,6 +12,7 @@
                     <div>
                         <form method="POST" action="{{ route('school.update', $school->url_address) }}">
                             @csrf
+                            @method('patch')
                             <input type="hidden" id="id" name="id" value="{{ $school->id }}">
                             <input type="hidden" id="url_address" name="url_address"
                                 value="{{ $school->url_address }}">
@@ -28,7 +29,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="current_name" class="w-full mb-1" :value="__('word.School_name')" />
                                     <x-text-input id="current_name" class="w-full block mt-1" type="text"
-                                        name="current_name" value="{{ old('current_name') ?? $school->current_name }}" />
+                                        name="current_name"
+                                        value="{{ old('current_name') ?? $school->current_name }}" />
                                     <x-input-error :messages="$errors->get('current_name')" class="w-full mt-2" />
                                 </div>
 
@@ -48,7 +50,8 @@
                                 <div class=" mx-4 my-4 w-full" id="gs">
                                     <x-input-label for="guest_school" class="w-full mb-1" :value="__('word.Guest_school')" />
                                     <x-text-input id="guest_school" class="w-full block mt-1" type="text"
-                                        name="guest_school" value="{{ old('guest_school') ?? $school->guest_school }}" />
+                                        name="guest_school"
+                                        value="{{ old('guest_school') ?? $school->guest_school }}" />
                                     <x-input-error :messages="$errors->get('guest_school')" class="w-full mt-2" />
                                 </div>
 
@@ -367,7 +370,8 @@
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="halls_count" class="w-full mb-1" :value="__('word.halls_count')" />
                                     <x-text-input id="halls_count" class="w-full block mt-1" type="text"
-                                        name="halls_count" value="{{ old('halls_count') ?? $school->halls_count }}" />
+                                        name="halls_count"
+                                        value="{{ old('halls_count') ?? $school->halls_count }}" />
                                     <x-input-error :messages="$errors->get('halls_count')" class="w-full mt-2" />
                                 </div>
 

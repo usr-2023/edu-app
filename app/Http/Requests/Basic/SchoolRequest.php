@@ -24,17 +24,17 @@ class SchoolRequest extends FormRequest
     {
         return [
             'id',
-         // 'school_id'=>['required'],
+            // 'school_id'=>['required'],
             'url_address'=>['required'],
             'counting_number' => ['required',\Illuminate\Validation\Rule::unique(School::class, 'counting_number')->ignore($this->id) , 'digits:7'],
             //foreign id and reference
-         'school_property_id'=>['required'],
-           'duality_id'=>['required'],
-           'school_invironment_id'=>['required'],
-           'school_time_id'=>['required'],
+            'school_property_id'=>['required'],
+            'duality_id'=>['required'],
+            'school_invironment_id'=>['required'],
+            'school_time_id'=>['required'],
+            'main_section_id'=>['required'],
             'school_gender_id'=>['required'],
             'school_stage_id'=>['required'],
-           'main_section_id'=>['required'],
 
             //normal fields
             

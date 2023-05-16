@@ -110,9 +110,6 @@ return [
         'employee_status_id'=> 'الحالة الوظيفية',
         'contract_type_id'=> 'نوع التعاقد',
         'employment_type_id'=> 'نوع التوظيف',
-        'section_id'=> 'المديرية',
-        'sub_section_id'=> 'الدائرة',
-        'sub_sub_section_id'=> 'القسم',
         'assignment_type_id'=> 'نوع التعيين',
         'nationality_id'=> 'القومية',
         'mother_language_id'=> 'اللغة الام',
@@ -283,5 +280,13 @@ return [
          'established_year'=>'سنة التأسيس',
          'occupied_rooms_number'=>'عدد الغرف المشغولة',
          'is_there_airconditions'=>'هل يوجد اجهزة تكييف',
+
+         //******************************* Section************************************ */
+        
+        'section_add'=>'اضافة قسم / شعبة',
+         'section_search'=>'بحث قسم  / شعبة',
+         'section_name'=>'اسم القسم  / شعبة',
+         'section_counting_number'=>'الرقم الاحصائي للقسم  / شعبة',
+
 
 ];

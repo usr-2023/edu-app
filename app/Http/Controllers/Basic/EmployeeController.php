@@ -19,9 +19,6 @@ use App\Models\Basic\Employee\Mother_Language;
 use App\Models\Basic\Employee\Nationality;
 use App\Models\Basic\Employee\Political_Dismissal_Type;
 use App\Models\Basic\Employee\Scientific_Title_Stage;
-use App\Models\Basic\Employee\Section;
-use App\Models\Basic\Employee\Sub_Section;
-use App\Models\Basic\Employee\Sub_Sub_Section;
 use App\Models\Basic\Employee\Teaching_Specialization;
 use App\Models\User;
 use App\Models\YesNo;
@@ -50,9 +47,6 @@ class EmployeeController extends Controller
         $contract_types = Contract_Type::all();
         $employee_statuss = Employee_Status::all();
         $employment_types = Employment_Type::all();
-        $sections = Section::all();
-        $sub_sections = Sub_Section::all();
-        $sub_sub_sections = Sub_Sub_Section::all();
         $assignment_types = Assignment_Type::all();
         $nationalitys = Nationality::all();
         $mother_languages = Mother_Language::all();
@@ -71,7 +65,7 @@ class EmployeeController extends Controller
 
        
 
-        return view('basic.employee.create',compact(['contract_types','employee_statuss','employment_types','sections','sub_sections','sub_sub_sections','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
+        return view('basic.employee.create',compact(['contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
     }
 
     /**
@@ -118,9 +112,6 @@ class EmployeeController extends Controller
          $contract_types = Contract_Type::all();
          $employee_statuss = Employee_Status::all();
          $employment_types = Employment_Type::all();
-         $sections = Section::all();
-         $sub_sections = Sub_Section::all();
-         $sub_sub_sections = Sub_Sub_Section::all();
          $assignment_types = Assignment_Type::all();
          $nationalitys = Nationality::all();
          $mother_languages = Mother_Language::all();
@@ -137,7 +128,7 @@ class EmployeeController extends Controller
  
          $employee = Employee::where('url_address','=',$url_address) -> first();
          if (isset($employee)) {
-            return view('basic.employee.edit',compact(['employee','contract_types','employee_statuss','employment_types','sections','sub_sections','sub_sub_sections','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
+            return view('basic.employee.edit',compact(['employee','contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
      
          }
          else{
