@@ -69,7 +69,7 @@ class School extends Model
 
         //Normal Fields
         'counting_number',
-        'current_name',
+        'name',
         'is_main_school',
         'guest_school',
         'personale_design_number',

@@ -275,5 +275,16 @@ return [
          'section_name'=>'Section Name',
          'section_counting_number'=>'Section Counting Number',
 
+        //******************************* facility************************************ */
+        
+        'facility_add'=>'Add Facility',
+         'facility_search'=>'Search Facility',
+         'facility_name'=>'Facility Name',
+         'facility_work_address'=>'Work Address',
+         'facility_group_id'=>'Facility Group',
+         'facility_type_id'=>'Facility Type',
+         'facility_link_id'=>'Facility',
+         'facility_choose'=>'Choose Facility',
+         'facility_choose_type'=>'Choose Facility Type',
 
 ];

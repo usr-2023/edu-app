@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Basic\Facility\Facility;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class FinancialController extends Controller
 
     public function test()
     {
-       return view('financial.test');
+        $tests = Facility::all();
+       return view('financial.test',compact('tests'));
         
     }
 }

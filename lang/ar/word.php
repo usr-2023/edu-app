@@ -288,5 +288,18 @@ return [
          'section_name'=>'اسم القسم  / شعبة',
          'section_counting_number'=>'الرقم الاحصائي للقسم  / شعبة',
 
+        //******************************* facility************************************ */
+        
+        'facility_add'=>'أضافة دائرة',
+         'facility_search'=>'بحث دائرة',
+         'facility_name'=>'اسم الدائرة',
+         'facility_work_address'=>'مقر العمل',
+         'facility_type_id'=>'نوع الدائرة',
+         'facility_group_id'=>'مجموعة الدائرة',
+         'facility_link_id'=>'الدائرة',
+         'facility_choose'=>'اختر الدائرة',
+         'facility_choose_type'=>'اختر نوع الدائرة',
+
+
 
 ];

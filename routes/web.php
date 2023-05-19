@@ -48,6 +48,9 @@ require __DIR__.'/basic/building.php';
 //basic info section routes
 require __DIR__.'/basic/section.php';
 
+//basic info facility routes
+require __DIR__.'/basic/facility.php';
+
 //financial routes
 require __DIR__.'/financial.php';
 

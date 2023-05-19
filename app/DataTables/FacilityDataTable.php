@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Basic\Section\Section;
+use App\Models\Basic\Facility\Facility;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
@@ -13,7 +13,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class SectionDataTable extends DataTable
+class FacilityDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -24,19 +24,19 @@ class SectionDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'basic.section.action')
+            ->addColumn('action', 'basic.facility.action')
             ->setRowId('id');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Basic\Section\Section $model
+     * @param \App\Models\Basic\Facility\Facility $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Section $model): QueryBuilder
+    public function query(Facility $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['get_department','get_facility_type','get_facility_group','get_facility_link']);
     }
 
     /**
@@ -47,7 +47,7 @@ class SectionDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('section-table')
+                    ->setTableId('facility-table')
                     ->language([
                         'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
@@ -80,8 +80,12 @@ class SectionDataTable extends DataTable
                   ->width(60)
                   ->title(__('word.action'))
                   ->addClass('text-center'),
-            Column::make('counting_number')->title(__('word.section_counting_number'))->class('text-center'),
-            Column::make('name')->title(__('word.section_name'))->class('text-center'),
+            Column::make('name')->title(__('word.facility_name'))->class('text-center'),
+            Column::make('work_address')->title(__('word.facility_work_address'))->class('text-center'),
+            Column::make('get_facility_type')->title(__('word.facility_type_id'))->data('get_facility_type.facility_type')->name('get_facility_type.facility_type')->class('text-center'),
+            Column::make('get_department')->title(__('word.department_id'))->data('get_department.department')->name('get_department.department')->class('text-center'),
+            Column::make('get_facility_group')->title(__('word.facility_group_id'))->data('get_facility_group.facility_group')->name('get_facility_group.facility_group')->class('text-center'),
+            Column::make('get_facility_link')->title(__('word.facility_link_id'))->data('get_facility_link.counting_number')->name('get_facility_link.counting_number')->class('text-center'),
         ];
     }
 
@@ -92,6 +96,6 @@ class SectionDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Section_' . date('YmdHis');
+        return 'Facility_' . date('YmdHis');
     }
 }

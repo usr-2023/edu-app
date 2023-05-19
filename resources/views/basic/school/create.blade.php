@@ -22,10 +22,10 @@
 
 
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="current_name" class="w-full mb-1" :value="__('word.School_name')" />
-                                    <x-text-input id="current_name" class="w-full block mt-1" type="text"
-                                        name="current_name" value="{{ old('current_name') }}" />
-                                    <x-input-error :messages="$errors->get('current_name')" class="w-full mt-2" />
+                                    <x-input-label for="name" class="w-full mb-1" :value="__('word.School_name')" />
+                                    <x-text-input id="name" class="w-full block mt-1" type="text" name="name"
+                                        value="{{ old('name') }}" />
+                                    <x-input-error :messages="$errors->get('name')" class="w-full mt-2" />
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">

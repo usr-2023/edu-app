@@ -29,15 +29,6 @@ return new class extends Migration
             $table->unsignedBigInteger('employment_type_id')->nullable();
             $table->foreign('employment_type_id')->references('id')->on('employment_type');
 
-            $table->unsignedBigInteger('section_id')->nullable();
-            $table->foreign('section_id')->references('id')->on('section');
-
-            $table->unsignedBigInteger('sub_section_id')->nullable();
-            $table->foreign('sub_section_id')->references('id')->on('sub_section');
-
-            $table->unsignedBigInteger('sub_sub_section_id')->nullable();
-            $table->foreign('sub_sub_section_id')->references('id')->on('sub_sub_section');
-
             $table->unsignedBigInteger('marital_status_id')->nullable();
             $table->foreign('marital_status_id')->references('id')->on('marital_status');
 

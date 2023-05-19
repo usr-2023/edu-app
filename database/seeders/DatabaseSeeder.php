@@ -4,6 +4,15 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Basic\Facility\Facility_Group;
+use App\Models\Basic\Facility\Facility_Type;
+use App\Models\Basic\School\Duality;
+use App\Models\Basic\School\Main_Section;
+use App\Models\Basic\School\School_Gender;
+use App\Models\Basic\School\School_Invironment;
+use App\Models\Basic\School\School_Property;
+use App\Models\Basic\School\School_Stage;
+use App\Models\Basic\School\School_Time;
 use App\Models\Department;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -17,7 +26,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // add Permissions
         $permissions = [
             //dashboard
             'dashboard-info',
@@ -57,6 +66,13 @@ class DatabaseSeeder extends Seeder
             'section-update',
             'section-delete',
 
+             //facility permissions
+            'facility-list',
+            'facility-show',
+            'facility-create',
+            'facility-update',
+            'facility-delete',
+
             // user permissions
             'user-list',
             'user-show',
@@ -77,10 +93,56 @@ class DatabaseSeeder extends Seeder
           {
              Permission::create(['name' => $permission]);
           }
-        
-        $department_id = Department::create([
-          'department' => 'ديوان المديرية العامة للتربية',
-        ]);
+
+
+        // add Departments
+        $departments = [
+          'ديوان المديرية العامة',
+          'قسم تربية الكوفة',
+          'قسم تربية المناذرة',
+        ];
+         foreach ($departments as $department)
+          {
+             Department::create(['department' => $department]);
+          }
+
+
+        // add Facility Groups
+        $facility_groups = [
+          'مكتب المدير العام',
+          'مكتب المعاون الاداري',
+          'مكتب المعاون الفني',
+          'ابتدائيات النجف',
+          'ثانويات النجف',
+        ];
+         foreach ($facility_groups as $facility_group)
+          {
+             Facility_Group::create(['facility_group' => $facility_group]);
+          }
+
+
+        // add Facility Types
+        $facility_types = [
+          'اقسام / شعب',
+          'مدارس',
+        ];
+
+        foreach ($facility_types as $facility_type)
+          {
+             Facility_Type::create(['facility_type' => $facility_type]);
+          }
+
+        // School referance tables
+        Duality::create(['dualities'=>'غير محدد']);
+        Main_Section::create(['main_sections'=>'غير محدد']);
+        School_Gender::create(['school_genders'=>'غير محدد']);
+        School_Invironment::create(['school_invironments'=>'غير محدد']);
+        School_Property::create(['school_properties'=>'غير محدد']);
+        School_Stage::create(['school_stages'=>'غير محدد']);
+        School_Time::create(['school_times'=>'غير محدد']);
+
+
+
 
         $user = User::create([
              'name' => 'admin',

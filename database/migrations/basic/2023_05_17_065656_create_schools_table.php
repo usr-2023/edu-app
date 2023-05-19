@@ -46,7 +46,7 @@ return new class extends Migration
 
             //Normal fields
             $table->bigInteger('counting_number')->nullable();
-            $table->string('current_name')->nullable();
+            $table->string('name')->nullable();
             $table->integer('is_main_school')->nullable();
             $table->string('guest_school')->nullable();
             $table->integer('personale_design_number')->nullable();

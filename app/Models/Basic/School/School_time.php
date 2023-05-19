@@ -5,7 +5,7 @@ namespace App\Models\Basic\School;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class school_time extends Model
+class School_Time extends Model
 {
     use HasFactory;
     protected $table = 'school_times';

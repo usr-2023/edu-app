@@ -22,9 +22,9 @@
 
 
                             <div class=" mx-4 my-4 w-full">
-                                <x-input-label for="current_name" class="w-full mb-1" :value="__('word.School_name')" />
-                                <p id="current_name" class="w-full h-9 block mt-1" type="text" name="current_name">
-                                    {{ $school->current_name }}
+                                <x-input-label for="name" class="w-full mb-1" :value="__('word.School_name')" />
+                                <p id="name" class="w-full h-9 block mt-1" type="text" name="name">
+                                    {{ $school->name }}
                                 </p>
                             </div>
                             <div class=" mx-4 my-4 w-full">

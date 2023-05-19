@@ -38,7 +38,7 @@ class SchoolRequest extends FormRequest
 
             //normal fields
             
-            'current_name' => ['required','max:30'],
+            'name' => ['required','max:30'],
             'is_main_school' => ['max:1'],
             'guest_school' => ['max:30'],
             'personale_design_number' => ['max:4'],

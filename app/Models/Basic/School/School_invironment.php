@@ -5,7 +5,7 @@ namespace App\Models\Basic\School;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class school_invironment extends Model
+class School_Invironment extends Model
 {
     use HasFactory;
     protected $table = 'school_invironments';

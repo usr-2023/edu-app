@@ -101,7 +101,7 @@ class schoolDataTable extends DataTable
                   ->title(__('word.action'))
                   ->addClass('text-center'),
             Column::make('counting_number')->title(__('word.Counting_number'))->class('text-center'),
-            Column::make('current_name')->title(__('word.School_name'))->class('text-center'),
+            Column::make('name')->title(__('word.School_name'))->class('text-center'),
             Column::make('get_school_invironment_id')->title(__('word.School_invironment'))->data('get_school_invironment_id.school_invironments')->name('get_school_invironment_id.school_invironments')->class('text-center'),
             Column::make('get_school_gender_id')->title(__('word.School_gender'))->data('get_school_gender_id.school_genders')->name('get_school_gender_id.school_genders')->class('text-center'),
             Column::make('get_school_gender_id')->title(__('word.School_stage'))->data('get_school_stage_id.school_stages')->name('get_school_stage_id.school_stages')->class('text-center'),
