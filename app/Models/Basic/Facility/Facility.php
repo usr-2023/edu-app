@@ -2,6 +2,7 @@
 
 namespace App\Models\Basic\Facility;
 
+use App\Models\Basic\Employee\Employee;
 use App\Models\Basic\School\School;
 use App\Models\Basic\Section\Section;
 use App\Models\Department;
@@ -13,18 +14,22 @@ class Facility extends Model
 {
     use HasFactory;
      protected $table = 'facility';
+    public function get_sections()
+    {
+        return $this->hasMany(Section::class,'work_address_id','id');
+    }
+        public function get_schools()
+    {
+        return $this->hasMany(School::class,'work_address_id','id');
+    }
+        public function get_employees()
+    {
+        return $this->hasMany(Employee::class,'work_address_id','id');
+    }
 
          public function get_facility_type()
     {
         return $this->hasone(Facility_Type::class,'id','facility_type_id');
-    }
-        public function get_facility_link()
-    {  
-        if ($this->facility_type_id == 1) {
-            return $this->hasone(Section::class,'id','facility_link_id');
-        }elseif ($this->facility_type_id == 2) {
-            return $this->hasone(School::class,'id','facility_link_id');
-        }
     }
         public function get_facility_group()
     {

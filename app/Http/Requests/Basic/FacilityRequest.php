@@ -28,7 +28,6 @@ class FacilityRequest extends FormRequest
             'work_address'=>['required'],
             'facility_group_id'=>['required'],
             'facility_type_id'=>['required'],
-            'facility_link_id'=>['required'],
             'department_id'=>['required'],
             'user_id_create'=>['Numeric'],
             'user_id_update'=>['Numeric'],

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('url_address', '60')->unique()->nullable();
 
             //Foreign id and reference
+            $table->unsignedBigInteger('work_address_id')->nullable();
+            $table->foreign('work_address_id')->references('id')->on('facility');
+
             $table->unsignedBigInteger('school_property_id')->nullable();
             $table->foreign('school_property_id')->references('id')->on('school_properties');
 

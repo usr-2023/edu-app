@@ -294,6 +294,19 @@
                                     <x-input-error :messages="$errors->get('employment_type_id')" class="w-full mt-2" />
                                 </div>
 
+                                <div class=" mx-4 my-4 w-full">
+                                    <x-input-label for="work_address_id" class="w-full mb-1" :value="__('word.work_address_id')" />
+                                    <select id="work_address_id" class="w-full block mt-1 " name="work_address_id">
+                                        {{ __('word.facility_choose') }}</option>
+                                        @foreach ($facilitys as $facility)
+                                            <option value="{{ $facility->id }}"
+                                                {{ $employee->work_address_id == $facility->id ? 'selected' : '' }}>
+                                                {{ $facility->work_address }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <x-input-error :messages="$errors->get('work_address_id')" class="w-full mt-2" />
+                                </div>
 
                             </div>
 

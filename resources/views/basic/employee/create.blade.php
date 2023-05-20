@@ -13,7 +13,6 @@
                         <form method="post" action="{{ route('employee.store') }}">
                             @csrf
 
-
                             <h2 class="font-semibold text-l text-gray-800 leading-tight mx-4 my-4 w-full">
                                 {{ __('word.personal_info') }}
                             </h2>
@@ -289,6 +288,19 @@
                                 </div>
 
 
+                                <div class=" mx-4 my-4 w-full">
+                                    <x-input-label for="work_address_id" class="w-full mb-1" :value="__('word.work_address_id')" />
+                                    <select id="work_address_id" class="w-full block mt-1 " name="work_address_id">
+                                        <option value="0" disabled="true" selected="true">
+                                            {{ __('word.facility_choose') }}</option>
+                                        @foreach ($facilitys as $facility)
+                                            <option value="{{ $facility->id }}">
+                                                {{ $facility->work_address }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <x-input-error :messages="$errors->get('work_address_id')" class="w-full mt-2" />
+                                </div>
                             </div>
 
                             <div class="flex">

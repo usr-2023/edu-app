@@ -11,3 +11,4 @@ Route::post('/financial/add_payroll', [FinancialController::class, 'store'])->mi
 
 Route::get('/financial/test',[FinancialController::class,'test'])->middleware(['auth','verified'])->name('financial.test');
 Route::post('/financial/test', [FinancialController::class, 'test'])->middleware(['auth','verified'])->name('financial.test');
+ Route::get('/financial/get_facility_links',[FinancialController::class,'get_facility_links'])->middleware(['auth','verified'])->name('financial.get_facility_links');

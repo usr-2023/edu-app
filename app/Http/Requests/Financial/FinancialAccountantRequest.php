@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Basic;
+namespace App\Http\Requests\Financial;
 
-use App\Models\Basic\Section\Section;
+use App\Models\Financial\Financial_Accountant;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SectionRequest extends FormRequest
+class FinancialAccountantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,23 +23,23 @@ class SectionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required'],
-            'url_address'=>['required'],
-            'work_address_id'=>['required'],
-            'counting_number' => ['required',\Illuminate\Validation\Rule::unique(Section::class, 'counting_number')->ignore($this->id) , 'digits:7'],
-            'user_id_create'=>['Numeric'],
-            'user_id_update'=>['Numeric'],
+             'name'=>['required'],
+             'url_address'=>['required'],
+             'department_id'=>['required'],
+             'user_id'=>['required',\Illuminate\Validation\Rule::unique(Financial_Accountant::class, 'user_id')->ignore($this->id)],
+             'status' => ['required'],
+             'user_id_create'=>['Numeric'],
+             'user_id_update'=>['Numeric'],
         ];
     }
-
-     protected function prepareForValidation()
+      protected function prepareForValidation()
     {
         $this->mergeIfMissing(['url_address' => $this->get_random_string(60)]);
         //add user_id base on route
-         if (request()->routeIs('section.store')) { 
+         if (request()->routeIs('financial_accountant.store')) { 
             $this->mergeIfMissing(['user_id_create' => auth()->user()->id ]);
 
-         }elseif(request()->routeIs('section.update')) 
+         }elseif(request()->routeIs('financial_accountant.update')) 
         {
             $this->mergeIfMissing(['user_id_update' =>  auth()->user()->id ]);
         

@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Basic\Facility\Facility;
+use App\Models\Financial\Financial_Accountant;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Yajra\DataTables\EloquentDataTable;
@@ -13,7 +13,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class FacilityDataTable extends DataTable
+class FinancialAccountantDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -24,19 +24,19 @@ class FacilityDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'basic.facility.action')
+            ->addColumn('action', 'financial.financial_accountant.action')
             ->setRowId('id');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Basic\Facility\Facility $model
+     * @param \App\Models\Financial\Financial_Accountant $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Facility $model): QueryBuilder
+    public function query(Financial_Accountant $model): QueryBuilder
     {
-        return $model->newQuery()->with(['get_department','get_facility_type','get_facility_group']);
+        return $model->newQuery()->with(['get_department']);
     }
 
     /**
@@ -47,7 +47,7 @@ class FacilityDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('facility-table')
+                    ->setTableId('financialaccountant-table')
                     ->language([
                         'sUrl' =>  url('/').'/../lang/'.__( LaravelLocalization::getCurrentLocale() ).'/datatable.json'
                     ])
@@ -80,11 +80,9 @@ class FacilityDataTable extends DataTable
                   ->width(60)
                   ->title(__('word.action'))
                   ->addClass('text-center'),
+            Column::make('name')->title(__('word.financial_accountant_name'))->class('text-center'),
+            Column::make('status')->title(__('word.financial_accountant_status'))->class('text-center'),
             Column::make('get_department')->title(__('word.department_id'))->data('get_department.department')->name('get_department.department')->class('text-center'),
-            Column::make('get_facility_group')->title(__('word.facility_group_id'))->data('get_facility_group.facility_group')->name('get_facility_group.facility_group')->class('text-center'),
-            Column::make('get_facility_type')->title(__('word.facility_type_id'))->data('get_facility_type.facility_type')->name('get_facility_type.facility_type')->class('text-center'),
-            Column::make('name')->title(__('word.facility_name'))->class('text-center'),
-            Column::make('work_address')->title(__('word.facility_work_address'))->class('text-center'),
         ];
     }
 
@@ -95,6 +93,6 @@ class FacilityDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Facility_' . date('YmdHis');
+        return 'FinancialAccountant_' . date('YmdHis');
     }
 }

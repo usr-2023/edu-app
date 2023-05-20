@@ -56,15 +56,6 @@
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="facility_link_id" class="w-full mb-1" :value="__('word.facility_link_id')" />
-                                    <select id="facility_link_id" class="w-full block mt-1 " name="facility_link_id">
-                                        <option value="0" disabled="true" selected="true">
-                                            {{ __('word.facility_choose') }}</option>
-                                    </select>
-                                    <x-input-error :messages="$errors->get('facility_link_id')" class="w-full mt-2" />
-                                </div>
-
-                                <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="department_id" class="w-full mb-1" :value="__('word.department_id')" />
                                     <select id="department_id" class="w-full block mt-1 " name="department_id">
                                         @foreach ($departments as $department)
@@ -92,38 +83,5 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
 
-            $(document).on('change', '#facility_type_id', function() {
-
-                var facility_type_id = $(this).val();
-
-                var div = $(this).parent();
-
-                var facility_links = " ";
-
-                $.ajax({
-                    type: 'get',
-                    url: '{{ route('facility.get_facility_links') }}',
-                    data: {
-                        'id': facility_type_id
-                    },
-                    success: function(data) {
-
-                        facility_links +=
-                            '<option value="0" selected disabled>{{ __('word.facility_choose') }}</option>';
-                        for (var i = 0; i < data.length; i++) {
-                            facility_links += '<option value="' + data[i].id + '">' + data[i]
-                                .name + '</option>';
-                        }
-                        $("#facility_link_id").html(facility_links);
-                    },
-                    error: function() {
-
-                    }
-                });
-            });
-        });
-    </script>
 </x-app-layout>

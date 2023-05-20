@@ -7,7 +7,7 @@ Route::group(['prefix' => 'basic/facility'], function() {
 
     //index
         Route::get('/',[FacilityController::class,'index'])->middleware(['auth','verified','permission:facility-list'])->name('facility.index');
-         Route::get('/get_facility_links',[FacilityController::class,'get_facility_links'])->middleware(['auth','verified'])->name('facility.get_facility_links');
+        
     //create
         Route::get('/create',[FacilityController::class,'create'])->middleware(['auth','verified','permission:facility-create'])->name('facility.create');
         Route::post('/create', [FacilityController::class, 'store'])->middleware(['auth','verified','permission:facility-create'])->name('facility.store');

@@ -15,6 +15,7 @@ use App\Models\Basic\School\School_Stage;
 use App\Models\Basic\School\School_Time;
 use App\Models\Department;
 use App\Models\User;
+use App\Models\YesNo;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -73,6 +74,19 @@ class DatabaseSeeder extends Seeder
             'facility-update',
             'facility-delete',
 
+            
+            //*************************financial****************************** */
+
+            //financial_accountant permissions
+            'financial_accountant-list',
+            'financial_accountant-show',
+            'financial_accountant-create',
+            'financial_accountant-update',
+            'financial_accountant-delete',
+
+
+            //**************************user******************************* */
+
             // user permissions
             'user-list',
             'user-show',
@@ -120,7 +134,7 @@ class DatabaseSeeder extends Seeder
              Facility_Group::create(['facility_group' => $facility_group]);
           }
 
-
+          
         // add Facility Types
         $facility_types = [
           'اقسام / شعب',
@@ -141,8 +155,15 @@ class DatabaseSeeder extends Seeder
         School_Stage::create(['school_stages'=>'غير محدد']);
         School_Time::create(['school_times'=>'غير محدد']);
 
-
-
+        //yes no table
+        $yes_nos = [
+          'لا',
+          'نعم',
+        ];
+          foreach ($yes_nos as $yes_no)
+          {
+             YesNo::create(['value' => $yes_no]);
+          }
 
         $user = User::create([
              'name' => 'admin',
@@ -161,7 +182,7 @@ class DatabaseSeeder extends Seeder
    
         $user->assignRole([$role]);
 
-        $role = Role::create(['name' => 'user']);
+        $role = Role::create(['name' => 'accountant']);
 
     }
      function get_random_string($length)

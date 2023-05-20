@@ -2,6 +2,7 @@
 
 namespace App\Models\Basic\School;
 
+use App\Models\Basic\Facility\Facility;
 use App\Models\Province;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,10 @@ class School extends Model
 {
     use HasFactory;
     protected $table = 'schools';
-
+    public function get_work_address()
+    {
+        return $this->hasone(Facility::class, 'id', 'work_address_id');
+    }
     public function get_school_property_id()
     {
         return $this->hasone(School_Property::class, 'id', 'school_property_id');
@@ -58,6 +62,7 @@ class School extends Model
         'url_address',
 
         //Refference
+        'work_address_id',
         'school_property_id',
         'duality_id',
         'school_invironment_id',

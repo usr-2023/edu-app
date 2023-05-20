@@ -2,6 +2,7 @@
 
 namespace App\Models\Basic\Employee;
 
+use App\Models\Basic\Facility\Facility;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,10 @@ class Employee extends Model
     use HasFactory;
 
     protected $table = 'employees';
-
+    public function get_work_address()
+    {
+        return $this->hasone(Facility::class, 'id', 'work_address_id');
+    }
      public function get_employee_status()
     {
         return $this->hasone(Employee_Status::class,'id','employee_status_id');
@@ -90,6 +94,7 @@ class Employee extends Model
         'user_id_update',
         
         //foreign id and reference
+        'work_address_id',
         'employee_status_id',
         'contract_type_id',
         'employment_type_id',

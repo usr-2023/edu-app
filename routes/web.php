@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +31,7 @@ require __DIR__.'/role.php';
 //notification routes
 require __DIR__.'/notification.php';
 
-//basic info group
+//********************************basic info group*************************************
 Route::get('/basic/index', function () {
     return view('basic.index');
 })->middleware(['auth', 'verified','permission:dashboard-info'])->name('basic.index');
@@ -51,8 +50,19 @@ require __DIR__.'/basic/section.php';
 //basic info facility routes
 require __DIR__.'/basic/facility.php';
 
+
+
+//********************************basic info group*************************************
+Route::get('/financial/index', function () {
+    return view('financial.index');
+})->middleware(['auth', 'verified','permission:dashboard-financial'])->name('financial.index');
 //financial routes
-require __DIR__.'/financial.php';
+require __DIR__.'/financial/financial.php';
+
+//financial_organizer routes
+require __DIR__.'/financial/financial_accountant.php';
+
+
 
 //profile routes
 require __DIR__.'/profile.php';

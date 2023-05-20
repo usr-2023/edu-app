@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Basic;
 use App\Http\Requests\Basic\SchoolRequest;
 use App\DataTables\schoolDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Basic\Facility\Facility;
 use App\Models\Basic\School\duality;
 use App\Models\Basic\School\main_section;
 use App\Models\Basic\School\School;
@@ -37,9 +38,10 @@ class SchoolController extends Controller
         $school_property=school_property::all();
         $school_stage=school_stage::all();
         $school_time=school_time::all();
+        $facilitys = Facility::where('facility_type_id',2)->get();
         $provinces=Province::all();
         $yesnos = YesNo::all();
-        return view('basic.school.create',compact(['duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+        return view('basic.school.create',compact(['facilitys','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
     }
 
     /**
@@ -85,12 +87,13 @@ class SchoolController extends Controller
         $school_property = school_property::all();
         $school_stage = School_stage::all();
         $school_time = school_time::all();
+        $facilitys = Facility::where('facility_type_id',2)->get();
         $provinces=Province::all();
         $yesnos = YesNo::all();
 
         $school = School::where('url_address','=',$url_address) -> first();
          if (isset($school)) {
-            return view('basic.school.edit',compact(['school','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+            return view('basic.school.edit',compact(['facilitys','school','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
      
          }
          else{

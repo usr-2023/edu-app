@@ -34,12 +34,10 @@ class EmployeeRequest extends FormRequest
         'user_id_update'=>['Numeric'],
 
         //foreign id and reference
+        'work_address_id'=>['required'],
         'employee_status_id' => ['required'],
         'contract_type_id' => ['required'],
         'employment_type_id' => ['required'],
-        'section_id' => ['required'],
-        'sub_section_id' => ['required'],
-        'sub_sub_section_id' => ['required'],
         'assignment_type_id' => ['required'],
         'nationality_id' => ['required'],
         'mother_language_id' => ['required'],

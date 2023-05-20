@@ -296,9 +296,20 @@ return [
          'facility_work_address'=>'مقر العمل',
          'facility_type_id'=>'نوع الدائرة',
          'facility_group_id'=>'مجموعة الدائرة',
-         'facility_link_id'=>'الدائرة',
+         'work_address_id'=>'الدائرة',
          'facility_choose'=>'اختر الدائرة',
          'facility_choose_type'=>'اختر نوع الدائرة',
+
+         //******************************financial********************************************** */
+         'financial_msg'=>'اهلا بكم في الصفحة الخاصة بالحسابات',
+
+        //******************************* financial_organizer************************************ */
+        
+        'financial_accountant_add'=>'اضافة محاسب',
+         'financial_accountant_search'=>'بحث محاسب',
+         'financial_accountant_name'=>'اسم المحاسب',
+         'financial_accountant_status'=>'حالة المحاسب',
+         'financial_accountant_user_id'=>'اسم حساب المحاسب',
 
 
 

@@ -28,6 +28,7 @@ class SchoolRequest extends FormRequest
             'url_address'=>['required'],
             'counting_number' => ['required',\Illuminate\Validation\Rule::unique(School::class, 'counting_number')->ignore($this->id) , 'digits:7'],
             //foreign id and reference
+            'work_address_id'=>['required'],
             'school_property_id'=>['required'],
             'duality_id'=>['required'],
             'school_invironment_id'=>['required'],

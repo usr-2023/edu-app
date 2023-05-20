@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('facility', function (Blueprint $table) {
+        Schema::create('financial_accountant', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name','50');
-            $table->string('work_address','100');
-            $table->string('url_address','60')->unique()->nullable();
-            $table->integer('facility_type_id');
-            $table->integer('facility_link_id');
-            $table->unsignedBigInteger('facility_group_id')->nullable();
-            $table->foreign('facility_group_id')->references('id')->on('facility_group');
+            $table->string('url_address','60');
+            $table->string('status','10');
             $table->unsignedBigInteger('department_id')->nullable();
             $table->foreign('department_id')->references('id')->on('department');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('user_id_create')->nullable();
             $table->foreign('user_id_create')->references('id')->on('users');
             $table->unsignedBigInteger('user_id_update')->nullable();
@@ -35,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('facility');
+        Schema::dropIfExists('financial_accountant');
     }
 };

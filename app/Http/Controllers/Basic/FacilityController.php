@@ -110,18 +110,7 @@ class FacilityController extends Controller
                             ->with('success','تمت حذف بيانات المؤسسة بنجاح ');
     }
 
-	public function get_facility_links(Request $request){
 
-        if ($request->id == 1) {
-            $data=Section::all();
-            return response()->json($data);//then sent this data to ajax success
-
-        } elseif ($request->id == 2) {
-            $data=School::all();
-            return response()->json($data);//then sent this data to ajax success
-        }
-        
-	}
 
 
     function getIPAddress()

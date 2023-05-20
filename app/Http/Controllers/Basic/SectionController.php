@@ -5,8 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Basic\Section\Section;
 use App\DataTables\SectionDataTable;
 use App\Http\Requests\Basic\SectionRequest;
-
-
+use App\Models\Basic\Facility\Facility;
 
 class SectionController extends Controller
 {
@@ -23,8 +22,8 @@ class SectionController extends Controller
      */
     public function create()
     {
-
-        return view('basic.section.create');
+        $facilitys = Facility::where('facility_type_id',1)->get();
+        return view('basic.section.create',compact('facilitys'));
     }
 
     /**
@@ -64,7 +63,8 @@ class SectionController extends Controller
    
         $section = Section::where('url_address','=',$url_address) -> first();
          if (isset($section)) {
-            return view('basic.section.edit',compact(['section']));
+            $facilitys = Facility::where('facility_type_id',1)->get();
+            return view('basic.section.edit',compact(['section','facilitys']));
      
          }
          else{

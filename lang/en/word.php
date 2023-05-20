@@ -283,8 +283,21 @@ return [
          'facility_work_address'=>'Work Address',
          'facility_group_id'=>'Facility Group',
          'facility_type_id'=>'Facility Type',
-         'facility_link_id'=>'Facility',
+         'work_address_id'=>'Facility',
          'facility_choose'=>'Choose Facility',
          'facility_choose_type'=>'Choose Facility Type',
+         
+         //******************************financial********************************************** */
+         'financial_msg'=>'Welcome to the Financial page',
+
+                 //******************************* financial_organizer************************************ */
+        
+        'financial_accountant_add'=>'Add financial accountant',
+         'financial_accountant_search'=>'Search financial accountant',
+         'financial_accountant_name'=>'financial accountant Name',
+         'financial_accountant_status'=>'Status',
+         'financial_accountant_user_id'=>'accountant username',
+
+
 
 ];
