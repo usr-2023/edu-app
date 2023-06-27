@@ -6,14 +6,15 @@ namespace Database\Seeders;
 
 use App\Models\Basic\Facility\Facility_Group;
 use App\Models\Basic\Facility\Facility_Type;
-use App\Models\Basic\School\Duality;
-use App\Models\Basic\School\Main_Section;
-use App\Models\Basic\School\School_Gender;
-use App\Models\Basic\School\School_Invironment;
-use App\Models\Basic\School\School_Property;
-use App\Models\Basic\School\School_Stage;
-use App\Models\Basic\School\School_Time;
+use App\Models\Basic\Facility\Duality;
+use App\Models\Basic\Facility\Main_Section;
+use App\Models\Basic\Facility\School_Gender;
+use App\Models\Basic\Facility\School_Invironment;
+use App\Models\Basic\Facility\School_Property;
+use App\Models\Basic\Facility\School_Stage;
+use App\Models\Basic\Facility\School_Time;
 use App\Models\Department;
+use App\Models\province;
 use App\Models\User;
 use App\Models\YesNo;
 use Illuminate\Database\Seeder;
@@ -55,15 +56,12 @@ class DatabaseSeeder extends Seeder
             'building-update',
             'building-delete',
 
-            //school permissions
-            'school-list',
-            'school-show',
-            'school-create',
-            'school-update',
-            'school-delete',
-
-
-
+            //facility permissions
+            'facility-list',
+            'facility-show',
+            'facility-create',
+            'facility-update',
+            'facility-delete',
             
             //*************************financial****************************** */
 
@@ -113,7 +111,8 @@ class DatabaseSeeder extends Seeder
 
 
 
-        // School referance tables
+        // Facility referance tables
+        province::create(['province'=>'النجف']);
         Duality::create(['dualities'=>'غير محدد']);
         Main_Section::create(['main_sections'=>'غير محدد']);
         School_Gender::create(['school_genders'=>'غير محدد']);

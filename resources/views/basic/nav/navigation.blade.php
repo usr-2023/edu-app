@@ -27,17 +27,17 @@
                             {{ __('word.building_add') }}
                         </x-nav-link>
                     @endcan
-                    @can('school-list')
-                        <x-nav-link :href="route('school.index')" :active="request()->routeIs('school.index')">
-                            {{ __('word.School_search') }}
+                    @can('facility-list')
+                        <x-nav-link :href="route('facility.index')" :active="request()->routeIs('facility.index')">
+                            {{ __('word.facility_search') }}
                         </x-nav-link>
                     @endcan
-                    @can('school-create')
-                        <x-nav-link :href="route('school.create')" :active="request()->routeIs('school.create')">
-                            {{ __('word.School_add') }}
+                    @can('facility-create')
+                        <x-nav-link :href="route('facility.create')" :active="request()->routeIs('facility.create')">
+                            {{ __('word.facility_add') }}
                         </x-nav-link>
                     @endcan
-            
+
                 </div>
 
             </div>

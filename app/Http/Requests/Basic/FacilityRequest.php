@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\Basic;
 
-use App\Models\Basic\School\School;
+use App\Models\Basic\Facility\Facility;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SchoolRequest extends FormRequest
+class FacilityRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +26,9 @@ class SchoolRequest extends FormRequest
             'id',
             // 'school_id'=>['required'],
             'url_address'=>['required'],
-            'counting_number' => ['required',\Illuminate\Validation\Rule::unique(School::class, 'counting_number')->ignore($this->id) , 'digits:7'],
+            'counting_number' => ['required',\Illuminate\Validation\Rule::unique(Facility::class, 'counting_number')->ignore($this->id) , 'digits:7'],
             //foreign id and reference
-            'work_address_id'=>['required'],
+            
             'school_property_id'=>['required'],
             'duality_id'=>['required'],
             'school_invironment_id'=>['required'],

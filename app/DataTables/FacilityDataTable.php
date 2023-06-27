@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Basic\School\School;
+use App\Models\Basic\Facility\Facility;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -14,7 +14,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class schoolDataTable extends DataTable
+class FacilityDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -26,19 +26,14 @@ class schoolDataTable extends DataTable
     {
            // ->addColumn('action', 'building.action')
 
-            return   (new EloquentDataTable($query)) ->addColumn('action','basic.school.action')
+            return   (new EloquentDataTable($query)) ->addColumn('action','basic.facility.action')
             ->rawColumns(['action'])
             ->setRowId('id');
   
     }
 
-    /**
-     * Get query source of dataTable.
-     *
-     * @param \App\Models\Basic\School\school $model
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function query(School $model): QueryBuilder
+    
+    public function query(Facility $model): QueryBuilder
     {
         return $model->newQuery()->with(['get_school_invironment_id','get_school_stage_id','get_school_gender_id','get_school_time_id']);
     }
@@ -118,6 +113,6 @@ class schoolDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'school_' . date('YmdHis');
+        return 'Facility_' . date('YmdHis');
     }
 }

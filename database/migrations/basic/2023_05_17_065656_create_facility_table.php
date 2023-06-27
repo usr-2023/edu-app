@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schools', function (Blueprint $table) {
+        Schema::create('facilitys', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
             //Unique 
-            $table->bigInteger('school_id')->unique()->nullable();
+
             $table->string('url_address', '60')->unique()->nullable();
 
             //Foreign id and reference
@@ -75,6 +75,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schools');
+        Schema::dropIfExists('facilitys');
     }
 };

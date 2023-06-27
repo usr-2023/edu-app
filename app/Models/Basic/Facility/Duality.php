@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Basic\School;
+namespace App\Models\Basic\Facility;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Main_Section extends Model
+class Duality extends Model
 {
     use HasFactory;
-    protected $table = 'main_sections';
+    protected $table = 'dualities';
     protected $fillable = [
-        'main_sections',
+        'dualities',
     ];
 }

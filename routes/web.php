@@ -38,8 +38,8 @@ Route::get('/basic/index', function () {
 //basic info employee routes
 require __DIR__.'/basic/employee.php';
 
-//basic info School routes
-require __DIR__.'/basic/school.php';
+//basic info facility routes
+require __DIR__.'/basic/facility.php';
 
 //basic info building routes
 require __DIR__.'/basic/building.php';

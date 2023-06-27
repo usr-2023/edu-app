@@ -10,26 +10,26 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <form method="POST" action="{{ route('school.update', $school->url_address) }}">
+                        <form method="POST" action="{{ route('facility.update', $facility->url_address) }}">
                             @csrf
                             @method('patch')
-                            <input type="hidden" id="id" name="id" value="{{ $school->id }}">
+                            <input type="hidden" id="id" name="id" value="{{ $facility->id }}">
                             <input type="hidden" id="url_address" name="url_address"
-                                value="{{ $school->url_address }}">
+                                value="{{ $facility->url_address }}">
 
                             <div class="flex">
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="counting_number" class="w-full mb-1" :value="__('word.Counting_number')" />
                                     <x-text-input id="counting_number" class="w-full block mt-1" type="text"
                                         name="counting_number"
-                                        value="{{ old('counting_number') ?? $school->counting_number }}" />
+                                        value="{{ old('counting_number') ?? $facility->counting_number }}" />
                                     <x-input-error :messages="$errors->get('counting_number')" class="w-full mt-2" />
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="name" class="w-full mb-1" :value="__('word.School_name')" />
                                     <x-text-input id="name" class="w-full block mt-1" type="text" name="name"
-                                        value="{{ old('name') ?? $school->name }}" />
+                                        value="{{ old('name') ?? $facility->name }}" />
                                     <x-input-error :messages="$errors->get('name')" class="w-full mt-2" />
                                 </div>
 
@@ -38,7 +38,7 @@
                                     <select id="is_main_school" class="w-full block mt-1 " name="is_main_school">
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ old('is_main_school') ?? $yesno->id }}"
-                                                {{ $school->is_main_school == $yesno->id ? 'selected' : '' }}>
+                                                {{ $facility->is_main_school == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -50,7 +50,7 @@
                                     <x-input-label for="guest_school" class="w-full mb-1" :value="__('word.Guest_school')" />
                                     <x-text-input id="guest_school" class="w-full block mt-1" type="text"
                                         name="guest_school"
-                                        value="{{ old('guest_school') ?? $school->guest_school }}" />
+                                        value="{{ old('guest_school') ?? $facility->guest_school }}" />
                                     <x-input-error :messages="$errors->get('guest_school')" class="w-full mt-2" />
                                 </div>
 
@@ -66,7 +66,7 @@
 
                                         @foreach ($provinces as $province)
                                             <option value="{{ $province->id }}"
-                                                {{ (old('province_id') ?? $school->province_id) == $province->id ? 'selected' : '' }}>
+                                                {{ (old('province_id') ?? $facility->province_id) == $province->id ? 'selected' : '' }}>
                                                 {{ $province->province }}
                                             </option>
                                         @endforeach
@@ -80,7 +80,7 @@
                                     <select id="main_section_id" class="w-full block mt-1 " name="main_section_id">
                                         @foreach ($main_section as $main_sections)
                                             <option value="{{ $main_sections->id }}"
-                                                {{ (old('main_section_id') ?? $school->main_section_id) == $main_sections->id ? 'selected' : '' }}>
+                                                {{ (old('main_section_id') ?? $facility->main_section_id) == $main_sections->id ? 'selected' : '' }}>
                                                 {{ $main_sections->main_sections }}
                                             </option>
                                         @endforeach
@@ -92,7 +92,7 @@
                                     <x-input-label for="established_year" class="w-full mb-1" :value="__('word.established_year')" />
                                     <x-text-input id="established_year" class="w-full block mt-1" type="text"
                                         name="established_year"
-                                        value="{{ old('established_year') ?? $school->established_year }}" />
+                                        value="{{ old('established_year') ?? $facility->established_year }}" />
                                     <x-input-error :messages="$errors->get('established_year')" class="w-full mt-2" />
                                 </div>
 
@@ -107,7 +107,7 @@
 
                                         @foreach ($school_property as $school_properties)
                                             <option value="{{ $school_properties->id }}"
-                                                {{ (old('school_property_id') ?? $school->school_property_id) == $school_properties->id ? 'selected' : '' }}>
+                                                {{ (old('school_property_id') ?? $facility->school_property_id) == $school_properties->id ? 'selected' : '' }}>
                                                 {{ $school_properties->school_properties }}
                                             </option>
                                         @endforeach
@@ -122,7 +122,7 @@
 
                                         @foreach ($duality as $dualities)
                                             <option value="{{ $dualities->id }}"
-                                                {{ (old('duality_id') ?? $school->duality_id) == $dualities->id ? 'selected' : '' }}>
+                                                {{ (old('duality_id') ?? $facility->duality_id) == $dualities->id ? 'selected' : '' }}>
                                                 {{ $dualities->dualities }}
                                             </option>
                                         @endforeach
@@ -138,7 +138,7 @@
 
                                         @foreach ($school_time as $school_times)
                                             <option value="{{ $school_times->id }}"
-                                                {{ (old('school_time_id') ?? $school->school_time_id) == $school_times->id ? 'selected' : '' }}>
+                                                {{ (old('school_time_id') ?? $facility->school_time_id) == $school_times->id ? 'selected' : '' }}>
                                                 {{ $school_times->school_times }}
                                             </option>
                                         @endforeach
@@ -155,7 +155,7 @@
 
                                         @foreach ($school_invironment as $school_invironments)
                                             <option value="{{ $school_invironments->id }}"
-                                                {{ (old('school_invironment_id') ?? $school->school_invironment_id) == $school_invironments->id ? 'selected' : '' }}>
+                                                {{ (old('school_invironment_id') ?? $facility->school_invironment_id) == $school_invironments->id ? 'selected' : '' }}>
                                                 {{ $school_invironments->school_invironments }}
                                             </option>
                                         @endforeach
@@ -170,7 +170,7 @@
 
                                         @foreach ($school_gender as $school_genders)
                                             <option value="{{ $school_genders->id }}"
-                                                {{ (old('school_gender_id') ?? $school->school_gender_id) == $school_genders->id ? 'selected' : '' }}>
+                                                {{ (old('school_gender_id') ?? $facility->school_gender_id) == $school_genders->id ? 'selected' : '' }}>
                                                 {{ $school_genders->school_genders }}
                                             </option>
                                         @endforeach
@@ -185,7 +185,7 @@
 
                                         @foreach ($school_stage as $school_stages)
                                             <option value="{{ $school_stages->id }}"
-                                                {{ (old('school_stage_id') ?? $school->school_stage_id) == $school_stages->id ? 'selected' : '' }}>
+                                                {{ (old('school_stage_id') ?? $facility->school_stage_id) == $school_stages->id ? 'selected' : '' }}>
                                                 {{ $school_stages->school_stages }}
                                             </option>
                                         @endforeach
@@ -203,7 +203,7 @@
                                         :value="__('word.personale_design_number')" />
                                     <x-text-input id="personale_design_number" class="w-full block mt-1"
                                         type="text" name="personale_design_number"
-                                        value="{{ old('personale_design_number') ?? $school->personale_design_number }}" />
+                                        value="{{ old('personale_design_number') ?? $facility->personale_design_number }}" />
                                     <x-input-error :messages="$errors->get('personale_design_number')" class="w-full mt-2" />
                                 </div>
 
@@ -211,7 +211,7 @@
                                     <x-input-label for="male_pupils_number" class="w-full mb-1" :value="__('word.male_pupils_number')" />
                                     <x-text-input id="male_pupils_number" class="w-full block mt-1" type="text"
                                         name="male_pupils_number"
-                                        value="{{ old('male_pupils_number') ?? $school->male_pupils_number }}" />
+                                        value="{{ old('male_pupils_number') ?? $facility->male_pupils_number }}" />
                                     <x-input-error :messages="$errors->get('male_pupils_number')" class="w-full mt-2" />
                                 </div>
                                 <div class=" mx-4 my-4 w-full" id="fp">
@@ -219,7 +219,7 @@
                                         :value="__('word.female_pupils_number')" />
                                     <x-text-input id="female_pupils_number" class="w-full block mt-1" type="text"
                                         name="female_pupils_number"
-                                        value="{{ old('female_pupils_number') ?? $school->female_pupils_number }}" />
+                                        value="{{ old('female_pupils_number') ?? $facility->female_pupils_number }}" />
                                     <x-input-error :messages="$errors->get('female_pupils_number')" class="w-full mt-2" />
                                 </div>
 
@@ -231,7 +231,7 @@
                                         :value="__('word.occupied_rooms_number')" />
                                     <x-text-input id="occupied_rooms_number" class="w-full block mt-1" type="text"
                                         name="occupied_rooms_number"
-                                        value="{{ old('occupied_rooms_number') ?? $school->occupied_rooms_number }}" />
+                                        value="{{ old('occupied_rooms_number') ?? $facility->occupied_rooms_number }}" />
                                     <x-input-error :messages="$errors->get('occupied_rooms_number')" class="w-full mt-2" />
                                 </div>
 
@@ -240,7 +240,7 @@
                                         :value="__('word.filed_classes_number')" />
                                     <x-text-input id="filed_classes_number" class="w-full block mt-1" type="text"
                                         name="filed_classes_number"
-                                        value="{{ old('filed_classes_number') ?? $school->filed_classes_number }}" />
+                                        value="{{ old('filed_classes_number') ?? $facility->filed_classes_number }}" />
                                     <x-input-error :messages="$errors->get('filed_classes_number')" class="w-full mt-2" />
                                 </div>
 
@@ -248,7 +248,7 @@
                                     <x-input-label for="desks_number" class="w-full mb-1" :value="__('word.desks_number')" />
                                     <x-text-input id="desks_number" class="w-full block mt-1" type="text"
                                         name="desks_number"
-                                        value="{{ old('desks_number') ?? $school->desks_number }}" />
+                                        value="{{ old('desks_number') ?? $facility->desks_number }}" />
                                     <x-input-error :messages="$errors->get('desks_number')" class="w-full mt-2" />
                                 </div>
 
@@ -260,7 +260,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_there_airconditions') ?? $school->is_there_airconditions) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_there_airconditions') ?? $facility->is_there_airconditions) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -281,7 +281,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_special_education') ?? $school->is_special_education) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_special_education') ?? $facility->is_special_education) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -297,7 +297,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_computer_available') ?? $school->is_computer_available) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_computer_available') ?? $facility->is_computer_available) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -313,7 +313,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_teaching_computer') ?? $school->is_teaching_computer) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_teaching_computer') ?? $facility->is_teaching_computer) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -329,7 +329,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_teaching_other_languages') ?? $school->is_teaching_other_languages) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_teaching_other_languages') ?? $facility->is_teaching_other_languages) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -350,7 +350,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_electronic_classes') ?? $school->is_electronic_classes) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_electronic_classes') ?? $facility->is_electronic_classes) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach
@@ -363,7 +363,7 @@
                                     <x-input-label for="classrooms_number" class="w-full mb-1" :value="__('word.classrooms_number')" />
                                     <x-text-input id="classrooms_number" class="w-full block mt-1" type="text"
                                         name="classrooms_number"
-                                        value="{{ old('classrooms_number') ?? $school->classrooms_number }}" />
+                                        value="{{ old('classrooms_number') ?? $facility->classrooms_number }}" />
                                     <x-input-error :messages="$errors->get('classrooms_number')" class="w-full mt-2" />
                                 </div>
 
@@ -371,7 +371,7 @@
                                     <x-input-label for="halls_count" class="w-full mb-1" :value="__('word.halls_count')" />
                                     <x-text-input id="halls_count" class="w-full block mt-1" type="text"
                                         name="halls_count"
-                                        value="{{ old('halls_count') ?? $school->halls_count }}" />
+                                        value="{{ old('halls_count') ?? $facility->halls_count }}" />
                                     <x-input-error :messages="$errors->get('halls_count')" class="w-full mt-2" />
                                 </div>
 
@@ -381,7 +381,7 @@
 
                                         @foreach ($yesnos as $yesno)
                                             <option value="{{ $yesno->id }}"
-                                                {{ (old('is_predicated') ?? $school->is_predicated) == $yesno->id ? 'selected' : '' }}>
+                                                {{ (old('is_predicated') ?? $facility->is_predicated) == $yesno->id ? 'selected' : '' }}>
                                                 {{ $yesno->value }}
                                             </option>
                                         @endforeach

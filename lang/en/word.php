@@ -237,14 +237,14 @@ return [
 
 
     // ***************************School **************************
-    'School_add'=>'Add School',
-    'School_search'=>'Search School',
+    'facility_add'=>'Add facility',
+    'facility_search'=>'Search facility',
     'School_property'=>'School Property',
     'Duality'=>'Duality',
     'School_invironment'=>'School Invironment',
     'School_time'=>'School Time',
     'Counting_number'=>'Counting Number',
-    'School_name'=>'School Name',
+    'School_name'=>'Name',
     'School_gender'=>'School Gender',
     'School_stage'=>'School Stage',
     'Is_main_school'=>'Is Main School',
