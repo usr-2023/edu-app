@@ -54,19 +54,7 @@
                             </div>
                             <div class="flex">
 
-                                <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="work_address_id" class="w-full mb-1" :value="__('word.work_address_id')" />
-                                    <select id="work_address_id" class="w-full block mt-1 " name="work_address_id">
-                                        <option value="0" disabled="true" selected="true">
-                                            {{ __('word.facility_choose') }}</option>
-                                        @foreach ($facilitys as $facility)
-                                            <option value="{{ $facility->id }}">
-                                                {{ $facility->work_address }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <x-input-error :messages="$errors->get('work_address_id')" class="w-full mt-2" />
-                                </div>
+
 
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="province_id" class="w-full mb-1" :value="__('word.Province')" />
@@ -154,8 +142,7 @@
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="school_invironment_id" class="w-full mb-1"
-                                        :value="__('word.School_invironment')" />
+                                    <x-input-label for="school_invironment_id" class="w-full mb-1" :value="__('word.School_invironment')" />
                                     <select id="school_invironment_id" class="w-full block mt-1 "
                                         name="school_invironment_id">
 

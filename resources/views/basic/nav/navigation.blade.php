@@ -37,26 +37,7 @@
                             {{ __('word.School_add') }}
                         </x-nav-link>
                     @endcan
-                    @can('section-list')
-                        <x-nav-link :href="route('section.index')" :active="request()->routeIs('section.index')">
-                            {{ __('word.section_search') }}
-                        </x-nav-link>
-                    @endcan
-                    @can('section-create')
-                        <x-nav-link :href="route('section.create')" :active="request()->routeIs('section.create')">
-                            {{ __('word.section_add') }}
-                        </x-nav-link>
-                    @endcan
-                    @can('facility-list')
-                        <x-nav-link :href="route('facility.index')" :active="request()->routeIs('facility.index')">
-                            {{ __('word.facility_search') }}
-                        </x-nav-link>
-                    @endcan
-                    @can('facility-create')
-                        <x-nav-link :href="route('facility.create')" :active="request()->routeIs('facility.create')">
-                            {{ __('word.facility_add') }}
-                        </x-nav-link>
-                    @endcan
+            
                 </div>
 
             </div>

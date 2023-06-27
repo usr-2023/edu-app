@@ -60,19 +60,7 @@ class DatabaseSeeder extends Seeder
             'school-update',
             'school-delete',
 
-            //section permissions
-            'section-list',
-            'section-show',
-            'section-create',
-            'section-update',
-            'section-delete',
 
-             //facility permissions
-            'facility-list',
-            'facility-show',
-            'facility-create',
-            'facility-update',
-            'facility-delete',
 
             
             //*************************financial****************************** */
@@ -121,30 +109,7 @@ class DatabaseSeeder extends Seeder
           }
 
 
-        // add Facility Groups
-        $facility_groups = [
-          'مكتب المدير العام',
-          'مكتب المعاون الاداري',
-          'مكتب المعاون الفني',
-          'ابتدائيات النجف',
-          'ثانويات النجف',
-        ];
-         foreach ($facility_groups as $facility_group)
-          {
-             Facility_Group::create(['facility_group' => $facility_group]);
-          }
 
-          
-        // add Facility Types
-        $facility_types = [
-          'اقسام / شعب',
-          'مدارس',
-        ];
-
-        foreach ($facility_types as $facility_type)
-          {
-             Facility_Type::create(['facility_type' => $facility_type]);
-          }
 
         // School referance tables
         Duality::create(['dualities'=>'غير محدد']);

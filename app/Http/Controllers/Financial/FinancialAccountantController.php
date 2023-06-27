@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Financial;
 use App\DataTables\FinancialAccountantDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Financial\FinancialAccountantRequest;
+use App\Models\Basic\Facility\Facility;
 use App\Models\Department;
 use App\Models\Financial\Financial_Accountant;
 use App\Models\User;
@@ -24,8 +25,9 @@ class FinancialAccountantController extends Controller
     public function create()
     {
         $users = User::role('accountant')->get();
+        $facilitys= Facility::all();
         $departments = Department::all();
-        return view('financial.financial_accountant.create',compact(['departments','users']));
+        return view('financial.financial_accountant.create',compact(['departments','users','facilitys']));
     }
 
     /**

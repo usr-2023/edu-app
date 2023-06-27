@@ -26,8 +26,7 @@
 
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="status" class="w-full mb-1" :value="__('word.financial_accountant_status')" />
-                                    <select name="status" id="select-beast"
-                                        class="form-control  nice-select  custom-select">
+                                    <select name="status" class="w-full block mt-1 " id="status">
                                         <option value="active" selected>active</option>
                                         <option value="disabled">disabled</option>
                                     </select>
@@ -62,12 +61,37 @@
 
                             </div>
 
+                            <table class="table table-striped">
+                                <thead>
+                                    <th scope="col" width="1%"><input type="checkbox" name="all_facility">
+                                    </th>
+                                    <th scope="col" width="10%">{{ __('word.name') }}</th>
+                                    <th scope="col" width="20%">{{ __('word.facility_work_address') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.facility_group_id') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.department_id') }}</th>
+                                </thead>
+
+                                @foreach ($facilitys as $facility)
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="facility[{{ $facility->id }}]"
+                                                value="{{ $facility->id }}" class='facility'>
+                                        </td>
+                                        <td>{{ $facility->name }}</td>
+                                        <td>{{ $facility->work_address }}</td>
+                                        <td>{{ $facility->get_facility_group->facility_group }}</td>
+                                        <td>{{ $facility->get_department->department }}</td>
+
+                                    </tr>
+                                @endforeach
+                            </table>
+
+
+
                             <div class=" mx-4 my-4 w-full">
                                 <x-primary-button class="ml-4">
                                     {{ __('word.save') }}
                                 </x-primary-button>
-
-
                             </div>
 
 
@@ -78,7 +102,23 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[name="all_facility"]').on('click', function() {
 
+                if ($(this).is(':checked')) {
+                    $.each($('.facility'), function() {
+                        $(this).prop('checked', true);
+                    });
+                } else {
+                    $.each($('.facility'), function() {
+                        $(this).prop('checked', false);
+                    });
+                }
+
+            });
+        });
+    </script>
 
 
 </x-app-layout>

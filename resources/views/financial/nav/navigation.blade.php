@@ -18,9 +18,6 @@
                         </x-nav-link>
                     @endcan
 
-                    <x-nav-link :href="route('financial.index')" :active="request()->routeIs('financial.index')">
-                        {{ __('word.employee_search') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('financial.add_payroll')" :active="request()->routeIs('financial.add_payroll')">
                         {{ __('add payroll') }}
                     </x-nav-link>
