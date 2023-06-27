@@ -47,6 +47,11 @@
                             {{ __('word.roles') }}
                         </x-nav-link>
                     @endcan
+                    @can('tables-edit')
+                        <x-nav-link :href="route('tables.all', 'show')" :active="request()->routeIs('table.all')">
+                            {{ __('word.tables') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
 
             </div>

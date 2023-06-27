@@ -38,6 +38,8 @@ class DatabaseSeeder extends Seeder
             'dashboard-users',
             'dashboard-roles',
 
+            'tables-edit',
+
             //employee permissions
             'employee-list',
             'employee-show',

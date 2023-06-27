@@ -44,7 +44,8 @@ require __DIR__.'/basic/school.php';
 //basic info building routes
 require __DIR__.'/basic/building.php';
 
-
+//basic info tables_edit routes
+require __DIR__.'/basic/tables_edit.php';
 
 
 //********************************basic info group*************************************

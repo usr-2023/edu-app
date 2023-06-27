@@ -281,24 +281,7 @@ return [
          'occupied_rooms_number'=>'عدد الغرف المشغولة',
          'is_there_airconditions'=>'هل يوجد اجهزة تكييف',
 
-         //******************************* Section************************************ */
-        
-        'section_add'=>'اضافة قسم / شعبة',
-         'section_search'=>'بحث قسم  / شعبة',
-         'section_name'=>'اسم القسم  / شعبة',
-         'section_counting_number'=>'الرقم الاحصائي للقسم  / شعبة',
 
-        //******************************* facility************************************ */
-        
-        'facility_add'=>'أضافة دائرة',
-         'facility_search'=>'بحث دائرة',
-         'facility_name'=>'اسم الدائرة',
-         'facility_work_address'=>'مقر العمل',
-         'facility_type_id'=>'نوع الدائرة',
-         'facility_group_id'=>'مجموعة الدائرة',
-         'work_address_id'=>'الدائرة',
-         'facility_choose'=>'اختر الدائرة',
-         'facility_choose_type'=>'اختر نوع الدائرة',
 
          //******************************financial********************************************** */
          'financial_msg'=>'اهلا بكم في الصفحة الخاصة بالحسابات',
@@ -310,7 +293,31 @@ return [
          'financial_accountant_name'=>'اسم المحاسب',
          'financial_accountant_status'=>'حالة المحاسب',
          'financial_accountant_user_id'=>'اسم حساب المحاسب',
-
+// *******************table*********************************
+    'tables'=>'الجداول',
+    'add'=>'إضافة',
+    'assignment_type'=>'نوع المهمة',
+    'building_type'=>'نوع البناية',
+    'career_stage'=>'الدرجة',
+    'contract_type'=>'نوع العقد',
+    'department'=>'القسم',
+    'employees'=>'الموظفون',
+    'employee_status'=>'حالة الموظف',
+    'employment_type'=>'نوع الوظيفة',
+    'gender'=>'الجنس',
+    'job_grade'=>'المرحلة',
+    'job_title'=>'العنوان الوظيفي',
+    'marital_status'=>'الحالة الزوجية',
+    'mother_language'=>'اللغة الام',
+    'nationality'=>'القومية',
+    'political_dismissal_type'=>'نوع الفصل السياسي',
+    'provinces'=>'المحافظات',
+    'scientific_title_stage'=>'العنوان العلمي',
+    'section'=>'القسم',
+    'sub_section'=>'الشعبة',
+    'sub_sub_section'=>'تحت الشعبة',
+    'teaching_specialization'=>'الاخنصاص',
+    'yes_no'=>'نعم - لا',
 
 
 ];

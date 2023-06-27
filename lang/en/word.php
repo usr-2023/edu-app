@@ -269,23 +269,6 @@ return [
     'occupied_rooms_number'=>'Occupied Rooms Number',
     'is_there_airconditions'=>'Is There Airconditions',
 
-    //******************************** Section********************************** */
-        'section_add'=>'Add Section',
-         'section_search'=>'Search Section',
-         'section_name'=>'Section Name',
-         'section_counting_number'=>'Section Counting Number',
-
-        //******************************* facility************************************ */
-        
-        'facility_add'=>'Add Facility',
-         'facility_search'=>'Search Facility',
-         'facility_name'=>'Facility Name',
-         'facility_work_address'=>'Work Address',
-         'facility_group_id'=>'Facility Group',
-         'facility_type_id'=>'Facility Type',
-         'work_address_id'=>'Facility',
-         'facility_choose'=>'Choose Facility',
-         'facility_choose_type'=>'Choose Facility Type',
          
          //******************************financial********************************************** */
          'financial_msg'=>'Welcome to the Financial page',
@@ -299,5 +282,30 @@ return [
          'financial_accountant_user_id'=>'accountant username',
 
 
+// *******************table*********************************
+    'tables'=>'الجداول',
+    'add'=>'إضافة',
+    'assignment_type'=>'نوع المهمة',
+    'building_type'=>'نوع البناية',
+    'career_stage'=>'الدرجة',
+    'contract_type'=>'نوع العقد',
+    'department'=>'القسم',
+    'employees'=>'الموظفون',
+    'employee_status'=>'حالة الموظف',
+    'employment_type'=>'نوع الوظيفة',
+    'gender'=>'الجنس',
+    'job_grade'=>'المرحلة',
+    'job_title'=>'العنوان الوظيفي',
+    'marital_status'=>'الحالة الزوجية',
+    'mother_language'=>'اللغة الام',
+    'nationality'=>'القومية',
+    'political_dismissal_type'=>'نوع الفصل السياسي',
+    'provinces'=>'المحافظات',
+    'scientific_title_stage'=>'العنوان العلمي',
+    'section'=>'القسم',
+    'sub_section'=>'الشعبة',
+    'sub_sub_section'=>'تحت الشعبة',
+    'teaching_specialization'=>'الاخنصاص',
+    'yes_no'=>'نعم - لا',
 
 ];
