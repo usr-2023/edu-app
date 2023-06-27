@@ -31,6 +31,7 @@ class FacilityController extends Controller
      */
     public function create()
     {
+        $facility_parents = Facility::all();
         $facility_types = Facility_Type::all();
         $duality = duality::all();
         $main_section=main_section::all();
@@ -41,7 +42,7 @@ class FacilityController extends Controller
         $school_time=School_Time::all();
         $provinces=Province::all();
         $yesnos = YesNo::all();
-        return view('basic.facility.create',compact(['facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+        return view('basic.facility.create',compact(['facility_parents','facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
     }
 
     /**
@@ -80,6 +81,7 @@ class FacilityController extends Controller
     {
         
         $facility = Facility::where('url_address',$url_address) -> first();
+        $facility_parents = Facility::all();
         $facility_types = Facility_Type::all();
         $duality = Duality::all();
         $main_section = Main_section::all();
@@ -93,7 +95,7 @@ class FacilityController extends Controller
 
         $facility = Facility::where('url_address','=',$url_address) -> first();
          if (isset($facility)) {
-            return view('basic.facility.edit',compact(['facility','facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+            return view('basic.facility.edit',compact(['facility','facility_parents','facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
      
          }
          else{

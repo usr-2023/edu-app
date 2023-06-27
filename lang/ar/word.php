@@ -253,6 +253,7 @@ return [
          'facility_search'=>'بحث مؤسسة',
          'School_property'=>'عائدية المدرسة',
          'facility_type'=> 'نوع المؤسسة',
+         'facility_parent'=> 'تابع الى',
          'Duality'=>'نوع الدوام',
          'School_invironment'=>'بيئة المدرسة',
          'School_time'=>'دوام المدرسة',

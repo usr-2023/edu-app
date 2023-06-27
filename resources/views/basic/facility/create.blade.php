@@ -43,6 +43,22 @@
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">
+                                    <x-input-label for="facility_parent_id" class="w-full mb-1" :value="__('word.facility_parent')" />
+                                    <select id="facility_parent_id" class="w-full block mt-1 "
+                                        name="facility_parent_id">
+
+                                        @foreach ($facility_parents as $facility_parent)
+                                            <option value="{{ $facility_parent->id }}"
+                                                {{ old('facility_parent_id') == $facility_parent->id ? 'selected' : '' }}>
+                                                {{ $facility_parent->name }}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+                                    <x-input-error :messages="$errors->get('facility_parent_id')" class="w-full mt-2" />
+                                </div>
+
+                                <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="is_main_school" class="w-full mb-1" :value="__('word.Is_main_school')" />
                                     <select id="is_main_school" class="w-full block mt-1 " name="is_main_school">
 

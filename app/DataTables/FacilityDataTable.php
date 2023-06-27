@@ -35,7 +35,7 @@ class FacilityDataTable extends DataTable
     
     public function query(Facility $model): QueryBuilder
     {
-        return $model->newQuery()->with(['get_school_invironment_id','get_school_stage_id','get_school_gender_id','get_school_time_id']);
+        return $model->newQuery()->with(['get_facility_type_id','get_facility_parent_id']);
     }
 
     /**
@@ -97,10 +97,8 @@ class FacilityDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('counting_number')->title(__('word.Counting_number'))->class('text-center'),
             Column::make('name')->title(__('word.School_name'))->class('text-center'),
-            Column::make('get_school_invironment_id')->title(__('word.School_invironment'))->data('get_school_invironment_id.school_invironments')->name('get_school_invironment_id.school_invironments')->class('text-center'),
-            Column::make('get_school_gender_id')->title(__('word.School_gender'))->data('get_school_gender_id.school_genders')->name('get_school_gender_id.school_genders')->class('text-center'),
-            Column::make('get_school_gender_id')->title(__('word.School_stage'))->data('get_school_stage_id.school_stages')->name('get_school_stage_id.school_stages')->class('text-center'),
-            Column::make('get_school_time_id')->title(__('word.School_time'))->data('get_school_time_id.school_times')->name('get_school_time_id.school_times')->class('text-center'),
+            Column::make('get_facility_type_id')->title(__('word.facility_type'))->data('get_facility_type_id.facility_types')->name('get_facility_type_id.facility_types')->class('text-center'),
+            Column::make('get_facility_parent_id')->title(__('word.facility_parent'))->data('get_facility_parent_id.name')->name('get_facility_parent_id.name')->class('text-center'),
             Column::make('established_year')->title(__('word.established_year'))->class('text-center'),
         ];
     }

@@ -241,6 +241,7 @@ return [
     'facility_search'=>'Search facility',
     'School_property'=>'School Property',
     'facility_type'=> 'Facility Type',
+    'facility_parent'=> 'higher facility',
     'Duality'=>'Duality',
     'School_invironment'=>'School Invironment',
     'School_time'=>'School Time',

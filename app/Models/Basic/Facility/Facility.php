@@ -11,6 +11,16 @@ class Facility extends Model
     use HasFactory;
     protected $table = 'facilitys';
 
+        public function get_facility_type_id()
+    {
+        return $this->hasone(Facility_Type::class, 'id', 'facility_type_id');
+    }
+
+        public function get_facility_parent_id()
+    {
+        return $this->hasone(Facility::class, 'id', 'facility_parent_id');
+    }
+
     public function get_school_property_id()
     {
         return $this->hasone(School_Property::class, 'id', 'school_property_id');
@@ -57,6 +67,8 @@ class Facility extends Model
         'url_address',
 
         //Refference
+        'facility_parent_id',
+        'facility_type_id',
         'work_address_id',
         'school_property_id',
         'duality_id',
