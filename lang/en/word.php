@@ -240,6 +240,7 @@ return [
     'facility_add'=>'Add facility',
     'facility_search'=>'Search facility',
     'School_property'=>'School Property',
+    'facility_type'=> 'Facility Type',
     'Duality'=>'Duality',
     'School_invironment'=>'School Invironment',
     'School_time'=>'School Time',

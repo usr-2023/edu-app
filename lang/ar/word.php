@@ -252,6 +252,7 @@ return [
          'facility_add'=>'اضافة مؤسسة',
          'facility_search'=>'بحث مؤسسة',
          'School_property'=>'عائدية المدرسة',
+         'facility_type'=> 'نوع المؤسسة',
          'Duality'=>'نوع الدوام',
          'School_invironment'=>'بيئة المدرسة',
          'School_time'=>'دوام المدرسة',

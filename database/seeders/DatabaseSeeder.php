@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Basic\Facility\Facility_Group;
 use App\Models\Basic\Facility\Facility_Type;
 use App\Models\Basic\Facility\Duality;
 use App\Models\Basic\Facility\Main_Section;
@@ -120,6 +119,27 @@ class DatabaseSeeder extends Seeder
         School_Property::create(['school_properties'=>'غير محدد']);
         School_Stage::create(['school_stages'=>'غير محدد']);
         School_Time::create(['school_times'=>'غير محدد']);
+        
+        //facility_type
+        $facility_types = [
+          'وزارة',
+          'مديرية',
+          'مكتب مدير عام',
+          'مكتب المعاون الاداري',
+          'مكتب المعاون الفني',
+          'قسم',
+          'شعبة',
+          'وحدة',
+          'لجنة',
+          'مدرسة',
+          'معهد',
+          'روضة',
+        ];
+          foreach ($facility_types as $facility_type)
+          {
+             Facility_Type::create(['facility_types' => $facility_type]);
+          }
+
 
         //yes no table
         $yes_nos = [

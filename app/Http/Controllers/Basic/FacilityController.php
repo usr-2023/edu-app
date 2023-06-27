@@ -7,6 +7,7 @@ use App\Http\Requests\Basic\FacilityRequest;
 use App\Models\Basic\Facility\duality;
 use App\Models\Basic\Facility\main_section;
 use App\Models\Basic\Facility\Facility;
+use App\Models\Basic\Facility\Facility_Type;
 use App\Models\Basic\Facility\School_Gender;
 use App\Models\Basic\Facility\School_Invironment;
 use App\Models\Basic\Facility\School_Property;
@@ -30,6 +31,7 @@ class FacilityController extends Controller
      */
     public function create()
     {
+        $facility_types = Facility_Type::all();
         $duality = duality::all();
         $main_section=main_section::all();
         $school_gender=School_Gender::all();
@@ -39,7 +41,7 @@ class FacilityController extends Controller
         $school_time=School_Time::all();
         $provinces=Province::all();
         $yesnos = YesNo::all();
-        return view('basic.facility.create',compact(['duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+        return view('basic.facility.create',compact(['facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
     }
 
     /**
@@ -78,6 +80,7 @@ class FacilityController extends Controller
     {
         
         $facility = Facility::where('url_address',$url_address) -> first();
+        $facility_types = Facility_Type::all();
         $duality = Duality::all();
         $main_section = Main_section::all();
         $school_gender = School_gender::all();
@@ -90,7 +93,7 @@ class FacilityController extends Controller
 
         $facility = Facility::where('url_address','=',$url_address) -> first();
          if (isset($facility)) {
-            return view('basic.facility.edit',compact(['facility','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
+            return view('basic.facility.edit',compact(['facility','facility_types','duality','main_section','school_gender','school_invironment','school_property','school_stage','school_time','yesnos','provinces']));
      
          }
          else{

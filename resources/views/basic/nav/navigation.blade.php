@@ -17,16 +17,6 @@
                             {{ __('word.employee_add') }}
                         </x-nav-link>
                     @endcan
-                    @can('building-list')
-                        <x-nav-link :href="route('building.index')" :active="request()->routeIs('building.index')">
-                            {{ __('word.building_search') }}
-                        </x-nav-link>
-                    @endcan
-                    @can('building-create')
-                        <x-nav-link :href="route('building.create')" :active="request()->routeIs('building.create')">
-                            {{ __('word.building_add') }}
-                        </x-nav-link>
-                    @endcan
                     @can('facility-list')
                         <x-nav-link :href="route('facility.index')" :active="request()->routeIs('facility.index')">
                             {{ __('word.facility_search') }}
@@ -37,6 +27,17 @@
                             {{ __('word.facility_add') }}
                         </x-nav-link>
                     @endcan
+                    @can('building-list')
+                        <x-nav-link :href="route('building.index')" :active="request()->routeIs('building.index')">
+                            {{ __('word.building_search') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('building-create')
+                        <x-nav-link :href="route('building.create')" :active="request()->routeIs('building.create')">
+                            {{ __('word.building_add') }}
+                        </x-nav-link>
+                    @endcan
+
 
                 </div>
 

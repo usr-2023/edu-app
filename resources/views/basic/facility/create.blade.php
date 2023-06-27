@@ -27,6 +27,20 @@
                                         value="{{ old('name') }}" />
                                     <x-input-error :messages="$errors->get('name')" class="w-full mt-2" />
                                 </div>
+                                <div class=" mx-4 my-4 w-full">
+                                    <x-input-label for="facility_type_id" class="w-full mb-1" :value="__('word.facility_type')" />
+                                    <select id="facility_type_id" class="w-full block mt-1 " name="facility_type_id">
+
+                                        @foreach ($facility_types as $facility_type)
+                                            <option value="{{ $facility_type->id }}"
+                                                {{ old('facility_type_id') == $facility_type->id ? 'selected' : '' }}>
+                                                {{ $facility_type->facility_types }}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+                                    <x-input-error :messages="$errors->get('facility_type_id')" class="w-full mt-2" />
+                                </div>
 
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="is_main_school" class="w-full mb-1" :value="__('word.Is_main_school')" />
@@ -142,7 +156,8 @@
                                 </div>
 
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="school_invironment_id" class="w-full mb-1" :value="__('word.School_invironment')" />
+                                    <x-input-label for="school_invironment_id" class="w-full mb-1"
+                                        :value="__('word.School_invironment')" />
                                     <select id="school_invironment_id" class="w-full block mt-1 "
                                         name="school_invironment_id">
 
