@@ -43,7 +43,7 @@ class FinancialAccountantController extends Controller
         $facility = Facility::find($facility_id); 
         $facility->facility_accountent_id = $financial_accountent_id->id; 
         $facility->save(); 
-    } 
+        } 
 
      
 
@@ -95,7 +95,29 @@ class FinancialAccountantController extends Controller
      */
     public function update(FinancialAccountantRequest $request, string $url_address)
     {
-        Financial_Accountant::where('url_address',$url_address)->update($request->validated());
+       Financial_Accountant::where('url_address',$url_address)->update($request->validated());
+
+         // first set all facility -> facility_accountent_id to null 
+
+         $old_facilitys = Facility::where('facility_accountent_id',$request->input('id'))->get(); 
+         foreach($old_facilitys as $facility)
+         {
+                 $facility->facility_accountent_id = null; 
+                 $facility->save(); 
+         } 
+
+         // update the checked values with accountent_id  in facility -> facility_accountent_id
+         $facilitys = $request->input('facility'); 
+          if (isset($facilitys))
+           {
+             foreach($facilitys as $facility_id)
+             {
+                 $facility = Facility::find($facility_id); 
+                 $facility->facility_accountent_id = $request->id; 
+                 $facility->save(); 
+             } 
+           }
+
         // Notify related users
         return redirect()->route('financial_accountant.index')
         ->with('success','تمت تعديل بيانات المحاسب بنجاح ');
