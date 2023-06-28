@@ -26,6 +26,9 @@ return new class extends Migration
             $table->unsignedBigInteger('facility_type_id')->nullable();
             $table->foreign('facility_type_id')->references('id')->on('facility_types');
 
+            $table->unsignedBigInteger('facility_accountent_id')->nullable();
+            $table->foreign('facility_accountent_id')->references('id')->on('financial_accountant');
+
             $table->unsignedBigInteger('school_property_id')->nullable();
             $table->foreign('school_property_id')->references('id')->on('school_properties');
 

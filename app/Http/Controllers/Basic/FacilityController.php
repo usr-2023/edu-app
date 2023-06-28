@@ -55,7 +55,7 @@ class FacilityController extends Controller
 
         //inform the user 
         return redirect()->route('facility.index')
-                        ->with('success','تمت أضافة المدرسة بنجاح ');
+                        ->with('success','تمت أضافة المؤسسة بنجاح ');
     }
 
 
@@ -112,7 +112,7 @@ class FacilityController extends Controller
         Facility::where('url_address',$url_address)->update($request->validated());
         // Notify related users
         return redirect()->route('facility.index')
-        ->with('success','تمت تعديل بيانات المدرسة بنجاح ');
+        ->with('success','تمت تعديل بيانات المؤسسة بنجاح ');
     }
 
     /**
@@ -122,7 +122,7 @@ class FacilityController extends Controller
     {
         $affected = Facility::where('url_address',$url_address)->delete();
         return redirect()->route('facility.index')
-                            ->with('success','تمت حذف بيانات المدرسة بنجاح ');
+                            ->with('success','تمت حذف بيانات المؤسسة بنجاح ');
     }
 
 

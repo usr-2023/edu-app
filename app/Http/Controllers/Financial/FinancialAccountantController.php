@@ -25,7 +25,7 @@ class FinancialAccountantController extends Controller
     public function create()
     {
         $users = User::role('accountant')->get();
-        $facilitys= Facility::all();
+        $facilitys=  Facility::Where('facility_accountent_id',null)->get();
         $departments = Department::all();
         return view('financial.financial_accountant.create',compact(['departments','users','facilitys']));
     }
@@ -36,7 +36,17 @@ class FinancialAccountantController extends Controller
     public function store(FinancialAccountantRequest $request)
     {
         // insert the user input into model and lareval insert it into the database.
-         Financial_Accountant::create($request->validated());
+         $financial_accountent_id = Financial_Accountant::create($request->validated());
+        // update the facility table to get accountent id
+         $facilitys = $request->input('facility'); 
+         foreach($facilitys as $facility_id){
+        $facility = Facility::find($facility_id); 
+        $facility->facility_accountent_id = $financial_accountent_id->id; 
+        $facility->save(); 
+    } 
+
+     
+
 
         //inform the user 
         return redirect()->route('financial_accountant.index')
@@ -68,8 +78,10 @@ class FinancialAccountantController extends Controller
         $financial_accountant = Financial_Accountant::where('url_address','=',$url_address) -> first();
          if (isset($financial_accountant)) {
             $users = User::role('accountant')->get();
+            $facilitys = Facility::where('facility_accountent_id',$financial_accountant->id)->orWhere('facility_accountent_id',null)->get();
+            $accountent_facilitys = Facility::all()->where('facility_accountent_id' ,'=' ,$financial_accountant->id);
             $departments = Department::all();
-            return view('financial.financial_accountant.edit',compact(['financial_accountant','departments','users']));
+            return view('financial.financial_accountant.edit',compact(['financial_accountant','facilitys','accountent_facilitys','departments','users']));
      
          }
          else{

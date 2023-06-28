@@ -28,7 +28,7 @@ class FacilityRequest extends FormRequest
             'url_address'=>['required'],
             'counting_number' => ['required',\Illuminate\Validation\Rule::unique(Facility::class, 'counting_number')->ignore($this->id) , 'digits:7'],
             //foreign id and reference
-            //'facility_parent_id'=>['required'],
+            'facility_parent_id'=>['required'],
             'facility_type_id'=>['required'],
             'school_property_id'=>['required'],
             'duality_id'=>['required'],
@@ -68,7 +68,7 @@ class FacilityRequest extends FormRequest
         $this->mergeIfMissing(['url_address' => $this->get_random_string(60)]);
 
         //add school_id base on route
-        
+        $this->mergeIfMissing(['facility_parent_id' => 1]);
         //
 
     }

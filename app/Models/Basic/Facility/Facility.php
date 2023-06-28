@@ -18,7 +18,7 @@ class Facility extends Model
 
         public function get_facility_parent_id()
     {
-        return $this->hasone(Facility::class, 'id', 'facility_parent_id');
+         return $this->belongsTo(Facility::class,'facility_parent_id');
     }
 
     public function get_school_property_id()
@@ -67,6 +67,7 @@ class Facility extends Model
         'url_address',
 
         //Refference
+        'facility_accountent_id',
         'facility_parent_id',
         'facility_type_id',
         'work_address_id',

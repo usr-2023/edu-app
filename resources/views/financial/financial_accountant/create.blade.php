@@ -66,9 +66,8 @@
                                     <th scope="col" width="1%"><input type="checkbox" name="all_facility">
                                     </th>
                                     <th scope="col" width="10%">{{ __('word.name') }}</th>
-                                    <th scope="col" width="20%">{{ __('word.facility_work_address') }}</th>
-                                    <th scope="col" width="10%">{{ __('word.facility_group_id') }}</th>
-                                    <th scope="col" width="10%">{{ __('word.department_id') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.facility_type') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.facility_parent') }}</th>
                                 </thead>
 
                                 @foreach ($facilitys as $facility)
@@ -78,9 +77,8 @@
                                                 value="{{ $facility->id }}" class='facility'>
                                         </td>
                                         <td>{{ $facility->name }}</td>
-                                        <td>{{ $facility->work_address }}</td>
-                                        <td>{{ $facility->get_facility_group->facility_group }}</td>
-                                        <td>{{ $facility->get_department->department }}</td>
+                                        <td>{{ $facility->get_facility_type_id->facility_types }}</td>
+                                        <td>{{ $facility->get_facility_parent_id->name }}</td>
 
                                     </tr>
                                 @endforeach

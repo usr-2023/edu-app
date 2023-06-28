@@ -68,7 +68,29 @@
                                     <x-input-error :messages="$errors->get('user_id')" class="w-full mt-2" />
                                 </div>
                             </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <th scope="col" width="1%"><input type="checkbox" name="all_facility">
+                                    </th>
+                                    <th scope="col" width="10%">{{ __('word.name') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.facility_type') }}</th>
+                                    <th scope="col" width="10%">{{ __('word.facility_parent') }}</th>
+                                </thead>
 
+                                @foreach ($facilitys as $facility)
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="facility[{{ $facility->id }}]"
+                                                value="{{ $facility->id }}" class='facility'
+                                                @foreach ($accountent_facilitys as $accountent_facility) @if ($accountent_facility->id == $facility->id) checked @endif @endforeach>
+                                        </td>
+                                        <td>{{ $facility->name }}</td>
+                                        <td>{{ $facility->get_facility_type_id->facility_types }}</td>
+                                        <td>{{ $facility->get_facility_parent_id->name }}</td>
+
+                                    </tr>
+                                @endforeach
+                            </table>
 
                             <div class="flex">
                                 <div class=" mx-4 my-4 w-full">
@@ -84,7 +106,23 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[name="all_facility"]').on('click', function() {
 
+                if ($(this).is(':checked')) {
+                    $.each($('.facility'), function() {
+                        $(this).prop('checked', true);
+                    });
+                } else {
+                    $.each($('.facility'), function() {
+                        $(this).prop('checked', false);
+                    });
+                }
+
+            });
+        });
+    </script>
 
 
 
