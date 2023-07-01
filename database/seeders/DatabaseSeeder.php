@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Basic\Employee\Career_Stage;
+use App\Models\Basic\Employee\Job_Grade;
 use App\Models\Basic\Facility\Facility_Type;
 use App\Models\Basic\Facility\Duality;
 use App\Models\Basic\Facility\Main_Section;
@@ -13,6 +15,7 @@ use App\Models\Basic\Facility\School_Property;
 use App\Models\Basic\Facility\School_Stage;
 use App\Models\Basic\Facility\School_Time;
 use App\Models\Department;
+use App\Models\Financial\Salary_Scale;
 use App\Models\province;
 use App\Models\User;
 use App\Models\YesNo;
@@ -140,7 +143,609 @@ class DatabaseSeeder extends Seeder
              Facility_Type::create(['facility_types' => $facility_type]);
           }
 
+           $job_grades = [
+          'الاولى',
+          'الثانية',
+          'الثالثة',
+          'الرابعة',
+          'الخامسة',
+          'السادسة',
+          'السابعة',
+          'الثامنة',
+          'التاسعة',
+          'العاشرة',
+        ];
+          foreach ($job_grades as $job_grade)
+          {
+             Job_Grade::create(['job_grade' => $job_grade]);
+          }
 
+        $career_stages = [
+          'الاولى',
+          'الثانية',
+          'الثالثة',
+          'الرابعة',
+          'الخامسة',
+          'السادسة',
+          'السابعة',
+          'الثامنة',
+          'التاسعة',
+          'العاشرة',
+          'الحادي عشرة',
+        ];
+          foreach ($career_stages as $career_stage)
+          {
+             Career_Stage::create(['career_stage' => $career_stage]);
+          }
+
+
+          $salary_scales = [
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 10,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 9,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 8,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 7,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 6,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 5,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+            // 4
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 4,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+            // 3
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 3,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+            // 2
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 2,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+            // 1 
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 1,
+              'salary' => 170000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 2,
+              'salary' => 173000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 3,
+              'salary' => 176000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 4,
+              'salary' => 179000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 5,
+              'salary' => 182000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 6,
+              'salary' => 185000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 7,
+              'salary' => 188000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 8,
+              'salary' => 191000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 9,
+              'salary' => 194000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 10,
+              'salary' => 197000
+            ],
+            [
+              'job_grade_id' => 1,
+              'career_stage_id' => 11,
+              'salary' => 200000
+            ],
+
+          ];
+
+          foreach ($salary_scales as $salary_scale) {
+            Salary_Scale::create($salary_scale);
+        }
+
+        
         //yes no table
         $yes_nos = [
           'لا',
