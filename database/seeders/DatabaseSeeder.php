@@ -41,6 +41,8 @@ class DatabaseSeeder extends Seeder
             Facility_Seeder::class,
             Department_Seeder::class,
             YesNo_Seeder::class,
+            Amount_Type_Seeder::class,
+            Academic_Achievement_Seeder::class,
  
           ]);
 
