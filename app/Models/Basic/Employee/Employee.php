@@ -2,7 +2,7 @@
 
 namespace App\Models\Basic\Employee;
 
-use App\Models\Academic_Achievement;
+
 use App\Models\Basic\Facility\Facility;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -34,7 +34,7 @@ class EmployeeRequest extends FormRequest
         'user_id_update'=>['Numeric'],
 
         //foreign id and reference
-        'work_address_id'=>['required'],
+        //'work_address_id'=>['required'],
         'employee_status_id' => ['required'],
         'contract_type_id' => ['required'],
         'employment_type_id' => ['required'],
@@ -49,6 +49,8 @@ class EmployeeRequest extends FormRequest
         'teaching_specialization_id' => ['required'],
         'political_dismissal_type_id' => ['required'],
         'marital_status_id' => ['required'],
+        'first_academic_achievement_id' => ['required'],
+        'academic_achievement_id' => ['required'],
 
         //normal fields
         'name' => ['required','max:20'],
@@ -95,14 +97,14 @@ class EmployeeRequest extends FormRequest
         'housing_card_house_number' => ['max:20'],
         'housing_card_nearest_point_of_reference' => ['max:30'],
         'housing_card_mukhtar_name' => ['max:20'],
-        'certificate_of_appointment_academic_achievement' => ['max:20'],
+        
         'certificate_of_appointment' => ['max:20'],
         'certificate_of_appointment_graduation_year' => ['max:9'],
         'certificate_of_appointment_university_institute_school_name' => ['max:50'],
         'certificate_of_appointment_college_name' => ['max:50'],
         'certificate_of_appointment_major' => ['max:20'],
         'certificate_of_appointment_mark' => ['max:3'],
-        'last_academic_achievement' => ['max:20'],
+        
         'last_certificate_obtained' => ['max:20'],
         'last_year_of_graduation' => ['max:9'],
         'last_name_of_the_university' => ['max:30'],

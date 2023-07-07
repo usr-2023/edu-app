@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Academic_Achievement;
+
+use App\Models\Basic\Employee\Academic_Achievement;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
