@@ -57,6 +57,12 @@ return new class extends Migration
             $table->unsignedBigInteger('career_stage_id')->nullable();
             $table->foreign('career_stage_id')->references('id')->on('career_stage');
 
+            $table->unsignedBigInteger('first_academic_achievement_id')->nullable();
+            $table->foreign('first_academic_achievement_id')->references('id')->on('academic_achievements');
+
+            $table->unsignedBigInteger('academic_achievement_id')->nullable();
+            $table->foreign('academic_achievement_id')->references('id')->on('academic_achievements');
+
             $table->unsignedBigInteger('teaching_specialization_id')->nullable();
             $table->foreign('teaching_specialization_id')->references('id')->on('teaching_specialization');
 
@@ -115,14 +121,14 @@ return new class extends Migration
             $table->string('housing_card_house_number','20')->nullable();
             $table->string('housing_card_nearest_point_of_reference','30')->nullable();
             $table->string('housing_card_mukhtar_name','40')->nullable();
-            $table->string('certificate_of_appointment_academic_achievement','30')->nullable();
+            
             $table->string('certificate_of_appointment','20')->nullable();
             $table->string('certificate_of_appointment_graduation_year','9')->nullable();
             $table->string('certificate_of_appointment_university_institute_school_name','50')->nullable();
             $table->string('certificate_of_appointment_college_name','50')->nullable();
             $table->string('certificate_of_appointment_major','20')->nullable();
             $table->integer('certificate_of_appointment_mark')->nullable();
-            $table->string('last_academic_achievement','20')->nullable();
+            
             $table->string('last_certificate_obtained','20')->nullable();
             $table->string('last_year_of_graduation','9')->nullable();
             $table->string('last_name_of_the_university','30')->nullable();

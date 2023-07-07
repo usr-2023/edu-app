@@ -2,6 +2,7 @@
 
 namespace App\Models\Basic\Employee;
 
+use App\Models\Academic_Achievement;
 use App\Models\Basic\Facility\Facility;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -76,6 +77,17 @@ class Employee extends Model
     {
     return $this->hasone(Political_Dismissal_Type::class,'id','political_dismissal_type_id');
      }
+
+    public function get_first_academic_achievement()
+    {
+    return $this->hasone(Academic_Achievement::class,'id','first_academic_achievement_id');
+     }
+
+    public function get_academic_achievement()
+    {
+    return $this->hasone(Academic_Achievement::class,'id','academic_achievement_id');
+     }
+
      public function get_user_create()
      {
      return $this->hasone(User::class,'id','user_id_create');
@@ -109,7 +121,9 @@ class Employee extends Model
         'teaching_specialization_id',
         'political_dismissal_type_id',
         'marital_status_id',
-
+        'first_academic_achievement_id',
+        'academic_achievement_id',
+        
         //normal fields
         'name',
         'father_name',
@@ -155,14 +169,12 @@ class Employee extends Model
         'housing_card_house_number',
         'housing_card_nearest_point_of_reference',
         'housing_card_mukhtar_name',
-        'certificate_of_appointment_academic_achievement',
         'certificate_of_appointment',
         'certificate_of_appointment_graduation_year',
         'certificate_of_appointment_university_institute_school_name',
         'certificate_of_appointment_college_name',
         'certificate_of_appointment_major',
         'certificate_of_appointment_mark',
-        'last_academic_achievement',
         'last_certificate_obtained',
         'last_year_of_graduation',
         'last_name_of_the_university',

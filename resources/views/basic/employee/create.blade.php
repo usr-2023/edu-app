@@ -843,14 +843,21 @@
 
                             <div class="flex">
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="certificate_of_appointment_academic_achievement"
-                                        class="w-full mb-1" :value="__('word.certificate_of_appointment_academic_achievement')" />
-                                    <x-text-input id="certificate_of_appointment_academic_achievement"
-                                        class="w-full block mt-1" type="text"
-                                        name="certificate_of_appointment_academic_achievement"
-                                        value="{{ old('certificate_of_appointment_academic_achievement') }}" />
-                                    <x-input-error :messages="$errors->get('certificate_of_appointment_academic_achievement')" class="w-full mt-2" />
+                                    <x-input-label for="first_academic_achievement_id" class="w-full mb-1"
+                                        :value="__('word.certificate_of_appointment_academic_achievement')" />
+                                    <select id="first_academic_achievement_id" class="w-full block mt-1 "
+                                        name="first_academic_achievement_id">
+                                        @foreach ($academic_achievements as $academic_achievement)
+                                            <option value="{{ $academic_achievement->id }}"
+                                                {{ old('first_academic_achievement_id') == $academic_achievement->id ? 'selected' : '' }}>
+                                                {{ $academic_achievement->academic_achievement }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <x-input-error :messages="$errors->get('first_academic_achievement_id')" class="w-full mt-2" />
                                 </div>
+
+
 
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="certificate_of_appointment" class="w-full mb-1"
@@ -925,15 +932,21 @@
                             </h2>
 
                             <div class="flex">
-
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="last_academic_achievement" class="w-full mb-1"
+                                    <x-input-label for="academic_achievement_id" class="w-full mb-1"
                                         :value="__('word.last_academic_achievement')" />
-                                    <x-text-input id="last_academic_achievement" class="w-full block mt-1"
-                                        type="text" name="last_academic_achievement"
-                                        value="{{ old('last_academic_achievement') }}" />
-                                    <x-input-error :messages="$errors->get('last_academic_achievement')" class="w-full mt-2" />
+                                    <select id="academic_achievement_id" class="w-full block mt-1 "
+                                        name="academic_achievement_id">
+                                        @foreach ($academic_achievements as $academic_achievement)
+                                            <option value="{{ $academic_achievement->id }}"
+                                                {{ old('first_academic_achievement_id') == $academic_achievement->id ? 'selected' : '' }}>
+                                                {{ $academic_achievement->academic_achievement }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <x-input-error :messages="$errors->get('first_academic_achievement_id')" class="w-full mt-2" />
                                 </div>
+
                                 <div class=" mx-4 my-4 w-full">
                                     <x-input-label for="last_certificate_obtained" class="w-full mb-1"
                                         :value="__('word.last_certificate_obtained')" />

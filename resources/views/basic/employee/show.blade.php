@@ -743,12 +743,11 @@
 
                             <div class="flex">
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="certificate_of_appointment_academic_achievement"
-                                        class="w-full mb-1" :value="__('word.certificate_of_appointment_academic_achievement')" />
-                                    <p id="certificate_of_appointment_academic_achievement"
-                                        class="w-full h-9 block mt-1" type="text"
-                                        name="certificate_of_appointment_academic_achievement">
-                                        {{ $employee->certificate_of_appointment_academic_achievement }}
+                                    <x-input-label for="first_academic_achievement_id" class="w-full mb-1"
+                                        :value="__('word.certificate_of_appointment_academic_achievement')" />
+                                    <p id="first_academic_achievement_id" class="w-full h-9 block mt-1"
+                                        type="text" name="first_academic_achievement_id">
+                                        {{ $employee->get_first_academic_achievement->academic_achievement }}
                                     </p>
 
                                 </div>
@@ -831,11 +830,11 @@
                             <div class="flex">
 
                                 <div class=" mx-4 my-4 w-full">
-                                    <x-input-label for="last_academic_achievement" class="w-full mb-1"
+                                    <x-input-label for="academic_achievement_id" class="w-full mb-1"
                                         :value="__('word.last_academic_achievement')" />
-                                    <p id="last_academic_achievement" class="w-full h-9 block mt-1" type="text"
-                                        name="last_academic_achievement">
-                                        {{ $employee->last_academic_achievement }}
+                                    <p id="academic_achievement_id" class="w-full h-9 block mt-1" type="text"
+                                        name="academic_achievement_id">
+                                        {{ $employee->get_academic_achievement->academic_achievement }}
                                     </p>
 
                                 </div>

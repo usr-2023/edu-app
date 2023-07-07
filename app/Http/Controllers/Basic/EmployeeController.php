@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Basic;
 use App\DataTables\EmployeeDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Basic\EmployeeRequest;
+use App\Models\Basic\Employee\Academic_Achievement;
 use App\Models\Basic\Employee\Assignment_Type;
 use App\Models\Basic\Employee\Career_Stage;
 use App\Models\Basic\Employee\Contract_Type;
@@ -58,10 +59,11 @@ class EmployeeController extends Controller
         $teaching_specializations = Teaching_Specialization::all();
         $political_dismissal_types = Political_Dismissal_Type::all();
         $marital_statuss = Marital_Status::all();
+        $academic_achievements = Academic_Achievement::all();
         
         $yesnos = YesNo::all();
 
-        return view('basic.employee.create',compact(['contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
+        return view('basic.employee.create',compact(['contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos','academic_achievements']));
     }
 
     /**
@@ -119,13 +121,13 @@ class EmployeeController extends Controller
          $teaching_specializations = Teaching_Specialization::all();
          $political_dismissal_types = Political_Dismissal_Type::all();
          $marital_statuss = Marital_Status::all();
-    
+         $academic_achievements = Academic_Achievement::all();
          $yesnos = YesNo::all();
  
  
          $employee = Employee::where('url_address','=',$url_address) -> first();
          if (isset($employee)) {
-            return view('basic.employee.edit',compact(['employee','contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos']));
+            return view('basic.employee.edit',compact(['employee','contract_types','employee_statuss','employment_types','assignment_types','nationalitys','mother_languages','genders','scientific_title_stages','job_titles','job_grades','career_stages','teaching_specializations','political_dismissal_types','marital_statuss','yesnos','academic_achievements']));
      
          }
          else{
